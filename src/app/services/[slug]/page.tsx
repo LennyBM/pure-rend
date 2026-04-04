@@ -6,6 +6,7 @@ import QuoteCalculator from "@/components/forms/QuoteCalculator";
 import InteractiveSlider from "@/components/ui/InteractiveSlider";
 import { ArrowRight, Phone, Mail, CheckCircle, ChevronDown } from "lucide-react";
 import Script from "next/script";
+import ClientContentPlaceholder from "@/components/ui/ClientContentPlaceholder";
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -49,7 +50,8 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/95 via-zinc-900/60 to-zinc-900/10" />
+        <ClientContentPlaceholder className="opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/95 via-zinc-900/60 to-zinc-900/10 pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-20">
           <span className="inline-block bg-blue-600/20 text-blue-400 font-semibold tracking-[0.2em] uppercase text-xs px-4 py-2 rounded-full mb-5 border border-blue-500/30 font-headline">

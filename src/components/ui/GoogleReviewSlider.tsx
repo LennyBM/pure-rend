@@ -1,6 +1,7 @@
 'use client';
 
 import { Star, CheckCircle } from 'lucide-react';
+import ClientContentPlaceholder from './ClientContentPlaceholder';
 
 const REVIEWS = [
   {
@@ -44,8 +45,9 @@ export default function GoogleReviewSlider() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {REVIEWS.map((review) => (
-          <div key={review.id} className="w-full px-3">
-            <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm h-full flex flex-col hover:shadow-md transition-shadow">
+          <div key={review.id} className="w-full px-3 relative">
+            <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm h-full flex flex-col hover:shadow-md transition-shadow relative overflow-hidden">
+              <ClientContentPlaceholder className="top-0 right-0 rounded-bl shadow-none border-t-0 border-r-0" text="Placeholder Rev" />
               <div className="flex items-center gap-4 mb-4">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center text-zinc-900 font-bold text-sm ${review.color}`}>
                   {review.initials}

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { ChevronsUpDown } from "lucide-react";
+import ClientContentPlaceholder from "./ClientContentPlaceholder";
 
 interface InteractiveSliderProps {
   beforeImage: string;
@@ -86,6 +87,7 @@ export default function InteractiveSlider({
           fill
           className="object-cover"
         />
+        <ClientContentPlaceholder />
         <div className="absolute top-6 right-6 bg-blue-600 text-zinc-900 px-4 py-2 text-xs font-bold tracking-[0.2em] uppercase font-headline rounded-none shadow-lg z-10">
           {afterLabel}
         </div>
