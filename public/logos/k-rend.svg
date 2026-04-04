@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <path d="M40 20 Q 60 20 60 40 Q 60 60 40 60 Q 30 60 20 50 Q 10 40 20 30 Q 30 20 40 20 Z" fill="#78BE20" />
+  <path d="M40 40 Q 60 40 60 60 Q 60 80 40 80 Q 20 80 20 60 Z" fill="#78BE20" opacity="0.9" />
+  <path d="M20 30 Q 40 30 40 50 Q 40 70 20 70 Q 0 70 0 50 Z" fill="#78BE20" opacity="0.95" />
+  <text x="80" y="65" font-family="'Times New Roman', Times, serif" font-size="52" font-weight="bold" letter-spacing="1" fill="#000000">K Rend</text>
+  <circle cx="85" cy="25" r="4" fill="#000000" />
+  <text x="92" y="27" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="bold" fill="#000000">UK</text>
+</svg>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Outfit:wght@700;800;900&amp;family=Manrope:wght@400;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9fb",
+                        "surface-dim": "#d9dadc",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e5",
+                        "outline-variant": "#bec8cf",
+                        "on-secondary-container": "#636467",
+                        "on-surface-variant": "#3e484e",
+                        "surface": "#f9f9fb",
+                        "inverse-surface": "#2f3133",
+                        "primary-fixed": "#bfe9ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#a5660b",
+                        "surface-bright": "#f9f9fb",
+                        "secondary-fixed": "#e2e2e5",
+                        "on-primary-fixed-variant": "#004d65",
+                        "on-tertiary-container": "#fffbff",
+                        "secondary": "#5d5e61",
+                        "on-secondary-fixed-variant": "#454749",
+                        "surface-container": "#edeef0",
+                        "primary": "#006482",
+                        "on-primary": "#ffffff",
+                        "outline": "#6e797f",
+                        "inverse-primary": "#71d2fd",
+                        "inverse-on-surface": "#f0f0f3",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ffb867",
+                        "primary-container": "#007ea3",
+                        "surface-tint": "#006685",
+                        "surface-container-low": "#f3f3f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1a1c1e",
+                        "on-surface": "#1a1c1e",
+                        "tertiary": "#845000",
+                        "on-primary-fixed": "#001f2a",
+                        "on-background": "#1a1c1e",
+                        "secondary-fixed-dim": "#c6c6c9",
+                        "secondary-container": "#e2e2e5",
+                        "surface-container-high": "#e8e8ea",
+                        "primary-fixed-dim": "#71d2fd",
+                        "on-primary-container": "#fbfdff",
+                        "surface-container-highest": "#e2e2e5",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffddbb",
+                        "on-tertiary-fixed-variant": "#673d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "4px",
+                        "lg": "4px",
+                        "xl": "4px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Outfit", "Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .monolith-gradient {
+            background: linear-gradient(135deg, #006482 0%, #007ea3 100%);
+        }
+        .frosted-monolith {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .architectural-lead {
+            border-left: 8px solid #006482;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl transition-all duration-300">
+<nav class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-headline font-bold tracking-tighter text-zinc-800">
+                PureRend
+            </div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-body text-sm text-zinc-600 hover:text-cyan-600 transition-colors" href="#">Services</a>
+<a class="font-body text-sm text-cyan-600 border-b-2 border-cyan-600 pb-1" href="#">Locations</a>
+<a class="font-body text-sm text-zinc-600 hover:text-cyan-600 transition-colors" href="#">Portfolio</a>
+<a class="font-body text-sm text-zinc-600 hover:text-cyan-600 transition-colors" href="#">Contact</a>
+<button class="monolith-gradient text-white px-6 py-2.5 rounded text-sm font-medium hover:opacity-90 active:scale-95 transition-all">
+                    Get a Precision Quote
+                </button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-zinc-800">menu</span>
+</div>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center overflow-hidden bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 z-10">
+<span class="text-primary font-headline font-bold tracking-widest uppercase text-xs mb-4 block">Headquarters: Bude, Cornwall</span>
+<h1 class="text-5xl md:text-7xl font-headline font-black text-on-surface tracking-tighter leading-[1.1] mb-6">
+                        Bude's Specialist for Elite Architectural Rendering.
+                    </h1>
+<p class="text-xl text-on-surface-variant font-light leading-relaxed max-w-2xl mb-10">
+                        From Widemouth Bay to the heart of Bude, I provide the specialist finishing required for the region's elite architecture. PureRend is the local authority on coastal salt-air protection, ensuring your property remains immaculate against the Atlantic elements.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="monolith-gradient text-white px-8 py-4 rounded text-sm font-bold tracking-wider uppercase hover:opacity-90 transition-all">
+                            Get a Precision Quote
+                        </button>
+<button class="border border-outline-variant/30 px-8 py-4 rounded text-sm font-bold tracking-wider uppercase text-on-surface hover:bg-surface-container transition-all">
+                            View Local Portfolio
+                        </button>
+</div>
+</div>
+<div class="md:col-span-5 relative h-full min-h-[400px]">
+<div class="absolute inset-0 bg-surface-container-highest overflow-hidden rounded-lg shadow-2xl shadow-zinc-900/10">
+<img alt="Luxury Coastal Home Bude" class="w-full h-full object-cover grayscale-[20%] contrast-[110%]" data-alt="Modern high-end coastal architecture in Bude featuring clean white rendered walls against a dramatic stormy Atlantic ocean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnKtpc1Ktvg8QyInMuXJIQZUj3XuIt6RXBGpMC5V0jqtSF9E5gXiW5UVNDwLnJRe7GeJgfakT92KGlcVQsN9vgya5qzuvkiSIYHPTYCBbLP-CFHS2R51Oow0WW2V19KhorTan_S3Nz-Vb1rn-aD2wZSGYWgARX4g7P3yBQRzBUf2-NzH_vTla9FO-5W2plvF3CejmPlkYrVkmGBv9YHPbQq1J7KGfz4sAZvgPJfAj6ix_LpzWG61u25G3skdF7KO8KgBvUeZQ-qur9"/>
+</div>
+<!-- Monolith Accent -->
+<div class="absolute -bottom-6 -left-6 bg-primary w-24 h-24 hidden md:block"></div>
+</div>
+</div>
+</section>
+<!-- Technical Specification Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+<div class="architectural-lead pl-10">
+<h2 class="text-4xl font-headline font-extrabold text-on-surface mb-8 tracking-tight">
+                            Protecting North Cornwall's Most Prestigious Developments.
+                        </h2>
+<div class="space-y-6 text-on-surface-variant leading-loose">
+<p>
+                                Bude's coastal environment demands more than standard plastering. I use advanced silicone-based systems and high-polymer modifiers to create a microscopic barrier that prevents moisture and salinity from penetrating the substrate.
+                            </p>
+<p class="font-semibold text-on-surface">
+                                This is the Bude standard—engineered for the coast.
+                            </p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-8">
+<div class="p-8 bg-surface-container-low border-l-4 border-primary">
+<h3 class="font-headline font-bold text-lg mb-2">Coastal Resilience</h3>
+<p class="text-sm text-on-surface-variant">Salt-air protection systems specifically calibrated for the North Cornwall microclimate.</p>
+</div>
+<div class="p-8 bg-surface-container-low border-l-4 border-primary">
+<h3 class="font-headline font-bold text-lg mb-2">Technical Substrates</h3>
+<p class="text-sm text-on-surface-variant">High-polymer modifiers ensuring structural integrity against Atlantic thermal expansion.</p>
+</div>
+<div class="p-8 bg-surface-container-low border-l-4 border-primary">
+<h3 class="font-headline font-bold text-lg mb-2">Aesthetic Permanence</h3>
+<p class="text-sm text-on-surface-variant">Self-cleaning technology that maintains a brilliant finish without periodic maintenance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Services -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16">
+<h3 class="font-headline font-black text-3xl tracking-tighter mb-4">Core Protection Systems</h3>
+<p class="text-on-surface-variant max-w-xl">Explore my parent services to see how I protect North Cornwall's architectural assets.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[500px]">
+<div class="md:col-span-2 relative group overflow-hidden bg-zinc-900 rounded-lg">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Close up of high precision silicone render texture on a contemporary luxury villa with sharp shadow lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqROhVTuUaAfHn-V4RyaxB8V8wCDfflSo1Omh0A8XAGCSFIwDQS8wi5wCOMKWhNdbIfJpef8vNIubN_I4EfzEo314RuaiRUHNxg4OHqznjpGjxIxR9FQ-JlFxi2XYzibCFpaqkeqXUVyvTH5cny2OWdYrPOIlhaO6755zZj0WDYZawQXaczdWu0XyVpnLaiOeC1I01Zu5kFAP1mBoYbx0JItpJv4rBvNVQytFS1GBy40hEqCYScCVe-QsZMrDBsxebp3livu_r6orq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="text-white text-2xl font-headline font-bold mb-2">Silicone Rendering</h4>
+<p class="text-zinc-300 text-sm mb-6 max-w-md">The gold standard in water repellency and crack resistance for coastal properties.</p>
+<a class="inline-flex items-center text-primary-fixed font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform" href="#">
+                                View Technical Specs <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="relative group overflow-hidden bg-zinc-800 rounded-lg">
+<img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" data-alt="Thermal insulation boarding being installed on a modern residence with technical precision" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV-U9HxKyK_hcNyVPsG48sEUq8nfbcO5s1AIfOcXnfPU6vBHYGVwM6W22rvQm2SvO-WmImJ2dOkAqZ0_05dENuPRuvAtU8Tq7HhZ9xhkIin0YyN8UEBS9N6exmhZIszkBzCovPYbeAx4qzNjbWir2bHWCkdq_V05vf_AVfkBTdwgloMg9rm4N3a8vyl07bf7Fat8-F5Co_6vpDtyXcGvlomGMspV5YQjHHzp-ot-TNtfvG0vxnrYOzSDmGsJmiNyYx5MNsYuafgjNk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="text-white text-2xl font-headline font-bold mb-2">EWI Systems</h4>
+<p class="text-zinc-300 text-sm mb-6">High-performance external wall insulation for energy-efficient coastal living.</p>
+<a class="inline-flex items-center text-primary-fixed font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform" href="#">
+                                Explore EWI <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA / "No Dead End" -->
+<section class="py-24 bg-on-surface text-surface">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+<div class="mb-8 md:mb-0">
+<h2 class="text-3xl md:text-5xl font-headline font-black tracking-tighter mb-4">Ready for Architectural Precision?</h2>
+<p class="text-surface-variant max-w-xl text-lg font-light">Secure your quote for elite rendering services in Bude and surrounding North Cornwall today.</p>
+</div>
+<button class="monolith-gradient text-white px-10 py-5 rounded text-base font-bold tracking-widest uppercase hover:scale-105 transition-transform shadow-xl">
+                    Get a Precision Quote
+                </button>
+</div>
+</section>
+<!-- Map Location Visualization -->
+<section class="h-[400px] w-full bg-surface-container grayscale contrast-125 overflow-hidden relative">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-30" data-alt="Stylized high contrast map texture of North Cornwall coastline near Bude" data-location="Bude, Cornwall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARktAplYzHINmz1PMTKkbpa2uqOger_0XwWiumiDWyTwPmcZCvcetg9hZSaIYejbE_3rZ3xEV0uqDGYPmHtoFNThw54KxtxMKzW7JprIWcgU_fOqpGi1Ud0IVQAnjchF73JlhlQz-v6yFOPfzhUteLQusQWXgGmsiEF5On3Ff66bHKtKjhmHtxalLQvGTCtRuMowp-8Mt2FZ3K1AOYiE6tXLyZqQagV2hDExFODUeYUbfYnEAxEvNd5wxfKJ5bsGa6-FC1NTmi9jid"/>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-white p-6 rounded-lg shadow-2xl flex items-center space-x-4 border border-outline-variant/10">
+<div class="bg-primary p-3 rounded">
+<span class="material-symbols-outlined text-white">location_on</span>
+</div>
+<div>
+<p class="text-zinc-900 font-bold font-headline uppercase text-xs tracking-widest">Main Operations HQ</p>
+<p class="text-zinc-600 text-sm">Bude, EX23 0HX</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-800 dark:bg-black w-full py-12">
+<div class="flex flex-col md:flex-row justify-between items-start px-8 max-w-7xl mx-auto space-y-8 md:space-y-0">
+<div class="flex flex-col space-y-4">
+<div class="text-lg font-outfit font-black text-white">PureRend</div>
+<p class="font-inter text-xs uppercase tracking-widest text-zinc-400 max-w-xs leading-relaxed">
+                    PureRend (Formerly B.R Plastering). Architectural Precision in Every Render. 14 St Marwenne Cl, Bude, EX23 0HX.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col space-y-2">
+<span class="text-white font-bold text-[10px] uppercase tracking-widest mb-2">Navigation</span>
+<a class="text-zinc-500 hover:text-cyan-400 font-inter text-xs uppercase tracking-widest transition-colors" href="#">Services</a>
+<a class="text-white font-inter text-xs uppercase tracking-widest" href="#">Locations</a>
+<a class="text-zinc-500 hover:text-cyan-400 font-inter text-xs uppercase tracking-widest transition-colors" href="#">Portfolio</a>
+<a class="text-zinc-500 hover:text-cyan-400 font-inter text-xs uppercase tracking-widest transition-colors" href="#">Legal</a>
+</div>
+<div class="flex flex-col space-y-2">
+<span class="text-white font-bold text-[10px] uppercase tracking-widest mb-2">Expertise</span>
+<span class="text-zinc-500 font-inter text-[10px] uppercase tracking-widest">Silicone Rendering</span>
+<span class="text-zinc-500 font-inter text-[10px] uppercase tracking-widest">EWI Systems</span>
+<span class="text-zinc-500 font-inter text-[10px] uppercase tracking-widest">Monocouche</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp SideNav -->
+<div class="fixed bottom-8 right-8 z-[100] cursor-pointer flex items-center justify-center bg-[#25D366] text-white rounded-full p-4 shadow-2xl shadow-zinc-900/20 hover:scale-110 transition-transform duration-300 active:scale-90 group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+<div class="absolute right-full mr-4 bg-white text-zinc-900 px-4 py-2 rounded shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<p class="font-inter font-medium text-xs">WhatsApp Support</p>
+<p class="text-[10px] text-zinc-500">Instant Chat</p>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <rect x="10" y="25" width="50" height="50" rx="6" fill="#e3000f" />
+  <path d="M20 50 L40 50 L35 60 L20 60 Z" fill="none" stroke="#fff" stroke-width="4" />
+  <text x="75" y="65" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="900" font-style="italic" fill="#000000">weber</text>
+  <text x="78" y="80" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#666666" letter-spacing="2">SAINT-GOBAIN</text>
+</svg>

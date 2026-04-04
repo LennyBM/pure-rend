@@ -1,0 +1,104 @@
+{
+  "business": {
+    "name": "PureRend",
+    "tagline": "Elevating Exteriors with Precision Rendering",
+    "signature_phrase": "Clean lines. Flawless finish. Built to last.",
+    "former_name": "B.R Plastering",
+    "rebrand_designer": "Ruffle Creative (@rufflecreative)",
+    "facebook_page_created": "January 12, 2020",
+    "founded": null,
+    "years_experience": null
+  },
+  "owner": {
+    "first_name": "Ben",
+    "surname": "Rod",
+    "full_name": "Ben Rod",
+    "role": "Founder & Lead Renderer"
+  },
+  "contact": {
+    "phone": "07761 735022",
+    "phone_tel": "+447761735022",
+    "email": "b.rplasteringsw@gmail.com",
+    "website": null
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/people/PureRend/100063442040968/",
+    "facebook_page_id": "100063442040968",
+    "facebook_likes": 217,
+    "facebook_followers": 217,
+    "facebook_category": "Construction Company",
+    "facebook_photos": "https://www.facebook.com/profile.php?id=100063442040968&sk=photos",
+    "facebook_reels": "https://www.facebook.com/profile.php?id=100063442040968&sk=reels_tab",
+    "instagram": "https://www.instagram.com/purerendsw/",
+    "instagram_handle": "@purerendsw"
+  },
+  "location": {
+    "address": "14 St Marwenne Cl",
+    "base": "Bude",
+    "county": "Cornwall",
+    "region": "North Cornwall & North Devon",
+    "postcode": "EX23 0HX",
+    "service_area": ["Bude", "North Cornwall", "North Devon", "Widemouth Bay", "Stratton", "Padstow", "Southwest UK", "Devon"]
+  },
+  "services": [
+    "Silicone Rendering",
+    "Monocouche Rendering (One-Coat)",
+    "External Wall Insulation (EWI)",
+    "Spray Rendering",
+    "Sand & Cement Rendering",
+    "Internal Plastering (Skim Finish)",
+    "New Build Packages (Internal + External)",
+    "Extensions & Refurbishments"
+  ],
+  "products": {
+    "primary_manufacturer": "EcoRend",
+    "other_brands": ["Refina", "NELA", "British Gypsum", "SAS Render Systems", "Fassabortolo"],
+    "equipment_hire": "CES Hire",
+    "approved_applicator": null,
+    "notes": "Confirm with Ben whether he has formal EcoRend approved applicator status"
+  },
+  "trust_signals": {
+    "google_review_count": null,
+    "google_review_rating": null,
+    "facebook_reviews": 0,
+    "facebook_rating": "Not yet rated",
+    "community_endorsement": "Ben Rod who is PureRend — top class work (Bude Notice Board FB group)",
+    "insurance": null,
+    "accreditations": [],
+    "guarantee_terms": null
+  },
+  "scraped_datasets": {
+    "instagram_posts": {
+      "dataset_id": "CcVHzungROt8HKQNe",
+      "total_items": 37,
+      "scraped_at": "2026-04-04"
+    },
+    "facebook_posts": {
+      "dataset_id": "JiJq08WGMRFMVapdZ",
+      "total_items": 40,
+      "scraped_at": "2026-04-04"
+    },
+    "facebook_page_info": {
+      "dataset_id": "Ujq2Z3xWVmsuXRF5Q",
+      "total_items": 1,
+      "scraped_at": "2026-04-04"
+    }
+  },
+  "content_gaps": {
+    "critical": [
+      "Professional headshot / on-site photo",
+      "Google Review count and rating"
+    ],
+    "high": [
+      "Years of experience",
+      "EcoRend accreditation status (approved applicator or product user)",
+      "Insurance details (public liability amount)",
+      "Service area radius/boundaries"
+    ],
+    "medium": [
+      "Number of properties rendered (approx)",
+      "Trade body memberships (TrustMark, FMB, etc)",
+      "Guarantee/warranty terms"
+    ]
+  }
+}

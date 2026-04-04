@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f9f9fb",
+                    "surface-dim": "#d9dadc",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e2e2e5",
+                    "outline-variant": "#bec8cf",
+                    "on-secondary-container": "#636467",
+                    "on-surface-variant": "#3e484e",
+                    "surface": "#f9f9fb",
+                    "inverse-surface": "#2f3133",
+                    "primary-fixed": "#bfe9ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#2b1700",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#a5660b",
+                    "surface-bright": "#f9f9fb",
+                    "secondary-fixed": "#e2e2e5",
+                    "on-primary-fixed-variant": "#004d65",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary": "#5d5e61",
+                    "on-secondary-fixed-variant": "#454749",
+                    "surface-container": "#edeef0",
+                    "primary": "#006482",
+                    "on-primary": "#ffffff",
+                    "outline": "#6e797f",
+                    "inverse-primary": "#71d2fd",
+                    "inverse-on-surface": "#f0f0f3",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb867",
+                    "primary-container": "#007ea3",
+                    "surface-tint": "#006685",
+                    "surface-container-low": "#f3f3f6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#1a1c1e",
+                    "on-surface": "#1a1c1e",
+                    "tertiary": "#845000",
+                    "on-primary-fixed": "#001f2a",
+                    "on-background": "#1a1c1e",
+                    "secondary-fixed-dim": "#c6c6c9",
+                    "secondary-container": "#e2e2e5",
+                    "surface-container-high": "#e8e8ea",
+                    "primary-fixed-dim": "#71d2fd",
+                    "on-primary-container": "#fbfdff",
+                    "surface-container-highest": "#e2e2e5",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffddbb",
+                    "on-tertiary-fixed-variant": "#673d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Outfit", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"],
+                    "outfit": ["Outfit", "sans-serif"],
+                    "inter": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .architectural-lead {
+        border-left: 8px solid #006482;
+      }
+      .monolith-shadow {
+        box-shadow: 0 24px 48px -12px rgba(56, 58, 60, 0.08);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #006482 0%, #007ea3 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-outfit font-bold tracking-tighter text-zinc-800 dark:text-zinc-100">
+                PureRend
+            </div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-inter text-sm text-cyan-600 dark:text-cyan-400 border-b-2 border-cyan-600 pb-1" href="#">Services</a>
+<a class="font-inter text-sm text-zinc-600 dark:text-zinc-400 hover:text-cyan-600 transition-colors" href="#">Locations</a>
+<a class="font-inter text-sm text-zinc-600 dark:text-zinc-400 hover:text-cyan-600 transition-colors" href="#">Portfolio</a>
+<a class="font-inter text-sm text-zinc-600 dark:text-zinc-400 hover:text-cyan-600 transition-colors" href="#">Contact</a>
+<button class="primary-gradient text-white px-6 py-2 rounded-[4px] font-inter text-sm font-semibold hover:opacity-90 transition-all active:scale-95 duration-150">
+                    Get a Precision Quote
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section: Asymmetric Monolith -->
+<section class="relative px-8 py-24 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-8">
+<h1 class="font-outfit font-black text-5xl md:text-7xl text-on-surface leading-[0.95] tracking-tighter">
+                    Weather-Defying Silicone Rendering: The New Standard in Bude.
+                </h1>
+<h2 class="font-outfit font-bold text-2xl text-on-surface-variant max-w-xl">
+                    Architectural Protection Engineered for the Atlantic Coast.
+                </h2>
+<div class="architectural-lead pl-8">
+<p class="font-inter text-lg text-secondary leading-relaxed">
+                        The Cornish climate is unforgiving. My silicone rendering systems are engineered to repel the relentless salt air and moisture of the Atlantic, providing a self-cleaning, hydrophobic shield for your property.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="primary-gradient text-white px-8 py-4 rounded-[4px] font-outfit font-bold text-lg hover:opacity-90 transition-all">
+                        Get a Precision Quote
+                    </button>
+<button class="bg-transparent border border-outline-variant/30 px-8 py-4 rounded-[4px] font-outfit font-bold text-lg text-on-surface hover:bg-surface-container-low transition-all">
+                        View Portfolio
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative h-[500px] lg:h-[600px] bg-surface-container-highest rounded-lg overflow-hidden monolith-shadow">
+<img alt="Silicone Rendering" class="w-full h-full object-cover grayscale-[0.2] contrast-125" data-alt="Modern minimalist coastal house exterior with clean white silicone render finish under a dramatic stormy sky in Cornwall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwQ5pf2HqNbPXGhY-ireVHSs07jro1IoEKrLsZxf3hnH31olfETQfHinT4tsGRGUDG9vK2_OXVJE4gmozlDgnbkTzUO7GIHO2bx2Iwp1y7TsbVyRLMuCATcgc4ySCdxbeCBmhams9vd1E3s7f31SyJgtj0APnh2ODbppHSXkJRq3c-b0-0aOZq7VQbm2XksmiBUJfnHb7ZjoYwMjrnZsb9bglC_u6Tm2nhsxUOTlk7PXmzYsc8n1TFVUhgGS4aD8cMHAq4--6T7ggX"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+</section>
+<!-- Trust Bar: Partnerships -->
+<section class="bg-inverse-surface py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 opacity-70 grayscale">
+<div class="flex items-center gap-4 text-white">
+<span class="material-symbols-outlined text-4xl">verified</span>
+<div class="font-outfit font-bold uppercase tracking-widest text-xs">EcoRend Partner</div>
+</div>
+<div class="flex items-center gap-4 text-white">
+<span class="material-symbols-outlined text-4xl">precision_manufacturing</span>
+<div class="font-outfit font-bold uppercase tracking-widest text-xs">NELA Precision Tools</div>
+</div>
+<div class="flex items-center gap-4 text-white">
+<span class="material-symbols-outlined text-4xl">architecture</span>
+<div class="font-outfit font-bold uppercase tracking-widest text-xs">Elite Spray Rendering</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs: Bento Grid Layout -->
+<section class="px-8 py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<span class="font-inter font-bold text-primary tracking-widest uppercase text-xs">Technical Performance</span>
+<h3 class="font-outfit font-extrabold text-4xl mt-2">Engineered Resilience</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest p-8 rounded-[4px] monolith-shadow border-b-4 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">wb_sunny</span>
+<h4 class="font-outfit font-bold text-xl mb-2">100% UV resistant</h4>
+<p class="font-inter text-sm text-secondary">Advanced pigment stability prevents fading under intense coastal exposure.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-[4px] monolith-shadow border-b-4 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">air</span>
+<h4 class="font-outfit font-bold text-xl mb-2">Highly breathable</h4>
+<p class="font-inter text-sm text-secondary">Allowing moisture to escape while preventing liquid water ingress.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-[4px] monolith-shadow border-b-4 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">cleaning_services</span>
+<h4 class="font-outfit font-bold text-xl mb-2">Self-cleaning</h4>
+<p class="font-inter text-sm text-secondary">Dirt particles are picked up by water droplets and rolled off the surface.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-[4px] monolith-shadow border-b-4 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">waves</span>
+<h4 class="font-outfit font-bold text-xl mb-2">Engineered flexibility</h4>
+<p class="font-inter text-sm text-secondary">Polymer-enhanced structure prevents cracking from thermal movement.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section: Vertical Timeline -->
+<section class="px-8 py-32 bg-surface">
+<div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div>
+<h3 class="font-outfit font-black text-4xl mb-8 leading-tight">The PureRend Precision Protocol</h3>
+<p class="font-inter text-secondary mb-12">Every application follows an uncompromising 6-step installation framework to ensure the integrity of the coastal shield.</p>
+<div class="relative h-[600px] bg-zinc-200 rounded-[4px] overflow-hidden">
+<img alt="Application Process" class="w-full h-full object-cover" data-alt="Close up of a professional tradesman applying white render to a wall using precision tools with sharp focus on the texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9RCfjDWX2nvziVwGmjk-irRcMoQRgtrV9OVjWmnuwp3MvYLtLJaMphsz_YQqdP-QuzJXGGgDWxE3QgDpdZaLq-16vkCZQd1JX3xs1VjW4JznuZ_a9uV_r0shDbdEJcMW_7WoGrprbJgPAvSFMlYtRoE8la4FAQIE9MhxICcSASMzZM46KrepqQYFMkyu3WEGIYCDrgjN50xkYZTaIg4LYXGghRGjsB95zlWAnn8tQPb7ThWehZYfRnbu3ckNsUFwA43Lhjur76a3j"/>
+</div>
+</div>
+<div class="space-y-12">
+<div class="flex gap-6 group">
+<div class="flex-none w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest font-outfit font-black text-primary text-xl">1</div>
+<div>
+<h5 class="font-outfit font-bold text-xl mb-2 text-on-surface">Substrate Analysis</h5>
+<p class="font-inter text-on-surface-variant text-sm">Deep inspection of the existing structure to ensure optimal adhesion and moisture profiles.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-none w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest font-outfit font-black text-primary text-xl">2</div>
+<div>
+<h5 class="font-outfit font-bold text-xl mb-2 text-on-surface">Precision Beading</h5>
+<p class="font-inter text-on-surface-variant text-sm">Installing high-grade stainless or PVC beads for razor-sharp architectural lines.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-none w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest font-outfit font-black text-primary text-xl">3</div>
+<div>
+<h5 class="font-outfit font-bold text-xl mb-2 text-on-surface">Reinforcement Mesh</h5>
+<p class="font-inter text-on-surface-variant text-sm">Full embedment of alkali-resistant fiberglass mesh to resist structural stress.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-none w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest font-outfit font-black text-primary text-xl">4</div>
+<div>
+<h5 class="font-outfit font-bold text-xl mb-2 text-on-surface">Base Coat Application</h5>
+<p class="font-inter text-on-surface-variant text-sm">Application of a high-performance polymer-modified base layer.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-none w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest font-outfit font-black text-primary text-xl">5</div>
+<div>
+<h5 class="font-outfit font-bold text-xl mb-2 text-on-surface">Primer Seal</h5>
+<p class="font-inter text-on-surface-variant text-sm">A specific color-matched primer to control absorption and enhance topcoat bonding.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-none w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest font-outfit font-black text-primary text-xl">6</div>
+<div>
+<h5 class="font-outfit font-bold text-xl mb-2 text-on-surface">The Elite Finish</h5>
+<p class="font-inter text-on-surface-variant text-sm text-primary font-medium">Hand-floated silicone topcoat providing the final monolithic aesthetic and protection.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA: No Dead End -->
+<section class="relative bg-inverse-surface py-32 px-8 overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<img alt="Background" class="w-full h-full object-cover" data-alt="Abstract architectural texture of high-end concrete and glass with sharp diagonal shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApC6_cGoFZae_oaPgderxWMnwEgFeQXtN6EBD5QCebtMh8QUplqsEBDk7jSK35TtQ_IwumFAFwOAlojVG74BSgzhISBnrW05x2Nqna8y43oxBYQv_KhSo7a8p653ZrHj1QDrQZcJTOSvZ3SVgX12iL8QDnXfy7rDOcJ0utf2pNqyk8xgeCqCEC6wwWmUU_tMQ7r9QF1yGdq7d4g0lm0X2o914TrGHYiLm5X7LILlY9Qu32tjfJuHs_56MzySffoBMQKsBUkiYRaEAc"/>
+</div>
+<div class="max-w-4xl mx-auto relative z-10 text-center">
+<h3 class="font-outfit font-black text-4xl md:text-6xl text-white mb-8 tracking-tight">Protect Your Asset with Elite Engineering.</h3>
+<p class="font-inter text-zinc-400 text-lg mb-12 max-w-2xl mx-auto">Don't let the Atlantic climate degrade your property value. Secure a precision-engineered finish today.</p>
+<button class="primary-gradient text-white px-12 py-6 rounded-[4px] font-outfit font-extrabold text-xl hover:scale-105 transition-all shadow-2xl">
+                    Get a Precision Quote
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-800 dark:bg-black w-full py-12">
+<div class="flex flex-col md:flex-row justify-between items-start px-8 max-w-7xl mx-auto space-y-8 md:space-y-0">
+<div class="space-y-4">
+<div class="text-lg font-outfit font-black text-white">PureRend</div>
+<p class="font-inter text-xs uppercase tracking-widest text-zinc-400 max-w-xs">
+                    PureRend (Formerly B.R Plastering). 14 St Marwenne Cl, Bude, EX23 0HX.
+                </p>
+</div>
+<div class="flex gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-outfit text-white text-xs font-bold uppercase tracking-widest">Navigation</span>
+<a class="font-inter text-xs uppercase tracking-widest text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Services</a>
+<a class="font-inter text-xs uppercase tracking-widest text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Locations</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-outfit text-white text-xs font-bold uppercase tracking-widest">Company</span>
+<a class="font-inter text-xs uppercase tracking-widest text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Portfolio</a>
+<a class="font-inter text-xs uppercase tracking-widest text-zinc-500 hover:text-cyan-400 transition-colors" href="#">Legal</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Support FAB -->
+<a class="fixed bottom-8 right-8 z-[100] cursor-pointer group" href="https://wa.me/yournumber">
+<div class="bg-[#25D366] text-white rounded-full p-4 shadow-2xl shadow-zinc-900/20 group-hover:scale-110 transition-transform duration-300 active:scale-90 flex items-center gap-3 pr-6">
+<div class="bg-white rounded-full w-10 h-10 flex items-center justify-center text-[#25D366]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<div class="text-left">
+<div class="font-inter font-bold text-xs uppercase tracking-tighter leading-none">Instant Support</div>
+<div class="font-inter text-[10px] opacity-90 leading-none mt-1">Chat with us</div>
+</div>
+</div>
+</a>
+</body></html>
