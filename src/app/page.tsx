@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import QuoteCalculator from "@/components/forms/QuoteCalculator";
 import InteractiveSlider from "@/components/ui/InteractiveSlider";
-import ClientContentPlaceholder from "@/components/ui/ClientContentPlaceholder";
 import { 
   ArrowRight, 
   Home as HomeIcon,
@@ -66,7 +65,6 @@ export default function Home() {
             className="object-cover opacity-50 sm:opacity-70"
             priority
           />
-          <ClientContentPlaceholder text="Placeholder Image" />
           <div className="absolute inset-0 bg-zinc-900/60 lg:bg-transparent lg:bg-gradient-to-r lg:from-zinc-900/95 lg:via-zinc-900/70 lg:to-transparent" />
         </div>
         <motion.div 
@@ -143,7 +141,6 @@ export default function Home() {
                   fill
                   className="object-cover"
                 />
-                <ClientContentPlaceholder text="Stock Representation" />
               </div>
               <motion.div 
                 whileHover={{ scale: 1.05, rotate: 2 }}
@@ -231,7 +228,6 @@ export default function Home() {
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
-              <ClientContentPlaceholder text="Stock Representation" />
             </motion.div>
           </div>
         </motion.div>

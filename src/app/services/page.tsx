@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Wrench } from "lucide-react";
 import { services } from "@/data/services";
-import ClientContentPlaceholder from "@/components/ui/ClientContentPlaceholder";
 
 export const metadata = {
   title: "Specialist Rendering Services | PureRend",
@@ -42,7 +41,6 @@ export default function ServicesHub() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <ClientContentPlaceholder text="Placeholder Image" />
               {/* Gradient overlay — stronger at bottom */}
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/95 via-zinc-900/50 to-zinc-900/10" />
 
