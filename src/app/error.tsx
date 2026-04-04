@@ -28,7 +28,7 @@ export default function Error({
         </h1>
         
         <p className="text-lg text-zinc-500 max-w-xl mx-auto leading-relaxed">
-          We apologize, but an unexpected error occurred while loading this page. 
+          We apologise, but an unexpected error occurred while loading this page. 
           Our team has been notified.
         </p>
 

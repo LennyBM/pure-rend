@@ -54,7 +54,7 @@ export default function CookieBanner() {
                 </button>
               </div>
               <p className="text-xs text-zinc-500 leading-relaxed mb-4">
-                We use cookies to improve your experience and analyze site traffic. Read our{" "}
+                We use cookies to improve your experience and analyse site traffic. Read our{" "}
                 <Link href="/privacy" className="text-blue-500 hover:underline underline-offset-2">Privacy Policy</Link> to learn more.
               </p>
               <div className="flex items-center gap-3">

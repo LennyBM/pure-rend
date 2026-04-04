@@ -71,18 +71,20 @@ export default function QuoteCalculator() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {["Detached", "Semi-Detached", "Terraced", "Bungalow"].map((pt) => (
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
                     key={pt}
                     onClick={() => handleSelect("propertyType", pt)}
-                    className={`p-6 rounded-2xl flex flex-col items-center justify-center gap-4 border-2 transition-all hover:shadow-md ${
+                    className={`p-6 rounded-2xl flex flex-col items-center justify-center gap-4 border-2 transition-all hover:shadow-xl hover:shadow-blue-500/10 ${
                       formData.propertyType === pt
-                        ? "border-blue-600 bg-teal-50"
-                        : "border-zinc-200 bg-white hover:border-teal-300"
+                        ? "border-blue-600 bg-blue-50 shadow-md"
+                        : "border-zinc-200 bg-white hover:border-blue-300"
                     }`}
                   >
-                    {pt === "Detached" ? <Building className="w-8 h-8 text-blue-700" /> : <Home className="w-8 h-8 text-blue-700" />}
+                    {pt === "Detached" ? <Building className="w-8 h-8 text-blue-600" /> : <Home className="w-8 h-8 text-blue-600" />}
                     <span className="font-bold text-zinc-800">{pt}</span>
-                  </button>
+                  </motion.button>
                 ))}
               </div>
             </motion.div>
@@ -101,22 +103,24 @@ export default function QuoteCalculator() {
               </h3>
               <div className="flex flex-col gap-3">
                 {["Just the Front", "Front & Back", "3 Walls", "Whole Property", "Just a Repair"].map((w) => (
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.02, x: 4 }}
+                    whileTap={{ scale: 0.98 }}
                     key={w}
                     onClick={() => handleSelect("walls", w)}
                     className={`p-5 rounded-2xl flex items-center justify-between border-2 transition-all hover:shadow-md ${
                       formData.walls === w
-                        ? "border-blue-600 bg-teal-50"
-                        : "border-zinc-200 bg-white hover:border-teal-300"
+                        ? "border-blue-600 bg-blue-50"
+                        : "border-zinc-200 bg-white hover:border-blue-300"
                     }`}
                   >
                     <span className="font-bold text-zinc-800">{w}</span>
-                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
                       formData.walls === w ? "border-blue-600 bg-blue-600" : "border-zinc-300"
                     }`}>
-                      {formData.walls === w && <Check className="w-4 h-4 text-zinc-900" />}
+                      {formData.walls === w && <Check className="w-4 h-4 text-white" />}
                     </div>
-                  </button>
+                  </motion.button>
                 ))}
               </div>
             </motion.div>
@@ -138,18 +142,20 @@ export default function QuoteCalculator() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {["Yes", "No", "Not Sure Yet"].map((ins) => (
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
                     key={ins}
                     onClick={() => handleSelect("insulation", ins)}
-                    className={`p-6 rounded-2xl flex flex-col items-center justify-center gap-4 border-2 transition-all hover:shadow-md ${
+                    className={`p-6 rounded-2xl flex flex-col items-center justify-center gap-4 border-2 transition-all hover:shadow-xl hover:shadow-blue-500/10 ${
                       formData.insulation === ins
-                        ? "border-blue-600 bg-teal-50"
-                        : "border-zinc-200 bg-white hover:border-teal-300"
+                        ? "border-blue-600 bg-blue-50 shadow-md"
+                        : "border-zinc-200 bg-white hover:border-blue-300"
                     }`}
                   >
-                    <Box className="w-8 h-8 text-blue-700" />
+                    <Box className="w-8 h-8 text-blue-600" />
                     <span className="font-bold text-zinc-800 text-center">{ins}</span>
-                  </button>
+                  </motion.button>
                 ))}
               </div>
             </motion.div>
@@ -209,7 +215,9 @@ export default function QuoteCalculator() {
                   </label>
                 </div>
 
-                <button
+                <motion.button
+                  whileHover={formData.name && formData.phone && formData.gdprConsent ? { scale: 1.02, y: -2 } : {}}
+                  whileTap={formData.name && formData.phone && formData.gdprConsent ? { scale: 0.98 } : {}}
                   onClick={async () => {
                     if (formData.name && formData.phone && formData.gdprConsent) {
                       try {
@@ -229,14 +237,14 @@ export default function QuoteCalculator() {
                     }
                   }}
                   disabled={!formData.name || !formData.phone || !formData.gdprConsent}
-                  className={`w-full mt-4 font-bold text-lg py-5 rounded-xl transition-all font-headline flex items-center justify-center gap-2 ${
+                  className={`w-full mt-4 font-bold text-lg py-5 rounded-2xl transition-all flex items-center justify-center gap-2 ${
                     (formData.name && formData.phone && formData.gdprConsent)
-                    ? 'bg-blue-600 text-zinc-900 hover:bg-blue-500 shadow-[0_0_20px_rgba(13,148,136,0.3)] hover:shadow-[0_0_30px_rgba(13,148,136,0.5)] transform hover:-translate-y-1'
+                    ? 'bg-blue-600 text-white hover:bg-blue-500 shadow-lg hover:shadow-xl hover:shadow-blue-500/20'
                     : 'bg-zinc-200 text-zinc-500 cursor-not-allowed'
                   }`}
                 >
                   Request Instant Quote <ArrowRight className="w-5 h-5" />
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           )}
