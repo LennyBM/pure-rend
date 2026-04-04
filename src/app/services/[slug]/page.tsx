@@ -4,6 +4,7 @@ import Link from "next/link";
 import { services } from "@/data/services";
 import QuoteCalculator from "@/components/forms/QuoteCalculator";
 import InteractiveSlider from "@/components/ui/InteractiveSlider";
+import ClientContentPlaceholder from "@/components/ui/ClientContentPlaceholder";
 import { ArrowRight, Phone, Mail, CheckCircle, ChevronDown } from "lucide-react";
 import Script from "next/script";
 
@@ -49,6 +50,7 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
           className="object-cover"
           priority
         />
+        <ClientContentPlaceholder text="Placeholder Image" />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/95 via-zinc-900/60 to-zinc-900/10" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-20">
