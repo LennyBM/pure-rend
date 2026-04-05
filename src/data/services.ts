@@ -14,6 +14,9 @@ export interface ServiceData {
   benefits: { title: string; description: string; icon: any }[];
   process: { title: string; description: string }[];
   faqs: { question: string; answer: string }[];
+  pricing?: string;
+  relatedBlogs?: { slug: string; title: string }[];
+  serviceLocations?: { slug: string; name: string }[];
 }
 
 export const services: ServiceData[] = [
@@ -43,14 +46,24 @@ export const services: ServiceData[] = [
       { question: "How long does monocouche last?", answer: "When applied correctly to a stable substrate, it will easily perform for 25+ years." },
       { question: "Can it be applied over painted bricks?", answer: "No, paint must be removed or a specialised mechanical fixing mesh and basecoat system must be installed first." },
       { question: "What is the difference between this and silicone?", answer: "Monocouche is a thicker, cement-based rigid render with a scraped finish. Silicone is a thinner, flexible, highly water-repellent topcoat." }
-    ]
+    ],
+    pricing: "Monocouche rendering usually costs £45–£65 per m² applied. It's often slightly less than silicone because it's a one-coat system. For a full house, expect somewhere in the range of £3,500–£6,000 depending on size and access.",
+    relatedBlogs: [
+      { slug: "silicone-render-vs-monocouche", title: "Silicone render vs monocouche — which is right for your house?" },
+      { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+    ],
+    serviceLocations: [
+      { slug: "bude", name: "Bude" },
+      { slug: "holsworthy", name: "Holsworthy" },
+      { slug: "barnstaple", name: "Barnstaple" },
+    ],
   },
   {
     slug: "silicone-rendering",
     name: "Silicone Renders",
     title: "Silicone Rendering Cornwall | Weatherproof Finishes | PureRend",
     metaDescription: "Defy Atlantic storms with advanced silicone rendering. Hydrophobic, flexible, and crack-resistant finishes for coastal properties.",
-    h1: "Advanced Silicone Rendering",
+    h1: "Silicone Rendering",
     shortDescription: "Hydrophobic, highly flexible rendering engineered specifically to combat high-velocity wind-driven rain and severe coastal weathering.",
     heroImage: "/images/silicone_after.png",
     beforeImage: "/images/silicone_before.png",
@@ -71,7 +84,17 @@ export const services: ServiceData[] = [
       { question: "Is silicone rendering waterproof?", answer: "It is highly water-repellent (hydrophobic) rather than totally waterproof, which is crucial because it must remain breathable." },
       { question: "Will the colour fade?", answer: "High-quality silicone renders use UV-stable pigments that resist fading significantly better than standard masonry paint." },
       { question: "Can it be applied in the rain?", answer: "No. Silicone cannot be applied in wet conditions or when temperatures approach freezing. We strictly monitor weather windows." }
-    ]
+    ],
+    pricing: "Silicone render systems typically cost between £55–£80 per m² applied, depending on the property, access, and substrate condition. A typical 3-bed semi might be £4,000–£7,000 for a full re-render. Every job is different — get in touch for an accurate quote.",
+    relatedBlogs: [
+      { slug: "silicone-render-vs-monocouche", title: "Silicone render vs monocouche — which is right for your house?" },
+      { slug: "how-to-clean-render", title: "How to clean render without damaging it" },
+    ],
+    serviceLocations: [
+      { slug: "bude", name: "Bude" },
+      { slug: "widemouth-bay", name: "Widemouth Bay" },
+      { slug: "bideford", name: "Bideford" },
+    ],
   },
   {
     slug: "external-wall-insulation",
@@ -99,7 +122,17 @@ export const services: ServiceData[] = [
       { question: "Do I need planning permission for EWI?", answer: "Often it falls under permitted development, but if it significantly changes the property's appearance or extends beyond existing rooflines, you may need to check with the local authority." },
       { question: "How thick are the insulation boards?", answer: "Typically 90mm to 100mm to meet current building regulations, plus the render system thickness." },
       { question: "Will it stop internal damp?", answer: "It completely cures penetrating damp and condensation issues by bringing the thermal mass inside the insulated envelope." }
-    ]
+    ],
+    pricing: "EWI systems are a bigger investment — typically £80–£120 per m² including insulation board and render topcoat. A full house can be £8,000–£15,000+, but the energy savings mean most homeowners see the investment pay back over 5–10 years.",
+    relatedBlogs: [
+      { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+      { slug: "planning-permission-rendering", title: "Do I need planning permission to render my house?" },
+    ],
+    serviceLocations: [
+      { slug: "bude", name: "Bude" },
+      { slug: "bideford", name: "Bideford" },
+      { slug: "barnstaple", name: "Barnstaple" },
+    ],
   },
   {
     slug: "thin-coat-systems",
@@ -125,7 +158,17 @@ export const services: ServiceData[] = [
       { question: "Can thin coat render be applied to brick?", answer: "Yes, though the brickwork must usually be completely levelled first with a backing coat to ensure the final 1.5mm topcoat looks perfectly flat." },
       { question: "Is it suitable for timber-framed houses?", answer: "It is specifically designed for them. We apply it over BBA-approved calcium silicate or cement particle carrier boards." },
       { question: "How long does it take to apply?", answer: "Due to the thin nature of the coats, drying times are faster, allowing a generally quicker turnaround than thick-coat systems." }
-    ]
+    ],
+    pricing: "Thin coat render typically falls between £40–£60 per m². It's a popular choice for timber frame and modern builds where a lightweight, flexible finish is needed.",
+    relatedBlogs: [
+      { slug: "render-over-pebbledash", title: "Can you render over pebbledash? (And should you?)" },
+      { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+    ],
+    serviceLocations: [
+      { slug: "bude", name: "Bude" },
+      { slug: "holsworthy", name: "Holsworthy" },
+      { slug: "launceston", name: "Launceston" },
+    ],
   },
   {
     slug: "heritage-lime-render",
@@ -151,7 +194,16 @@ export const services: ServiceData[] = [
       { question: "Why is lime better than cement for old houses?", answer: "Old houses were built without damp proof courses. They rely on moisture evaporating through the walls. Cement seals the wall, trapping the water; lime lets it breathe." },
       { question: "Does lime render take longer to dry?", answer: "Yes. Lime carbonation is a slow chemical process. It must be protected from frost, rapid drying, and heavy rain for significantly longer than modern renders." },
       { question: "Do I have to paint it?", answer: "You can leave naturally coloured lime, but if painting, you MUST use a highly breathable mineral or silicate paint, never modern vinyl masonry paint." }
-    ]
+    ],
+    pricing: "Lime rendering is a specialist skill and takes longer to apply. Expect £60–£90 per m². It's more expensive than cement-based options, but it's the right choice for older stone properties — using the wrong render causes more damage than it fixes.",
+    relatedBlogs: [
+      { slug: "planning-permission-rendering", title: "Do I need planning permission to render my house?" },
+    ],
+    serviceLocations: [
+      { slug: "stratton", name: "Stratton" },
+      { slug: "launceston", name: "Launceston" },
+      { slug: "camelford", name: "Camelford" },
+    ],
   },
   {
     slug: "machine-application",
@@ -177,7 +229,17 @@ export const services: ServiceData[] = [
       { question: "Is machine rendering cheaper?", answer: "On small domestic jobs, the setup time negates savings. On large projects or new builds, the massive reduction in labour time significantly lowers overall project costs." },
       { question: "Can you spray silicone render?", answer: "We spray the basecoats, but the final 1.5mm silicone topcoat is always meticulously applied and floated by hand." },
       { question: "Is it as strong as hand-applied render?", answer: "It is often stronger due to the impact velocity driving the material into the blockwork's pores." }
-    ]
+    ],
+    pricing: "Machine application doesn't change the product cost — it's the same render system, just applied faster. It's most cost-effective on larger projects where the setup time for the machine is justified.",
+    relatedBlogs: [
+      { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+      { slug: "silicone-render-vs-monocouche", title: "Silicone render vs monocouche — which is right for your house?" },
+    ],
+    serviceLocations: [
+      { slug: "bude", name: "Bude" },
+      { slug: "bideford", name: "Bideford" },
+      { slug: "barnstaple", name: "Barnstaple" },
+    ],
   },
   {
     slug: "rendering-repair",
@@ -203,7 +265,17 @@ export const services: ServiceData[] = [
       { question: "Will I be able to see the patch?", answer: "We texture-match flawlessly, but newly applied render will always look cleaner than a 10-year-old wall. It usually requires full elevation painting for absolute perfection." },
       { question: "Why is my render cracking?", answer: "Usually due to a lack of expansion joints, no stress mesh around windows, or general movement in the building." },
       { question: "Can you fix pebble dash?", answer: "Yes, we can patch pebble dash, though texture matching exact stone sizes and colours is highly complex and heavily dependent on material availability." }
-    ]
+    ],
+    pricing: "Repair work varies hugely depending on the extent of the damage. Small patch repairs might be a few hundred pounds. Larger areas where render needs stripping and reapplying could be £1,000–£3,000+. I always assess the cause before quoting.",
+    relatedBlogs: [
+      { slug: "render-over-pebbledash", title: "Can you render over pebbledash? (And should you?)" },
+      { slug: "how-to-clean-render", title: "How to clean render without damaging it" },
+    ],
+    serviceLocations: [
+      { slug: "bude", name: "Bude" },
+      { slug: "holsworthy", name: "Holsworthy" },
+      { slug: "widemouth-bay", name: "Widemouth Bay" },
+    ],
   },
   {
     slug: "soft-wash-aftercare",
@@ -229,7 +301,16 @@ export const services: ServiceData[] = [
       { question: "Will pressure washing ruin my silicone render?", answer: "Yes. Using a high-pressure lance close to the wall will score the 1.5mm topcoat, leaving permanent lines and deeply embedded water." },
       { question: "How long does a soft wash last?", answer: "Typically 3 to 5 years before any noticeable biological growth returns, depending heavily on proximity to trees and prevailing winds." },
       { question: "Is the chemical dangerous to pets?", answer: "While applying, yes. Once the wall is rinsed down and dry, it is completely inert and 100% safe." }
-    ]
+    ],
+    pricing: "A full house soft-wash typically costs £200–£500 depending on the size of the property and severity of the algae growth. Much cheaper than re-rendering after someone's taken a pressure washer to it.",
+    relatedBlogs: [
+      { slug: "how-to-clean-render", title: "How to clean render without damaging it" },
+    ],
+    serviceLocations: [
+      { slug: "bude", name: "Bude" },
+      { slug: "widemouth-bay", name: "Widemouth Bay" },
+      { slug: "bideford", name: "Bideford" },
+    ],
   },
   {
     slug: "internal-plastering",
@@ -255,6 +336,15 @@ export const services: ServiceData[] = [
       { question: "How long does a freshly plastered wall take to dry?", answer: "Typically 4 to 7 days, transitioning from dark to light pink. The room must be kept well-ventilated without force-drying." },
       { question: "Can you skim straight over Artex?", answer: "Yes, providing the Artex is bonded firmly to the ceiling and has been tested for asbestos if pre-2000." },
       { question: "Do I need to sand the wall before painting?", answer: "No. Our finishes are polished completely smooth. Just apply a mist coat directly once fully dry." }
-    ]
+    ],
+    pricing: "Internal skimming runs roughly £15–£25 per m², or around £300–£500 per average room. Boarding and skimming is more — typically £400–£700 per room. Ceilings are priced separately.",
+    relatedBlogs: [
+      { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+    ],
+    serviceLocations: [
+      { slug: "bude", name: "Bude" },
+      { slug: "holsworthy", name: "Holsworthy" },
+      { slug: "launceston", name: "Launceston" },
+    ],
   }
 ];

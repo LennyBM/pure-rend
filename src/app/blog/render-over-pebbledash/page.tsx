@@ -143,12 +143,47 @@ export default function PebbledashArticle() {
             </div>
           </div>
 
+          <div className="mt-12 pt-8 border-t border-zinc-100">
+            <h3 className="text-base font-headline font-bold text-zinc-900 mb-4">You might also find useful</h3>
+            <div className="space-y-3">
+              {[
+                { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+                { slug: "silicone-render-vs-monocouche", title: "Silicone render vs monocouche — which is right for your house?" },
+                { slug: "how-to-clean-render", title: "How to clean render without damaging it" },
+              ].map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/blog/${article.slug}`}
+                  className="flex items-center gap-3 group bg-zinc-50 border border-zinc-200 rounded-xl px-5 py-3.5 hover:border-blue-300 hover:shadow-sm transition-all"
+                >
+                  <span className="text-sm text-zinc-700 group-hover:text-blue-600 transition-colors flex-1 leading-snug">{article.title}</span>
+                  <span className="text-zinc-400 group-hover:text-blue-600 transition-colors shrink-0">→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <p className="text-xs text-zinc-400 mt-8 italic">
             Written by Ben Rod, PureRend — plastering and rendering specialist in Bude, Cornwall.
           </p>
         </div>
       </article>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Can You Render Over Pebbledash? (And Should You?)",
+            "author": { "@type": "Person", "name": "Ben Rod" },
+            "datePublished": "2026-01-01",
+            "description": "Honest answer: it depends on the condition of the existing pebbledash. Learn when you can render over it, when it needs to come off, and what the process involves.",
+            "publisher": { "@type": "Organization", "name": "PureRend", "url": "https://purerend.co.uk" },
+            "url": "https://purerend.co.uk/blog/render-over-pebbledash"
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

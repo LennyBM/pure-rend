@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, MapPin, Phone, Lightbulb } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Lightbulb, BookOpen } from "lucide-react";
 import type { LocationData } from "@/data/locations";
 
 const SERVICE_SLUGS: Record<string, string> = {
@@ -15,6 +15,49 @@ const SERVICE_SLUGS: Record<string, string> = {
   "Soft-Wash Aftercare": "soft-wash-aftercare",
   "Machine Application": "machine-application",
 };
+
+const LOCATION_BLOGS: Record<string, { slug: string; title: string }[]> = {
+  bude: [
+    { slug: "silicone-render-vs-monocouche", title: "Silicone render vs monocouche — which suits coastal properties?" },
+    { slug: "how-to-clean-render", title: "How to clean render without damaging it" },
+  ],
+  widemouth_bay: [
+    { slug: "silicone-render-vs-monocouche", title: "Silicone render vs monocouche — which suits coastal properties?" },
+    { slug: "how-to-clean-render", title: "How to clean render without damaging it" },
+  ],
+  "widemouth-bay": [
+    { slug: "silicone-render-vs-monocouche", title: "Silicone render vs monocouche — which suits coastal properties?" },
+    { slug: "how-to-clean-render", title: "How to clean render without damaging it" },
+  ],
+  stratton: [
+    { slug: "planning-permission-rendering", title: "Do I need planning permission to render my house?" },
+    { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+  ],
+  launceston: [
+    { slug: "planning-permission-rendering", title: "Do I need planning permission to render my house?" },
+    { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+  ],
+  camelford: [
+    { slug: "planning-permission-rendering", title: "Do I need planning permission to render my house?" },
+    { slug: "render-over-pebbledash", title: "Can you render over pebbledash? (And should you?)" },
+  ],
+  holsworthy: [
+    { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+    { slug: "planning-permission-rendering", title: "Do I need planning permission to render my house?" },
+  ],
+  bideford: [
+    { slug: "silicone-render-vs-monocouche", title: "Silicone render vs monocouche — which is right for your house?" },
+    { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+  ],
+  barnstaple: [
+    { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+    { slug: "silicone-render-vs-monocouche", title: "Silicone render vs monocouche — which is right for your house?" },
+  ],
+};
+const DEFAULT_BLOGS = [
+  { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+  { slug: "how-to-clean-render", title: "How to clean render without damaging it" },
+];
 
 export default function LocationPageClient({ location }: { location: LocationData }) {
   return (
@@ -89,6 +132,32 @@ export default function LocationPageClient({ location }: { location: LocationDat
                 <p className="text-zinc-700 text-sm leading-relaxed">{location.tip}</p>
               </div>
             )}
+
+            {/* Useful reading */}
+            {(() => {
+              const blogs = LOCATION_BLOGS[location.slug] ?? DEFAULT_BLOGS;
+              return (
+                <div className="bg-white rounded-2xl border border-zinc-200 p-7">
+                  <div className="flex items-center gap-2 mb-4">
+                    <BookOpen className="w-4 h-4 text-zinc-500" />
+                    <h3 className="text-sm font-headline font-bold text-zinc-900 uppercase tracking-wider">Useful reading</h3>
+                  </div>
+                  <div className="space-y-2">
+                    {blogs.map((blog) => (
+                      <Link
+                        key={blog.slug}
+                        href={`/blog/${blog.slug}`}
+                        className="flex items-center gap-3 group text-sm text-zinc-700 hover:text-blue-600 transition-colors"
+                      >
+                        <span className="w-2 h-2 bg-zinc-300 rounded-full flex-shrink-0 group-hover:bg-blue-600 transition-colors" />
+                        <span className="leading-snug">{blog.title}</span>
+                        <ArrowRight className="w-3.5 h-3.5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* Nearby locations */}
             {location.nearbyLocations.length > 0 && (

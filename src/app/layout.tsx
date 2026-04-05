@@ -26,6 +26,28 @@ export const metadata: Metadata = {
     icon: '/images/purerend-official-logo.webp',
     apple: '/images/purerend-official-logo.webp',
   },
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    url: 'https://purerend.co.uk',
+    siteName: 'PureRend',
+    title: 'PureRend | Plastering & Rendering Specialist in Bude, Cornwall',
+    description: 'Plastering and rendering specialist based in Bude. Silicone render, monocouche, EWI, heritage lime, and internal plastering across North Cornwall and Devon.',
+    images: [
+      {
+        url: '/images/purerend-rendering-specialist-hero.webp',
+        width: 1200,
+        height: 630,
+        alt: 'PureRend — Rendering & Plastering Specialist, Bude Cornwall',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PureRend | Plastering & Rendering Specialist in Bude, Cornwall',
+    description: 'Plastering and rendering specialist based in Bude. Silicone render, monocouche, EWI, and internal plastering across North Cornwall and Devon.',
+    images: ['/images/purerend-rendering-specialist-hero.webp'],
+  },
 };
 
 export default function RootLayout({

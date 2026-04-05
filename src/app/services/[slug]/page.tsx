@@ -4,7 +4,7 @@ import Link from "next/link";
 import { services } from "@/data/services";
 import QuoteCalculator from "@/components/forms/QuoteCalculator";
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
-import { ArrowRight, Phone, Mail, CheckCircle, ChevronDown } from "lucide-react";
+import { ArrowRight, Phone, Mail, CheckCircle, ChevronDown, BookOpen, MapPin, PoundSterling } from "lucide-react";
 import Script from "next/script";
 import ClientContentPlaceholder from "@/components/ui/ClientContentPlaceholder";
 
@@ -238,7 +238,96 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
         </div>
       </section>
 
-      {/* ── 7. INTERNAL PLASTERING DRYING GUIDE ── */}
+      {/* ── 7. TYPICAL COSTS ── */}
+      {service.pricing && (
+        <section className="py-16 bg-blue-50 border-b border-blue-100">
+          <div className="max-w-3xl mx-auto px-6 md:px-12">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                <PoundSterling className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h2 className="text-xl font-headline font-bold text-zinc-900 mb-3">Typical costs</h2>
+                <p className="text-zinc-700 leading-relaxed mb-4">{service.pricing}</p>
+                <p className="text-xs text-zinc-500 mb-4">
+                  These are guide prices for North Cornwall as of 2026. Every property is different — for an accurate quote, get in touch.
+                </p>
+                <Link
+                  href="/blog/rendering-cost-cornwall"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                >
+                  Full cost breakdown for Cornwall <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 7b. WHERE I WORK ── */}
+      {service.serviceLocations && service.serviceLocations.length > 0 && (
+        <section className="py-12 bg-white border-b border-zinc-100">
+          <div className="max-w-3xl mx-auto px-6 md:px-12">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                <MapPin className="w-5 h-5 text-zinc-600" />
+              </div>
+              <div>
+                <h2 className="text-base font-headline font-bold text-zinc-900 mb-3">Popular in</h2>
+                <div className="flex flex-wrap gap-2">
+                  {service.serviceLocations.map((loc) => (
+                    <Link
+                      key={loc.slug}
+                      href={`/locations/${loc.slug}`}
+                      className="inline-flex items-center gap-1.5 bg-zinc-50 border border-zinc-200 text-zinc-700 hover:border-blue-300 hover:text-blue-600 text-sm font-medium px-3 py-1.5 rounded-full transition-colors"
+                    >
+                      {loc.name} <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  ))}
+                  <Link
+                    href="/locations"
+                    className="inline-flex items-center gap-1.5 bg-zinc-50 border border-zinc-200 text-zinc-500 hover:border-blue-300 hover:text-blue-600 text-sm px-3 py-1.5 rounded-full transition-colors"
+                  >
+                    All areas
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 7c. RELATED READING ── */}
+      {service.relatedBlogs && service.relatedBlogs.length > 0 && (
+        <section className="py-12 bg-zinc-50 border-b border-zinc-100">
+          <div className="max-w-3xl mx-auto px-6 md:px-12">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 bg-zinc-200 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                <BookOpen className="w-5 h-5 text-zinc-700" />
+              </div>
+              <div className="w-full">
+                <h2 className="text-base font-headline font-bold text-zinc-900 mb-4">Related reading</h2>
+                <div className="space-y-3">
+                  {service.relatedBlogs.map((blog) => (
+                    <Link
+                      key={blog.slug}
+                      href={`/blog/${blog.slug}`}
+                      className="flex items-center gap-3 group bg-white border border-zinc-200 rounded-xl px-5 py-3.5 hover:border-blue-300 hover:shadow-sm transition-all"
+                    >
+                      <span className="text-sm text-zinc-700 group-hover:text-blue-600 transition-colors flex-1 leading-snug">
+                        {blog.title}
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all shrink-0" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 8. INTERNAL PLASTERING DRYING GUIDE ── */}
       {service.slug === "internal-plastering" && (
         <section className="pb-12 px-6 md:px-12 max-w-3xl mx-auto w-full">
           <div className="bg-amber-50 p-6 rounded-2xl border border-amber-200">
@@ -250,7 +339,7 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
         </section>
       )}
 
-      {/* ── 8. QUOTE CALCULATOR ── */}
+      {/* ── 9. QUOTE CALCULATOR ── */}
       <section className="py-24 bg-zinc-50 border-t border-zinc-200">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-12">
@@ -265,7 +354,7 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
         </div>
       </section>
 
-      {/* ── 9. FINAL CTA STRIP ── */}
+      {/* ── 10. FINAL CTA STRIP ── */}
       <section className="bg-zinc-900 py-20 px-6 md:px-12 text-center">
         <h2 className="text-2xl md:text-3xl font-headline font-light text-white mb-4">
           Ready to get started in North Cornwall?

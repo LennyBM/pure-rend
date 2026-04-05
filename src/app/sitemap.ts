@@ -7,17 +7,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Core static pages
   const corePages = [
-    '',
-    '/about',
-    '/process',
-    '/portfolio',
-    '/gallery',
-    '/contact',
-  ].map((route) => ({
+    { route: '', priority: 1.0 },
+    { route: '/about', priority: 0.8 },
+    { route: '/process', priority: 0.8 },
+    { route: '/portfolio', priority: 0.8 },
+    { route: '/contact', priority: 0.9 },
+    { route: '/services', priority: 0.8 },
+    { route: '/locations', priority: 0.7 },
+    { route: '/blog', priority: 0.8 },
+    { route: '/privacy', priority: 0.3 },
+    { route: '/terms', priority: 0.3 },
+    { route: '/accessibility', priority: 0.3 },
+    { route: '/your-rights', priority: 0.3 },
+  ].map(({ route, priority }) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    changeFrequency: 'monthly' as const,
+    priority,
+  }));
+
+  // Blog articles
+  const blogSlugs = [
+    'rendering-cost-cornwall',
+    'silicone-render-vs-monocouche',
+    'render-over-pebbledash',
+    'how-to-clean-render',
+    'planning-permission-rendering',
+  ];
+  const blogPages = blogSlugs.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }));
 
   // Dynamic Service Pages
@@ -36,5 +57,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...corePages, ...servicePages, ...locationPages];
+  return [...corePages, ...blogPages, ...servicePages, ...locationPages];
 }

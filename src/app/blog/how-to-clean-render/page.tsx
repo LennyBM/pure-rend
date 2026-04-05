@@ -143,12 +143,47 @@ export default function CleanRenderArticle() {
             </div>
           </div>
 
+          <div className="mt-12 pt-8 border-t border-zinc-100">
+            <h3 className="text-base font-headline font-bold text-zinc-900 mb-4">You might also find useful</h3>
+            <div className="space-y-3">
+              {[
+                { slug: "render-over-pebbledash", title: "Can you render over pebbledash? (And should you?)" },
+                { slug: "planning-permission-rendering", title: "Do I need planning permission to render my house?" },
+                { slug: "rendering-cost-cornwall", title: "How much does rendering cost in Cornwall? (2026 prices)" },
+              ].map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/blog/${article.slug}`}
+                  className="flex items-center gap-3 group bg-zinc-50 border border-zinc-200 rounded-xl px-5 py-3.5 hover:border-blue-300 hover:shadow-sm transition-all"
+                >
+                  <span className="text-sm text-zinc-700 group-hover:text-blue-600 transition-colors flex-1 leading-snug">{article.title}</span>
+                  <span className="text-zinc-400 group-hover:text-blue-600 transition-colors shrink-0">→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <p className="text-xs text-zinc-400 mt-8 italic">
             Written by Ben Rod, PureRend — plastering and rendering specialist in Bude, Cornwall.
           </p>
         </div>
       </article>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "How to Clean Render Without Damaging It",
+            "author": { "@type": "Person", "name": "Ben Rod" },
+            "datePublished": "2026-01-01",
+            "description": "The most important thing homeowners need to know: never pressure wash modern render. Learn why, and what actually works to clean algae and moss off rendered walls.",
+            "publisher": { "@type": "Organization", "name": "PureRend", "url": "https://purerend.co.uk" },
+            "url": "https://purerend.co.uk/blog/how-to-clean-render"
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
