@@ -24,7 +24,7 @@ export default function ServicesHub() {
           Architectural <span className="font-bold text-blue-600">Exteriors &amp; Interiors</span>
         </h1>
         <p className="text-xl text-zinc-500 leading-relaxed max-w-2xl mx-auto font-light">
-          We deliver highly engineered rendering systems and flawless internal plastering designed to protect and transform your property.
+          I deliver highly engineered rendering systems and flawless internal plastering designed to protect and transform your property.
         </p>
       </section>
 
@@ -35,7 +35,7 @@ export default function ServicesHub() {
             <StaggerItem key={service.slug}>
               <Link
                 href={`/services/${service.slug}`}
-                className="group relative rounded-2xl overflow-hidden h-72 block border border-zinc-200 hover:border-blue-600/40 transition-all duration-500 shadow-sm hover:shadow-xl"
+                className="group relative rounded-2xl overflow-hidden h-56 sm:h-72 block border border-zinc-200 hover:border-blue-600/40 transition-all duration-500 shadow-sm hover:shadow-xl"
               >
                 {/* Background image */}
                 <Image

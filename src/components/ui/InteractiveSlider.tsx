@@ -61,7 +61,7 @@ export default function InteractiveSlider({
   return (
     <div 
       ref={containerRef}
-      className={`relative rounded-2xl overflow-hidden shadow-2xl h-[400px] md:h-[600px] group border border-white/10 select-none ${isDragging ? 'cursor-ew-resize' : 'cursor-default'}`}
+      className={`relative rounded-2xl overflow-hidden shadow-2xl h-[280px] sm:h-[400px] md:h-[600px] group border border-white/10 select-none ${isDragging ? 'cursor-ew-resize' : 'cursor-default'}`}
       onMouseDown={(e) => {
         setIsDragging(true);
         if (containerRef.current) {

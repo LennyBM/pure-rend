@@ -12,28 +12,28 @@ const steps = [
     number: "01",
     title: "Site visit and honest quote",
     body: "Before any scaffolding goes up, I come out and look at the job in person. I check the existing substrate, the exposure to weather, what's caused any existing problems — and then give you a straight quote. Day rate plus materials, no hidden extras.",
-    image: "/images/real_portfolio/sand-cement-new-build-main.webp",
+    image: "/images/insulation_before.webp",
     imageAlt: "Property assessment before rendering in Bude, Cornwall",
   },
   {
     number: "02",
     title: "Proper preparation",
     body: "A render job is only as good as the surface underneath it. I strip any failed render, treat algae and organic growth, apply stabilising primer, and embed reinforcement mesh around windows and doors where cracking is most likely. Get this wrong and the render fails — so I don't skip it.",
-    image: "/images/real_portfolio/internal-works-aug-2024-main.webp",
+    image: "/images/craftsmanship_internal.webp",
     imageAlt: "Substrate preparation before rendering in North Cornwall",
   },
   {
     number: "03",
     title: "Application — by hand or machine",
     body: "On bigger jobs I use a spray machine for consistent coverage. On smaller areas or detail work it's hand-applied. Either way, I finish every surface myself — clean lines, level faces, sharp edges. The machine gets it on, I make it right.",
-    image: "/images/real_portfolio/christmas-2022-review-child-6.webp",
+    image: "/images/silicone_before.webp",
     imageAlt: "Machine-applied monocouche rendering in Cornwall",
   },
   {
     number: "04",
     title: "Clean site, done job",
     body: "Before I start mixing anything, all windows, doors, driveways and plants are masked and protected. When the scaffolding comes down, the site is spotless — no render on the patio, no mess in the garden. Just a finished job I'm happy to put my name to.",
-    image: "/images/real_portfolio/summer-sprays-ecorend-main.webp",
+    image: "/images/silicone_after.webp",
     imageAlt: "Finished silicone render in Bude — clean site handover",
   },
 ];
@@ -43,9 +43,9 @@ export default function ProcessPage() {
     <div className="flex flex-col min-h-screen bg-white">
 
       {/* ── HERO ── */}
-      <header className="relative h-[60vh] min-h-[480px] flex items-end overflow-hidden pt-20">
+      <header className="relative h-[50vh] min-h-[350px] sm:h-[60vh] sm:min-h-[480px] flex items-end overflow-hidden pt-20">
         <Image
-          src="/images/real_portfolio/monster-new-build-ecorend-child-6.webp"
+          src="/images/portfolio_hero.webp"
           alt="PureRend precision rendering process"
           fill
           className="object-cover"
@@ -88,7 +88,7 @@ export default function ProcessPage() {
               </div>
 
               {/* Image */}
-              <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="w-full md:w-1/2 aspect-[3/2] sm:aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src={step.image}
                   alt={step.imageAlt}
@@ -123,7 +123,7 @@ export default function ProcessPage() {
       {/* ── AFTERCARE WARNING ── */}
       <section className="py-24 bg-zinc-50 border-b border-zinc-100">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
-          <div className="bg-white rounded-2xl border-l-4 border-red-500 shadow-xl overflow-hidden relative p-8 md:p-12">
+          <div className="bg-white rounded-2xl border-l-4 border-red-500 shadow-xl overflow-hidden relative p-4 md:p-8 md:p-12">
             <AlertTriangle className="absolute -bottom-8 -right-8 w-56 h-56 text-red-500/5" />
 
             <div className="relative z-10">

@@ -67,7 +67,7 @@ export default function BlogIndex() {
             <Link
               key={article.slug}
               href={`/blog/${article.slug}`}
-              className="group block bg-white border border-zinc-200 rounded-2xl p-8 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+              className="group block bg-white border border-zinc-200 rounded-2xl p-4 md:p-8 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-3 text-xs text-zinc-400 font-semibold uppercase tracking-wider">
                 <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {article.date}</span>

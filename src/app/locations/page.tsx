@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { locations } from "@/data/locations";
+import CoverageAreaMap from "@/components/ui/CoverageAreaMap";
 
 export const metadata = {
   title: "Areas We Cover | PureRend Plastering & Rendering",
@@ -24,6 +25,15 @@ export default function LocationsHub() {
         </p>
       </section>
 
+      {/* Map Section */}
+      <section className="px-6 md:px-12 max-w-7xl mx-auto mb-20">
+        <div className="bg-zinc-50 rounded-3xl p-4 md:p-8 border border-zinc-200 shadow-sm">
+          <div className="h-[400px] md:h-[500px]">
+             <CoverageAreaMap center={[50.8290, -4.5447]} radiusMiles={25} />
+          </div>
+        </div>
+      </section>
+
       {/* Locations Grid */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -33,7 +43,7 @@ export default function LocationsHub() {
               href={`/locations/${location.slug}`}
               className="group block relative rounded-2xl overflow-hidden bg-zinc-50 border border-zinc-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300"
             >
-              <div className="p-8 h-full flex flex-col">
+              <div className="p-4 md:p-4 md:p-8 h-full flex flex-col">
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <h2 className="text-2xl font-headline font-semibold text-zinc-900 group-hover:text-blue-600 transition-colors">

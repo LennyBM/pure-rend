@@ -29,7 +29,7 @@ export default function Error({
         
         <p className="text-lg text-zinc-500 max-w-xl mx-auto leading-relaxed">
           We apologise, but an unexpected error occurred while loading this page. 
-          Our team has been notified.
+          Ben has been notified.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">

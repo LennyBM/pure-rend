@@ -87,7 +87,7 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
 
       {/* ── 2. OVERVIEW + SIDEBAR ── */}
       <section className="py-20 bg-white border-b border-zinc-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start">
 
           {/* Main copy */}
           <div className="lg:col-span-7">

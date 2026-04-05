@@ -48,7 +48,7 @@ export default function QuoteCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-zinc-100">
       {/* Progress Bar */}
-      <div className="bg-zinc-50 border-b border-zinc-100 px-8 py-4 flex items-center justify-between">
+      <div className="bg-zinc-50 border-b border-zinc-100 px-5 sm:px-8 py-3 sm:py-4 flex items-center justify-between">
         <div className="flex gap-2">
           {[1, 2, 3, 4].map((i) => (
             <div
@@ -64,7 +64,7 @@ export default function QuoteCalculator() {
         </span>
       </div>
 
-      <div className="p-8 md:p-12 min-h-[400px] flex flex-col relative bg-zinc-50/50">
+      <div className="p-5 sm:p-8 md:p-12 min-h-[350px] md:min-h-[400px] flex flex-col relative bg-zinc-50/50">
         <AnimatePresence mode="wait">
           {step === 1 && (
             <motion.div
@@ -74,7 +74,7 @@ export default function QuoteCalculator() {
               exit={{ opacity: 0, x: -20 }}
               className="flex-1"
             >
-              <h3 className="text-2xl font-bold font-headline text-zinc-900 mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold font-headline text-zinc-900 mb-4 md:mb-6">
                 What do you need?
               </h3>
               <div className="flex flex-col gap-3">
@@ -84,7 +84,7 @@ export default function QuoteCalculator() {
                     whileTap={{ scale: 0.98 }}
                     key={label}
                     onClick={() => handleSelect("serviceType", label)}
-                    className={`p-5 rounded-2xl flex items-center justify-between border-2 transition-all hover:shadow-md ${
+                    className={`p-4 sm:p-5 rounded-xl sm:rounded-2xl flex items-center justify-between border-2 transition-all hover:shadow-md ${
                       formData.serviceType === label
                         ? "border-blue-600 bg-blue-50"
                         : "border-zinc-200 bg-white hover:border-blue-300"

@@ -68,7 +68,7 @@ export default function SiliconeVsMonocoucheArticle() {
             Like monocouche, quality silicone renders are through-coloured and breathable. They cost a bit more than monocouche, but for the right property, the extra is well spent.
           </p>
 
-          <div className="bg-zinc-900 text-white rounded-2xl p-8 my-10">
+          <div className="bg-zinc-900 text-white rounded-2xl p-4 md:p-8 my-10">
             <h3 className="text-lg font-headline font-bold mb-4">At a glance</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
@@ -143,7 +143,7 @@ export default function SiliconeVsMonocoucheArticle() {
             Both are British-manufactured products. EcoRend&apos;s Generation 3 systems use lower-carbon raw materials than traditional renders, which matters to some clients — and it&apos;s something I think matters regardless.
           </p>
 
-          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8 mt-10">
+          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 md:p-8 mt-10">
             <h3 className="text-xl font-headline font-bold text-zinc-900 mb-3">Not sure which is right for your property?</h3>
             <p className="text-zinc-600 mb-6 leading-relaxed">
               Come and have a look with me. I can tell you within five minutes which system makes most sense for your property — there&apos;s no charge for that conversation.

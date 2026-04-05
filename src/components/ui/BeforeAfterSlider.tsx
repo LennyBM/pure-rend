@@ -86,9 +86,9 @@ export default function BeforeAfterSlider({
 
   return (
     <div className={`w-full ${className}`}>
-      <div
+        <div
         ref={containerRef}
-        className={`relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl select-none cursor-ew-resize ${isDragging ? "cursor-grabbing" : "cursor-ew-resize"}`}
+        className={`relative aspect-[3/2] sm:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl select-none cursor-ew-resize ${isDragging ? "cursor-grabbing" : "cursor-ew-resize"}`}
         onMouseDown={onMouseDown}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}

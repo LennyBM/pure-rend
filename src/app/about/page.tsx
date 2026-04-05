@@ -38,7 +38,7 @@ export default function AboutPage() {
 
       {/* Split Layout: Image & First-Person Copy */}
       <section className="bg-zinc-900 border-y border-zinc-800 py-24">
-        <div className="px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="px-6 md:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-start">
           <div className="relative aspect-[3/4] md:aspect-square lg:aspect-[3/4] w-full rounded-2xl overflow-hidden bg-zinc-800 border border-zinc-700/50 shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent z-10" />
             <div className="absolute inset-0 flex items-center justify-center text-zinc-500 font-medium z-0">
@@ -81,7 +81,7 @@ export default function AboutPage() {
 
       {/* Stats / Trust Bar */}
       <section className="bg-white py-16 px-6 md:px-12 border-b border-zinc-100">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16 text-center">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-4 md:p-8 md:gap-8 md:gap-16 text-center">
           <div>
             <div className="text-4xl font-headline font-bold text-blue-600 mb-2">5★</div>
             <div className="text-sm text-zinc-500 tracking-wider">TOP RATED</div>
@@ -115,8 +115,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-zinc-50 p-8 rounded-2xl border border-zinc-200">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:p-8">
+          <div className="bg-zinc-50 p-4 md:p-8 rounded-2xl border border-zinc-200">
             <h3 className="text-xl font-semibold text-zinc-900 mb-4">Flexible. Breathable.<br/>Self-Cleaning.</h3>
             <p className="text-zinc-500 text-sm mb-4 leading-relaxed">
               The gold standard for exposed and coastal properties. Silicone render is water-repellent yet allows walls to breathe, preventing trapped moisture.
@@ -124,7 +124,7 @@ export default function AboutPage() {
             <div className="text-blue-600 text-sm font-medium">Best for: Older homes, renovations, exposed locations</div>
           </div>
 
-          <div className="bg-zinc-50 p-8 rounded-2xl border border-zinc-200">
+          <div className="bg-zinc-50 p-4 md:p-8 rounded-2xl border border-zinc-200">
             <h3 className="text-xl font-semibold text-zinc-900 mb-4">One Coat. Through-Coloured.<br/>Zero Repainting.</h3>
             <p className="text-zinc-500 text-sm mb-4 leading-relaxed">
               A high-performance cement-based system with pigment throughout. Using EcoRend&apos;s low-carbon technology, monocouche delivers a solid, uniform finish.
@@ -132,7 +132,7 @@ export default function AboutPage() {
             <div className="text-blue-600 text-sm font-medium">Best for: New builds, extensions, stable substrates</div>
           </div>
 
-          <div className="bg-zinc-50 p-8 rounded-2xl border border-zinc-200">
+          <div className="bg-zinc-50 p-4 md:p-8 rounded-2xl border border-zinc-200">
             <h3 className="text-xl font-semibold text-zinc-900 mb-4">Warmer Home. Lower Bills.<br/>Better Looking.</h3>
             <p className="text-zinc-500 text-sm mb-4 leading-relaxed">
               EWI wraps your property in a thermal blanket, finished with a premium render topcoat. It cuts heat loss and transforms curb appeal in one.

@@ -128,7 +128,7 @@ export default function PebbledashArticle() {
             The good news is that stripping the old pebbledash and applying a modern render system completely transforms these properties. A fresh <Link href="/services/silicone-rendering" className="text-blue-600 hover:underline font-medium">silicone render</Link> on a well-prepared wall will last decades and look far better than any repainted pebbledash.
           </p>
 
-          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8 mt-10">
+          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 md:p-8 mt-10">
             <h3 className="text-xl font-headline font-bold text-zinc-900 mb-3">Not sure about your pebbledash?</h3>
             <p className="text-zinc-600 mb-6 leading-relaxed">
               I can come and have a look — no charge, no obligation. Ten minutes on site and I&apos;ll tell you whether it can be rendered over or needs to come off. I cover Bude, North Cornwall, and North Devon.

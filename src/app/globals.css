@@ -53,4 +53,12 @@
       radial-gradient(ellipse at 50% 80%, rgba(3, 105, 161, 0.1) 0%, transparent 60%),
       linear-gradient(to bottom, #18181b, #27272a);
   }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
 }

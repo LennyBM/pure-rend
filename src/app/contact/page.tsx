@@ -7,7 +7,7 @@ import GoogleReviewSlider from "@/components/ui/GoogleReviewSlider";
 
 export const metadata: Metadata = {
   title: "Contact PureRend | Silicone Rendering & Plastering in Bude",
-  description: "Get a free, instant quote for your rendering or plastering project in Bude, Cornwall. Contact the material experts at PureRend today.",
+  description: "Get a free quote for your rendering or plastering project in Bude, Cornwall. Contact Ben at PureRend today.",
 };
 
 export default function ContactPage() {
@@ -21,10 +21,8 @@ export default function ContactPage() {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50/50 border border-blue-100 mb-8 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-            <span className="text-sm font-semibold tracking-wide text-blue-700">AVAILABLE FOR Q2 BOOKINGS</span>
-          </div>
+
+
           
           <h1 className="text-5xl md:text-7xl font-bold font-headline text-zinc-900 mb-6 drop-shadow-sm">
             Get a <span className="text-blue-600">Free Quote</span>
@@ -37,11 +35,11 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content Layout */}
-      <section className="px-6 py-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <section className="px-6 py-6 md:py-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-start">
           
           {/* Left Column: Direct Contact & Trust */}
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-6 md:gap-12">
             <div>
               <h2 className="text-3xl font-bold font-headline text-zinc-900 mb-8 border-b border-zinc-200 pb-4">
                 Direct Contact
@@ -88,11 +86,11 @@ export default function ContactPage() {
             </div>
 
             {/* Social Proof & Socials */}
-            <div className="bg-blue-50 rounded-3xl p-8 relative overflow-hidden">
+            <div className="bg-blue-50 rounded-3xl p-4 md:p-8 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-20 -mt-20" />
               <h3 className="text-xl font-bold font-headline text-zinc-900 mb-6 relative z-10">See the work in progress</h3>
               <p className="text-zinc-500 mb-8 relative z-10 leading-relaxed">
-                Ben documents jobs from start to finish on Instagram and TikTok — real work, not showreel stuff.
+                Ben documents jobs from start to finish on Instagram — real work, not showreel stuff.
               </p>
 
               <a
@@ -148,15 +146,15 @@ export default function ContactPage() {
       </section>
 
       {/* Coverage Map Section */}
-      <section className="bg-white py-12 border-t border-zinc-100">
+      <section className="bg-white py-6 md:py-12 border-t border-zinc-100">
         <GoogleReviewSlider />
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="max-w-7xl mx-auto px-6 py-6 md:py-12">
           <div className="mb-8 text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold font-headline text-zinc-900 mb-4">
               Our Coverage Area
             </h2>
             <p className="text-zinc-600">
-              We provide priority specialist rendering and plastering services to Bude and the surrounding 25-mile radius.
+               I provide specialist rendering and plastering services to Bude and the surrounding 25-mile radius.
             </p>
           </div>
           <div className="w-full aspect-[16/9] max-h-[600px] rounded-3xl overflow-hidden shadow-2xl relative">

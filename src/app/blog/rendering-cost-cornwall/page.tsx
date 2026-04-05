@@ -126,7 +126,7 @@ export default function RenderingCostArticle() {
             I also give a 10-year workmanship guarantee on all my work. If something fails because of how I applied it, I&apos;ll fix it.
           </p>
 
-          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8 mt-10">
+          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 md:p-8 mt-10">
             <h3 className="text-xl font-headline font-bold text-zinc-900 mb-3">Want an actual price for your job?</h3>
             <p className="text-zinc-600 mb-6 leading-relaxed">
               I cover Bude, North Cornwall, and North Devon. Come and take a look at the job — no charge, no obligation. I&apos;ll give you a straight quote within 24 hours.

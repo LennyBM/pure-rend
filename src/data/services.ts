@@ -24,9 +24,9 @@ export const services: ServiceData[] = [
     metaDescription: "Through-coloured monocouche rendering across Cornwall. Fast application, scratch finish, low maintenance. Free quotes from Bude's leading specialists.",
     h1: "Monocouche & K Rend Systems",
     shortDescription: "Beautiful, through-coloured architectural finishes offering decades of flawless performance.",
-    heroImage: "/images/real_portfolio/multi-million-pound-new-build-main.webp",
-    beforeImage: "/images/real_portfolio/multi-million-pound-new-build-child-4.webp",
-    afterImage: "/images/real_portfolio/multi-million-pound-new-build-main.webp",
+    heroImage: "/images/monocouche_after.png",
+    beforeImage: "/images/monocouche_before.png",
+    afterImage: "/images/monocouche_after.png",
     longDescription: "Monocouche (literally meaning 'one coat' in French) represents a revolution in external wall coatings. Rather than applying traditional sand and cement followed by layers of masonry paint, monocouche is a through-coloured, cement-based render. Applied directly to blockwork or prepared masonry, it cures into a rock-solid, weather-resistant shield. We specialise in K Rend and Weber systems, expertly scraping the surface at the precise point of curing to expose a beautiful, uniform, pitted texture that never requires painting.",
     benefits: [
       { title: "Through-Coloured Depth", description: "Pigment is mixed throughout the render, meaning minor chips and scratches remain virtually invisible.", icon: Palette },
@@ -52,9 +52,9 @@ export const services: ServiceData[] = [
     metaDescription: "Defy Atlantic storms with advanced silicone rendering. Hydrophobic, flexible, and crack-resistant finishes for coastal properties.",
     h1: "Advanced Silicone Rendering",
     shortDescription: "Hydrophobic, highly flexible rendering engineered specifically to combat high-velocity wind-driven rain and severe coastal weathering.",
-    heroImage: "/images/real_portfolio/monster-new-build-ecorend-main.webp",
-    beforeImage: "/images/real_portfolio/monster-new-build-ecorend-child-4.webp",
-    afterImage: "/images/real_portfolio/monster-new-build-ecorend-main.webp",
+    heroImage: "/images/silicone_after.png",
+    beforeImage: "/images/silicone_before.png",
+    afterImage: "/images/silicone_after.png",
     longDescription: "For coastal properties across Bude and North Cornwall exposed to relentless aerosolised chloride ions and salt spray, standard cement rendering inevitably fails due to subflorescence and crystallisation pressure (salt blowouts). Our advanced silicone systems use a Polydimethylsiloxane (PDMS) backbone with strong siloxane bonds, creating an ultra-flexible, hydrophobic barrier with crack-bridging capability. Water exhibits the 'Lotus Effect' — beading up and rolling off the surface, taking dirt and biological spores with it. Crucially, the system maintains high vapour permeability (optimal Sd value) to allow trapped moisture to escape while blocking wind-driven rain.",
     benefits: [
       { title: "Self-Cleaning Technology", description: "Hydrophobic properties mean rainwater washes away surface dirt naturally.", icon: Sparkles },
@@ -80,9 +80,9 @@ export const services: ServiceData[] = [
     metaDescription: "Drastically reduce heating bills with External Wall Insulation (EWI) in Cornwall. Expert installation finished with premium silicone render.",
     h1: "External Wall Insulation (EWI)",
     shortDescription: "Transform your home's thermal efficiency by wrapping it in an engineered thermal blanket.",
-    heroImage: "/images/real_portfolio/sand-cement-new-build-main.webp",
-    beforeImage: "/images/real_portfolio/sand-cement-new-build-child-2.webp",
-    afterImage: "/images/real_portfolio/sand-cement-new-build-main.webp",
+    heroImage: "/images/insulation_after.png",
+    beforeImage: "/images/insulation_before.png",
+    afterImage: "/images/insulation_after.png",
     longDescription: "Uninsulated solid walls are responsible for up to 45% of a property's heat loss. Our External Wall Insulation (EWI) systems involve mechanically and adhesively fixing high-performance expanded polystyrene (EPS) or mineral wool insulation boards directly to your exterior walls. We then encapsulate the insulation in a reinforced basecoat and finish it with a decorative silicone render. The result is a dramatically warmer home, eradicated condensation, and a completely modernised exterior.",
     benefits: [
       { title: "Slash Heating Bills", description: "Significantly reduces heat transmission, keeping energy costs down permanently.", icon: TrendingUp },
@@ -108,7 +108,7 @@ export const services: ServiceData[] = [
     metaDescription: "Flexible thin coat rendering for modern construction and timber frames. Anti-crack polymer technology applied by PureRend.",
     h1: "Flexible Thin Coat Systems",
     shortDescription: "Ultra-thin, polymer-modified rendering systems designed to flex without cracking.",
-    heroImage: "/images/real_portfolio/summer-sprays-ecorend-main.webp",
+    heroImage: "/images/portfolio_hero.png",
     longDescription: "Modern construction methods — particularly timber framing, SIPs panels, and modular extensions — require rendering systems that can accommodate natural structural movement. Traditional sand and cement will instantly crack under these stresses. Our thin coat systems use high-polymer basecoats and flexible acrylic or silicone topcoats, yielding a total thickness of just 8–10mm. This results in a lightweight, incredibly resilient finish that moves seamlessly with the building.",
     benefits: [
       { title: "Anti-Crack Formulation", description: "High polymer content allows the render to stretch and flex with thermal expansion.", icon: Maximize },
@@ -134,7 +134,7 @@ export const services: ServiceData[] = [
     metaDescription: "Sympathetic lime rendering for stone, cob, and heritage properties in Cornwall. Highly breathable natural finishes by PureRend.",
     h1: "Heritage Lime Rendering",
     shortDescription: "Vapour-permeable, traditional natural lime rendering for historic and period properties.",
-    heroImage: "/images/real_portfolio/recent-works-nov-2023-main.webp",
+    heroImage: "/images/portfolio_hero.png",
     longDescription: "Applying modern, cement-based renders to traditional solid-walled properties (such as Cornish stone or cob cottages) is disastrous. Cement traps moisture inside the wall, destroying the stonework and causing severe internal damp. We specialise in traditional lime rendering (NHL and putty systems), which act as a 'poultice', actively drawing moisture out of the building. We respect the heritage of the county, matching historic textures and working closely with conservation officers when required.",
     benefits: [
       { title: "Total Breathability", description: "Allows historic solid walls to release trapped moisture, curing internal dampness.", icon: Wind },
@@ -160,7 +160,7 @@ export const services: ServiceData[] = [
     metaDescription: "High-velocity machine render application for commercial projects and large residential builds. Rapid completion, flawless consistency.",
     h1: "Machine Render Application",
     shortDescription: "High-velocity, spray-applied rendering for rapid, perfectly consistent coverage.",
-    heroImage: "/images/real_portfolio/christmas-2022-review-child-3.webp",
+    heroImage: "/images/silicone_after.png",
     longDescription: "For large-scale residential developments and commercial projects across Devon and Cornwall, speed and consistency are paramount. We use advanced diesel and electric render spray pumps to apply monocouche and basecoats at high velocity. Machine application ensures the material hits the wall with maximum impact, eliminating air pockets and creating an incredibly strong bond. It enables us to cover vast surface areas in a fraction of the time of traditional hand application without sacrificing a millimetre of quality.",
     benefits: [
       { title: "Rapid Project Completion", description: "Dramatically reduces time on scaffolding, accelerating your build timeline.", icon: Clock },
@@ -186,7 +186,7 @@ export const services: ServiceData[] = [
     metaDescription: "Expert diagnosis and repair of cracked, blown, or failing render in Cornwall. Structural pinning, crack stitching, and seamless patching.",
     h1: "Precision Rendering Repair",
     shortDescription: "Surgical restoration of damaged, cracked, or blown renders to protect your substrate.",
-    heroImage: "/images/real_portfolio/double-story-extension-main.webp",
+    heroImage: "/images/monocouche_after.png",
     longDescription: "Ignoring cracked or hollow render on a coastal property is a severe risk; water penetrates the cracks, freezes, expands, and blows the render off entirely. PureRend doesn't just patch the surface; we surgically diagnose the root cause — whether it's thermal movement, lintel failure, or poor initial application. We use helibar crack stitching, specialised polymer repair mortars, and exact texture matching to restore the integrity and aesthetics of your façade.",
     benefits: [
       { title: "Stops Structural Decay", description: "Seals the building envelope before water ingress damages the internal blockwork.", icon: Shield },
@@ -212,7 +212,7 @@ export const services: ServiceData[] = [
     metaDescription: "Professional render soft-washing and algae removal in Cornwall. Safe, low-pressure fungicidal cleaning to restore your bright finish.",
     h1: "Specialist Soft-Wash Aftercare",
     shortDescription: "Gentle, fungicidal treatment to eradicate organic growth without destroying your render.",
-    heroImage: "/images/real_portfolio/sand-cement-new-build-child-3.webp",
+    heroImage: "/images/insulation_after.png",
     longDescription: "Over time, even the highest quality renders in damp, coastal environments like Cornwall will acquire a build-up of red algae (Trentepohlia), green algae, and environmental traffic film. Never jet-wash a modern render; high pressure blasts the protective surface layer away and forces water into the pores. We provide specialised soft-washing services, applying a targeted biocide wash under low pressure that kills the spores at the root, dissolving stains and returning your render to its original brilliance.",
     benefits: [
       { title: "No Damage Guaranteed", description: "Low-pressure chemical treatment ensures your delicate thin-coat render remains completely intact.", icon: Shield },
@@ -238,7 +238,7 @@ export const services: ServiceData[] = [
     metaDescription: "Internal plastering by Ben Rod — skimming, boarding, and ceilings across Bude and North Cornwall. Smooth, paint-ready finishes. Fully insured, 10-year guarantee.",
     h1: "Internal Plastering",
     shortDescription: "Skimming, boarding, ceilings — smooth and paint-ready. Done properly, left clean.",
-    heroImage: "/images/real_portfolio/garage-float-apartment-skim-main.webp",
+    heroImage: "/images/craftsmanship_internal.png",
     longDescription: "Whether it's a skim over tired walls, plasterboarding a new room, or a full ceiling, I do it the same way I do everything else — properly. Your home is left clean at the end of every day and the finish is smooth enough to paint straight onto. All work is backed by my 10-year workmanship guarantee.",
     benefits: [
       { title: "Paint-Ready Perfection", description: "A glass-smooth surface that requires absolutely zero prep work before painting.", icon: Sparkles },

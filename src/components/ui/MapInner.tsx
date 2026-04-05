@@ -5,13 +5,16 @@ import { MapContainer, TileLayer, Circle, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-// Fix for default marker icons in Leaflet with Next.js
-const icon = L.icon({
-  iconUrl: '/location-pin.svg', // We will generate this or use a default
-  iconRetinaUrl: '/location-pin.svg',
-  iconSize: [32, 32],
-  iconAnchor: [16, 32],
-  popupAnchor: [0, -32],
+// Define default icon explicitely to fix Next.js SSR and caching issues with Leaflet defaults
+const defaultIcon = L.icon({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  tooltipAnchor: [16, -28],
+  shadowSize: [41, 41]
 });
 
 interface MapProps {
@@ -20,16 +23,6 @@ interface MapProps {
 }
 
 export default function MapInner({ center, radius }: MapProps) {
-  // Fix leaflet icon path issues in Next.js
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    delete (L.Icon.Default.prototype as any)._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-    });
-  }, []);
 
   return (
     <div className="w-full h-full min-h-[400px] md:min-h-[500px] rounded-3xl overflow-hidden shadow-xl border border-teal-900/10">
@@ -54,7 +47,7 @@ export default function MapInner({ center, radius }: MapProps) {
             weight: 2
           }} 
         />
-        <Marker position={center}>
+        <Marker position={center} icon={defaultIcon}>
           <Popup>
             <div className="font-headline font-bold text-teal-900">PureRend HQ</div>
             <div className="text-sm">Bude, Cornwall & Surrounding Areas</div>

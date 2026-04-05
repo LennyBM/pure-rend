@@ -11,12 +11,16 @@ export function Footer() {
     <footer className="mesh-bg-dark pt-24 pb-8 border-t border-white/5 relative overflow-hidden">
       <div className="absolute inset-0 bg-black/40 backdrop-blur-3xl z-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10 md:gap-8 mb-10">
           
           {/* Brand Col */}
-          <div className="col-span-1 md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <motion.div whileHover={{ scale: 1.05, rotate: -2 }} whileTap={{ scale: 0.95 }} className="inline-block origin-left">
-              <Link href="/" className="inline-block hover:opacity-100 transition-opacity">
+              <button 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+                className="inline-block hover:opacity-100 transition-opacity"
+                aria-label="Scroll to top"
+              >
                 <Image 
                   src="/images/pure-rend-logo-transparent.webp"
                   alt="PureRend Logo"
@@ -25,34 +29,34 @@ export function Footer() {
                   className="object-contain w-[70px] h-[70px] sm:w-[92px] sm:h-[92px] scale-[1.2] origin-left drop-shadow-2xl"
                   quality={100}
                 />
-              </Link>
+              </button>
             </motion.div>
-            <p className="text-sm text-zinc-300 mt-2 leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-zinc-300 mt-2 leading-relaxed max-w-sm">
               Plastering and rendering specialist in Bude, Cornwall. Covering North Cornwall and Devon.
             </p>
           </div>
 
           {/* Navigation Col */}
-          <div>
-            <h4 className="text-white font-headline font-semibold mb-4 tracking-wide text-sm uppercase">Navigation</h4>
-            <ul className="space-y-3">
+          <div className="col-span-1">
+            <h4 className="text-white font-headline font-semibold mb-3 tracking-wide text-xs sm:text-sm uppercase">Navigation</h4>
+            <ul className="space-y-2.5">
               <li>
-                <Link href="/services" className="text-sm text-zinc-300 hover:text-blue-600 transition-colors">
+                <Link href="/services" className="text-xs sm:text-sm text-zinc-300 hover:text-blue-600 transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/locations" className="text-sm text-zinc-300 hover:text-blue-600 transition-colors">
+                <Link href="/locations" className="text-xs sm:text-sm text-zinc-300 hover:text-blue-600 transition-colors">
                   Locations
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="text-sm text-zinc-300 hover:text-blue-600 transition-colors">
+                <Link href="/portfolio" className="text-xs sm:text-sm text-zinc-300 hover:text-blue-600 transition-colors">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-zinc-300 hover:text-blue-600 transition-colors">
+                <Link href="/contact" className="text-xs sm:text-sm text-zinc-300 hover:text-blue-600 transition-colors">
                   Contact
                 </Link>
               </li>
@@ -60,26 +64,26 @@ export function Footer() {
           </div>
 
           {/* Legal Col */}
-          <div>
-            <h4 className="text-white font-headline font-semibold mb-4 tracking-wide text-sm uppercase">Legal</h4>
-            <ul className="space-y-3">
+          <div className="col-span-1">
+            <h4 className="text-white font-headline font-semibold mb-3 tracking-wide text-xs sm:text-sm uppercase">Legal</h4>
+            <ul className="space-y-2.5">
               <li>
-                <Link href="/privacy" className="text-sm text-zinc-300 hover:text-blue-600 transition-colors">
+                <Link href="/privacy" className="text-xs sm:text-sm text-zinc-300 hover:text-blue-600 transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-sm text-zinc-300 hover:text-blue-600 transition-colors">
+                <Link href="/terms" className="text-xs sm:text-sm text-zinc-300 hover:text-blue-600 transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/accessibility" className="text-sm text-zinc-300 hover:text-blue-600 transition-colors">
+                <Link href="/accessibility" className="text-xs sm:text-sm text-zinc-300 hover:text-blue-600 transition-colors">
                   Accessibility
                 </Link>
               </li>
               <li>
-                <Link href="/your-rights" className="text-sm text-zinc-300 hover:text-blue-600 transition-colors">
+                <Link href="/your-rights" className="text-xs sm:text-sm text-zinc-300 hover:text-blue-600 transition-colors">
                   Your Rights
                 </Link>
               </li>
@@ -87,13 +91,13 @@ export function Footer() {
           </div>
 
           {/* Contact / CTA Col */}
-          <div>
-            <h4 className="text-white font-headline font-semibold mb-4 tracking-wide text-sm uppercase">Support</h4>
-            <ul className="space-y-3 mb-6">
-              <li className="text-sm text-zinc-300">
+          <div className="col-span-2 md:col-span-1">
+            <h4 className="text-white font-headline font-semibold mb-3 tracking-wide text-xs sm:text-sm uppercase">Support</h4>
+            <ul className="space-y-2 mb-4">
+              <li className="text-xs sm:text-sm text-zinc-300">
                 Phone: 07469 931 758
               </li>
-              <li className="text-sm text-zinc-300">
+              <li className="text-xs sm:text-sm text-zinc-300">
                 Email: b.rplasteringsw@gmail.com
               </li>
             </ul>
@@ -102,7 +106,7 @@ export function Footer() {
                 href="https://wa.me/447469931758"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex px-5 py-2 border border-blue-600/50 hover:border-blue-500 text-sm font-bold rounded-2xl text-blue-50 hover:text-white bg-blue-600/10 hover:bg-blue-600 transition-all shadow-lg"
+                className="inline-flex px-4 py-2 border border-blue-600/50 hover:border-blue-500 text-xs sm:text-sm font-bold rounded-xl text-blue-50 hover:text-white bg-blue-600/10 hover:bg-blue-600 transition-all shadow-lg"
               >
                 WhatsApp Ben
               </a>
@@ -111,7 +115,7 @@ export function Footer() {
 
         </div>
 
-        <div className="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-zinc-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-col items-center md:items-start gap-1">
             <p className="text-xs text-zinc-500">
               &copy; {currentYear} PureRend. All rights reserved.
@@ -151,19 +155,7 @@ export function Footer() {
               </svg>
             </motion.a>
 
-            <motion.a
-              whileHover={{ scale: 1.15, y: -4, rotate: -4 }}
-              whileTap={{ scale: 0.9 }}
-              href="https://www.tiktok.com/@therodfather.1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-zinc-100 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-all duration-300"
-              aria-label="PureRend on TikTok"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
-              </svg>
-            </motion.a>
+
           </div>
         </div>
       </div>

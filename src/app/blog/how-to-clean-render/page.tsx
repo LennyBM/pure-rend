@@ -128,7 +128,7 @@ export default function CleanRenderArticle() {
             This isn&apos;t small print buried in a document — it&apos;s standard across the industry. Pressure washing and modern render systems do not mix.
           </p>
 
-          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8 mt-10">
+          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 md:p-8 mt-10">
             <h3 className="text-xl font-headline font-bold text-zinc-900 mb-3">Need your render cleaned properly?</h3>
             <p className="text-zinc-600 mb-6 leading-relaxed">
               I offer soft-wash aftercare across Bude and North Cornwall. Get in touch and I&apos;ll let you know if it&apos;s something I can help with.

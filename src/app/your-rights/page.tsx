@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function YourRightsPage() {
   return (
     <main className="min-h-screen bg-zinc-50 pt-32 pb-16 px-6">
-      <div className="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-zinc-100">
+      <div className="max-w-3xl mx-auto bg-white p-4 md:p-8 md:p-12 rounded-3xl shadow-sm border border-zinc-100">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-50 border border-teal-100 mb-6">
           <span className="text-xs font-semibold tracking-widest text-teal-800 uppercase">UK GDPR Compliance</span>
         </div>

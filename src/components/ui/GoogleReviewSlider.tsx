@@ -47,8 +47,8 @@ const REVIEWS = [
 
 export default function GoogleReviewSlider() {
   return (
-    <div className="w-full max-w-5xl mx-auto py-12 px-6">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 pb-6 border-b border-zinc-200">
+    <div className="w-full max-w-5xl mx-auto py-8 md:py-12 px-4 md:px-6">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 md:mb-8 pb-4 md:pb-6 border-b border-zinc-200">
         <div>
           <h2 className="text-2xl font-bold font-headline text-zinc-900 flex items-center gap-3 mb-2">
             What customers say
@@ -66,7 +66,7 @@ export default function GoogleReviewSlider() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {REVIEWS.map((review) => (
-          <div key={review.id} className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+          <div key={review.id} className="bg-white p-5 md:p-6 rounded-xl md:rounded-2xl border border-zinc-200 shadow-sm flex flex-col hover:shadow-md transition-shadow">
             <div className="flex items-center gap-4 mb-4">
               <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 ${review.color}`}>
                 {review.initials}

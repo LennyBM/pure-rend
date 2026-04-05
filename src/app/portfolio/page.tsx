@@ -15,7 +15,7 @@ const projects = [
     location: "North Cornwall",
     service: "Silicone render — EcoRend",
     description: "Full external render on a large ICF new build. EcoRend silicone system throughout.",
-    image: "/images/real_portfolio/monster-new-build-ecorend-main.webp",
+    image: "/images/portfolio_hero.webp",
     href: "/portfolio/widemouth-bay",
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     location: "North Cornwall",
     service: "Monocouche — EcoRend",
     description: "Premium through-coloured monocouche finish on a large new build. No repainting, ever.",
-    image: "/images/real_portfolio/multi-million-pound-new-build-main.webp",
+    image: "/images/monocouche_after.webp",
     href: null,
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     location: "North Cornwall",
     service: "Sand cement render",
     description: "Full render on a substantial double-storey extension, matched to the existing property.",
-    image: "/images/real_portfolio/double-story-extension-main.webp",
+    image: "/images/insulation_after.webp",
     href: null,
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     location: "Bude area",
     service: "Sand cement render",
     description: "Clean sand cement finish on a new build — solid, weatherproof substrate ready for topcoat.",
-    image: "/images/real_portfolio/sand-cement-new-build-main.webp",
+    image: "/images/silicone_after.webp",
     href: null,
   },
   {
@@ -47,7 +47,7 @@ const projects = [
     location: "Bude area",
     service: "Internal plastering",
     description: "Float and skim on a garage conversion and apartment. Smooth, paint-ready finish throughout.",
-    image: "/images/real_portfolio/garage-float-apartment-skim-main.webp",
+    image: "/images/craftsmanship_internal.webp",
     href: null,
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     location: "Bude area",
     service: "Internal plastering",
     description: "Skimming and boarding — all internal rooms left with a smooth, flat finish ready for decorating.",
-    image: "/images/real_portfolio/internal-works-aug-2024-main.webp",
+    image: "/images/insulation_before.webp",
     href: null,
   },
   {
@@ -63,23 +63,23 @@ const projects = [
     location: "North Cornwall",
     service: "Machine-applied EcoRend silicone",
     description: "Spray-applied render on a larger property. Consistent coverage and a clean, sharp finish.",
-    image: "/images/real_portfolio/summer-sprays-ecorend-main.webp",
+    image: "/images/silicone_before.webp",
     href: null,
   },
   {
-    title: "Christmas 2022 Project",
+    title: "Winter Render Project",
     location: "Bude area",
     service: "Rendering",
-    description: "External render job completed before Christmas. Scaffolding down, site left clean, customer happy.",
-    image: "/images/real_portfolio/christmas-2022-review-main.webp",
+    description: "External render job completed on a tight schedule. Scaffolding down, site left clean, customer happy.",
+    image: "/images/monocouche_before.webp",
     href: null,
   },
   {
-    title: "Recent Works — Nov 2023",
+    title: "Autumn Render Project",
     location: "North Cornwall",
     service: "Rendering",
-    description: "Recent rendering job — part of a run of autumn/winter projects before the weather closes in.",
-    image: "/images/real_portfolio/recent-works-nov-2023-main.webp",
+    description: "Rendering job from a run of autumn/winter projects before the weather closes in.",
+    image: "/images/cornish_hero_background.webp",
     href: null,
   },
 ];
@@ -142,7 +142,7 @@ export default function PortfolioHub() {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => {
             const card = (
-              <div className="group relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-blue-600/50 transition-all duration-500 h-[380px] flex flex-col">
+              <div className="group relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-blue-600/50 transition-all duration-500 h-[280px] sm:h-[380px] flex flex-col">
                 <div className="absolute inset-0 z-0">
                   <Image
                     src={project.image}

@@ -137,7 +137,7 @@ export default function PlanningPermissionArticle() {
             Cornwall Council planning can be reached on 0300 1234 151. Holsworthy and Bideford properties fall under Torridge District Council (01237 428700). A five-minute call can save a lot of headaches.
           </p>
 
-          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8 mt-10">
+          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 md:p-8 mt-10">
             <h3 className="text-xl font-headline font-bold text-zinc-900 mb-3">Ready to get a quote?</h3>
             <p className="text-zinc-600 mb-6 leading-relaxed">
               Once you&apos;ve confirmed you don&apos;t need permission (or got it), I&apos;m happy to come and take a look. I cover Bude, North Cornwall, and North Devon.

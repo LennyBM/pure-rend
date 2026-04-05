@@ -79,7 +79,7 @@ export default function WidemouthBayCaseStudy() {
       {/* The Architectural Challenge */}
       <section className="bg-blue-50 border-y border-blue-100 py-24">
         <div className="px-6 md:px-12 max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-16">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-16">
             <div className="lg:w-1/3">
               <h2 className="text-3xl md:text-5xl font-outfit font-light text-zinc-900 mb-6">
                 The Context & Challenge
@@ -102,7 +102,7 @@ export default function WidemouthBayCaseStudy() {
                 {CHALLENGES.map((challenge, idx) => {
                   const Icon = challenge.icon;
                   return (
-                    <div key={idx} className="bg-white p-8 rounded-2xl border border-blue-100/50">
+                    <div key={idx} className="bg-white p-4 md:p-8 rounded-2xl border border-blue-100/50">
                       <div className="w-10 h-10 rounded-full bg-teal-900/20 flex items-center justify-center mb-6">
                         <Icon className="w-5 h-5 text-blue-500" />
                       </div>
@@ -136,7 +136,7 @@ export default function WidemouthBayCaseStudy() {
           {IMPLEMENTATION_STEPS.map((step, idx) => (
             <div 
               key={idx} 
-              className="bg-blue-50/50 border border-blue-100/50 p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start hover:border-teal-900/50 transition-colors"
+              className="bg-blue-50/50 border border-blue-100/50 p-4 md:p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start hover:border-teal-900/50 transition-colors"
             >
               <div className="flex-shrink-0 w-16 h-16 bg-white rounded-full flex items-center justify-center border border-blue-100 text-blue-500 font-outfit font-bold text-xl">
                 0{idx + 1}
@@ -175,7 +175,7 @@ export default function WidemouthBayCaseStudy() {
 
       {/* Final CTA */}
       <section className="py-24 px-6 md:px-12 border-t border-blue-100 bg-blue-50/20">
-        <div className="max-w-4xl mx-auto bg-blue-50 border border-blue-100 rounded-3xl p-8 md:p-16 text-center shadow-2xl shadow-zinc-900/50 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-blue-50 border border-blue-100 rounded-3xl p-4 md:p-8 md:p-16 text-center shadow-2xl shadow-zinc-900/50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-900/20 via-zinc-900 to-zinc-900 opacity-50" />
           
           <div className="relative z-10 space-y-8">
