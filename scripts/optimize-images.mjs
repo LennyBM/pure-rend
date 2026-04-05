@@ -2,7 +2,7 @@ import sharp from "sharp";
 import { readdir, stat, rename, writeFile, unlink } from "fs/promises";
 import { join, extname, basename } from "path";
 
-const IMAGE_DIR = "public/images";
+const IMAGE_DIR = "public/images";  // adjust per project
 const MAX_WIDTH = 1920;
 const JPEG_QUALITY = 80;
 const WEBP_QUALITY = 80;
@@ -24,10 +24,7 @@ async function getFiles(dir) {
 
 async function optimiseImage(filePath) {
   const ext = extname(filePath).toLowerCase();
-  
-  // ignore already converted files or non-image files, but keep processing original jpgs.
-  // Actually, wait, the user's images are PNGs. We should convert to webp and delete original.
-  if (![".png", ".jpg", ".jpeg"].includes(ext)) return;
+  if (![".png", ".jpg", ".jpeg", ".webp"].includes(ext)) return;
 
   const originalStat = await stat(filePath);
   const originalSize = originalStat.size;
@@ -37,9 +34,9 @@ async function optimiseImage(filePath) {
     const metadata = await sharp(filePath).metadata();
     const needsResize = metadata.width && metadata.width > MAX_WIDTH;
 
-    if (ext === ".png" || ext === ".jpg" || ext === ".jpeg") {
-      // Convert → WebP (typically 80-95% smaller)
-      const webpPath = filePath.replace(/\.(png|jpe?g)$/i, ".webp");
+    if (ext === ".png") {
+      // Convert PNG → WebP (typically 80-95% smaller)
+      const webpPath = filePath.replace(/\.png$/i, ".webp");
       const pipeline = sharp(filePath);
       if (needsResize) pipeline.resize(MAX_WIDTH, null, { withoutEnlargement: true });
       await pipeline.webp({ quality: WEBP_QUALITY }).toFile(webpPath);
@@ -51,8 +48,57 @@ async function optimiseImage(filePath) {
       const savings = ((1 - newStat.size / originalSize) * 100).toFixed(0);
       console.log(`  ✓ ${basename(filePath)} → .webp (${fmt(originalSize)} → ${fmt(newStat.size)}, -${savings}%)`);
 
-      // Delete the original file as we are permanently modifying references
-      await unlink(filePath);
+      // Also compress the original PNG in place
+      const pngBuffer = await sharp(filePath)
+        .resize(MAX_WIDTH, null, { withoutEnlargement: true })
+        .png({ quality: 80, compressionLevel: 9 })
+        .toBuffer();
+      if (pngBuffer.length < originalSize) {
+        const tmpPath = filePath + ".tmp";
+        await writeFile(tmpPath, pngBuffer);
+        await unlink(filePath);
+        await rename(tmpPath, filePath);
+      }
+    } else if (ext === ".webp") {
+      // Re-compress WEBP
+      const buffer = await sharp(filePath)
+        .resize(MAX_WIDTH, null, { withoutEnlargement: true })
+        .webp({ quality: WEBP_QUALITY })
+        .toBuffer();
+
+      if (buffer.length < originalSize) {
+        const tmpPath = filePath + ".tmp";
+        await writeFile(tmpPath, buffer);
+        await unlink(filePath);
+        await rename(tmpPath, filePath);
+        totalOptimised += buffer.length;
+        filesProcessed++;
+        const savings = ((1 - buffer.length / originalSize) * 100).toFixed(0);
+        console.log(`  ✓ ${basename(filePath)} (${fmt(originalSize)} → ${fmt(buffer.length)}, -${savings}%)`);
+      } else {
+        totalOptimised += originalSize;
+        console.log(`  · ${basename(filePath)} (${fmt(originalSize)}, already optimal)`);
+      }
+    } else {
+      // Re-compress JPEG with mozjpeg
+      const buffer = await sharp(filePath)
+        .resize(MAX_WIDTH, null, { withoutEnlargement: true })
+        .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
+        .toBuffer();
+
+      if (buffer.length < originalSize) {
+        const tmpPath = filePath + ".tmp";
+        await writeFile(tmpPath, buffer);
+        await unlink(filePath);
+        await rename(tmpPath, filePath);
+        totalOptimised += buffer.length;
+        filesProcessed++;
+        const savings = ((1 - buffer.length / originalSize) * 100).toFixed(0);
+        console.log(`  ✓ ${basename(filePath)} (${fmt(originalSize)} → ${fmt(buffer.length)}, -${savings}%)`);
+      } else {
+        totalOptimised += originalSize;
+        console.log(`  · ${basename(filePath)} (${fmt(originalSize)}, already optimal)`);
+      }
     }
   } catch (err) {
     console.error(`  ✗ ${basename(filePath)}: ${err.message}`);
@@ -67,15 +113,11 @@ function fmt(bytes) {
 async function main() {
   console.log("\n🖼️  Optimising images...\n");
   const files = await getFiles(IMAGE_DIR);
-  const imageFiles = files.filter((f) => /\.(png|jpg|jpeg)$/i.test(f));
+  const imageFiles = files.filter((f) => /\.(png|jpg|jpeg|webp)$/i.test(f));
   console.log(`  Found ${imageFiles.length} images\n`);
   for (const file of imageFiles) await optimiseImage(file);
-  if (totalOriginal > 0) {
-      const savings = ((1 - totalOptimised / totalOriginal) * 100).toFixed(0);
-      console.log(`\n📊 Original: ${fmt(totalOriginal)} → Optimised: ${fmt(totalOptimised)} (-${savings}%, ${filesProcessed} files)\n`);
-  } else {
-      console.log("No images required optimization.");
-  }
+  const savings = ((1 - totalOptimised / totalOriginal) * 100).toFixed(0);
+  console.log(`\n📊 Original: ${fmt(totalOriginal)} → Optimised: ${fmt(totalOptimised)} (-${savings}%, ${filesProcessed} files)\n`);
 }
 
 main().catch(console.error);

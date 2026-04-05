@@ -37,7 +37,7 @@ export default function NotFound() {
             or is temporarily unavailable. Let&apos;s get you back to the right place.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10 w-full">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-8 w-full">
             <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
               <Link
                 href="/"
@@ -55,6 +55,16 @@ export default function NotFound() {
                 Contact Us <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
+          </div>
+
+          <div className="pt-10 mt-10 border-t border-zinc-200/50 w-full space-y-5">
+             <p className="text-xs sm:text-sm font-semibold text-zinc-400 uppercase tracking-widest">Popular Pages</p>
+             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+               <Link href="/services#silicone" className="text-xs sm:text-sm bg-white/80 hover:bg-blue-50 text-zinc-600 hover:text-blue-700 px-4 py-2.5 rounded-xl border border-zinc-200 transition-all shadow-sm hover:shadow">Silicone Render</Link>
+               <Link href="/services#monocouche" className="text-xs sm:text-sm bg-white/80 hover:bg-blue-50 text-zinc-600 hover:text-blue-700 px-4 py-2.5 rounded-xl border border-zinc-200 transition-all shadow-sm hover:shadow">Monocouche</Link>
+               <Link href="/services#insulation" className="text-xs sm:text-sm bg-white/80 hover:bg-blue-50 text-zinc-600 hover:text-blue-700 px-4 py-2.5 rounded-xl border border-zinc-200 transition-all shadow-sm hover:shadow">Wall Insulation</Link>
+               <Link href="/locations" className="text-xs sm:text-sm bg-white/80 hover:bg-blue-50 text-zinc-600 hover:text-blue-700 px-4 py-2.5 rounded-xl border border-zinc-200 transition-all shadow-sm hover:shadow">Coverage Areas</Link>
+             </div>
           </div>
         </div>
       </motion.div>

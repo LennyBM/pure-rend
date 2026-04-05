@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mesh-bg-dark pt-24 pb-8 border-t border-white/5 relative overflow-hidden">
+    <footer className="mesh-bg-dark pt-24 pb-24 md:pb-32 border-t border-white/5 relative overflow-hidden">
       <div className="absolute inset-0 bg-black/40 backdrop-blur-3xl z-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10 md:gap-8 mb-10">
@@ -92,15 +92,18 @@ export function Footer() {
 
           {/* Contact / CTA Col */}
           <div className="col-span-2 md:col-span-1">
-            <h4 className="text-white font-headline font-semibold mb-3 tracking-wide text-xs sm:text-sm uppercase">Support</h4>
-            <ul className="space-y-2 mb-4">
-              <li className="text-xs sm:text-sm text-zinc-300">
-                Phone: 07469 931 758
-              </li>
-              <li className="text-xs sm:text-sm text-zinc-300">
-                Email: b.rplasteringsw@gmail.com
-              </li>
-            </ul>
+            <h4 className="text-white font-headline font-semibold mb-3 tracking-wide text-xs sm:text-sm uppercase">Contact Us</h4>
+            <address className="not-italic space-y-2 mb-4 text-xs sm:text-sm text-zinc-300">
+              <p>
+                <strong className="text-white font-medium">PureRend Limited</strong><br/>
+                Company No. 16505724<br/>
+                Bude, Cornwall & Devon
+              </p>
+              <p className="pt-1">
+                <a href="tel:+447469931758" className="hover:text-blue-500 transition-colors">07469 931 758</a><br/>
+                <a href="mailto:b.rplasteringsw@gmail.com" className="hover:text-blue-500 transition-colors break-all">b.rplasteringsw@gmail.com</a>
+              </p>
+            </address>
             <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }} className="inline-block">
               <a
                 href="https://wa.me/447469931758"

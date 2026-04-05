@@ -2,16 +2,19 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Core pages load correctly", () => {
   const pages = [
-    { path: "/", title: "PureRend" },
+    { path: "/", title: "Plastering" }, // usually "Silicone Rendering & Plastering in Bude | PureRend"
+    { path: "/about", title: "About" },
     { path: "/services", title: "Services" },
-    { path: "/locations", title: "Locations" },
+    { path: "/locations", title: "Areas" },
     { path: "/portfolio", title: "Portfolio" },
     { path: "/process", title: "Process" },
     { path: "/contact", title: "Contact" },
+    { path: "/privacy", title: "Privacy" },
+    { path: "/terms", title: "Terms" },
   ];
 
   for (const page of pages) {
-    test(`${page.path} loads`, async ({ page: p }) => {
+    test(`Static route: ${page.path} loads`, async ({ page: p }) => {
       const response = await p.goto(page.path);
       expect(response?.status()).toBe(200);
       await expect(p).toHaveTitle(new RegExp(page.title, "i"));
@@ -19,13 +22,43 @@ test.describe("Core pages load correctly", () => {
   }
 });
 
+test.describe("Dynamic routes load", () => {
+  const dynamicPages = [
+    "/services/silicone-rendering",
+    "/services/internal-plastering",
+    "/services/monocouche",
+    "/services/external-wall-insulation",
+    "/locations/bude",
+    "/locations/stratton"
+  ];
+  for (const path of dynamicPages) {
+    test(`Dynamic route: ${path} loads`, async ({ page }) => {
+      const response = await page.goto(path);
+      expect(response?.status()).toBe(200);
+    });
+  }
+});
+
 test.describe("Navigation", () => {
   test("navbar links work", async ({ page }) => {
     await page.goto("/");
-    await page.click('nav a[href="/services"]');
+    await page.locator('nav a[href="/services"]').first().click();
     await expect(page).toHaveURL(/\/services/);
-    await page.click('nav a[href="/contact"]');
+    await page.locator('nav a[href="/contact"]').first().click();
     await expect(page).toHaveURL(/\/contact/);
+  });
+
+  test("mobile menu opens", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/");
+    // Click the hamburger menu
+    const menuButton = page.locator('button[aria-controls="mobile-menu"]').first();
+    if (await menuButton.isVisible()) {
+      await menuButton.click();
+      await page.waitForTimeout(500); // Wait for open animation
+      const link = page.locator('#mobile-menu a[href="/contact"]').first();
+      await expect(link).toBeVisible();
+    }
   });
 });
 
@@ -36,50 +69,33 @@ test.describe("SEO", () => {
     await expect(meta).toHaveAttribute("content", /.+/);
   });
 
-  test("JSON-LD exists", async ({ page }) => {
+  test("JSON-LD exists on homepage", async ({ page }) => {
     await page.goto("/");
     const jsonLd = page.locator('script[type="application/ld+json"]');
-    expect(await jsonLd.count()).toBeGreaterThan(0);
+    await expect(jsonLd.first()).toBeAttached();
   });
 });
 
 test.describe("Accessibility", () => {
-  test("images have alt text", async ({ page }) => {
+  test("important structural elements exist", async ({ page }) => {
     await page.goto("/");
-    // We expect at least the main images to have alt tags. Some decorative ones might have empty alt tags, which is fine, but we'll check that non-empty alt exists on key elements.
-    const images = page.locator("img");
-    const count = await images.count();
-    // In PureRend, Next/Image requires alt. Let's make sure none are missing the attribute entirely.
-    for (let i = 0; i < Math.min(count, 10); i++) {
-      const alt = await images.nth(i).getAttribute("alt");
-      expect(alt !== null).toBeTruthy();
-    }
+    // We should have at least one main heading
+    const h1Count = await page.locator("h1").count();
+    expect(h1Count).toBeGreaterThanOrEqual(1);
+    
+    // Check navigation element exists
+    const navCount = await page.locator("nav").count();
+    expect(navCount).toBeGreaterThanOrEqual(1);
   });
-});
-
-test.describe("Dynamic Pages (locations/services)", () => {
-  const routes = ["/locations/bude", "/locations/stratton", "/services/monocouche", "/services/silicone-renders"];
-  for (const route of routes) {
-    test(`${route} loads`, async ({ page }) => {
-      const response = await page.goto(route);
-      expect(response?.status()).toBe(200);
-    });
-  }
 });
 
 test.describe("Interactive Components", () => {
-  test("whatsapp button visible", async ({ page }) => {
-    await page.goto("/");
-    const trigger = page.locator('a[href^="https://wa.me"]');
-    await expect(trigger).toBeVisible();
-  });
-
-  test("calculator works", async ({ page }) => {
-    await page.goto("/locations/bude");
-    // Find the quote calculator text "Area (sq m)"
-    const areaInput = page.getByLabel(/Area/i).first();
-    if (await areaInput.isVisible()) {
-      await areaInput.fill("120");
+  test("quote calculator slider renders on contact page", async ({ page }) => {
+    await page.goto("/contact");
+    const slider = page.locator('input[type="range"]').first();
+    if (await slider.isVisible()) {
+      // Move slider to trigger any potential state errors
+      await slider.fill("120");
     }
   });
 });

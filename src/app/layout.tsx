@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
 import BackToTop from "@/components/ui/BackToTop";
+import MobileStickyCTA from "@/components/ui/MobileStickyCTA";
 import "./globals.css";
 
 const inter = Inter({
@@ -45,11 +46,12 @@ export default function RootLayout({
         <Footer />
         <CookieBanner />
         <BackToTop />
+        <MobileStickyCTA />
         <a 
           href="https://wa.me/447469931758"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[60] flex items-center gap-3 bg-blue-50/90 backdrop-blur-xl border border-white/10 text-zinc-900 p-3 sm:px-5 sm:py-3 rounded-full shadow-2xl hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:bg-blue-100 hover:-translate-y-1 transition-all duration-300 font-medium tracking-wide text-sm"
+          className="hidden md:flex fixed bottom-6 right-6 z-[60] items-center gap-3 bg-blue-50/90 backdrop-blur-xl border border-white/10 text-zinc-900 px-5 py-3 rounded-full shadow-2xl hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:bg-blue-100 hover:-translate-y-1 transition-all duration-300 font-medium tracking-wide text-sm"
           aria-label="Chat with us on WhatsApp"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-7 h-7 sm:w-6 sm:h-6 fill-current shrink-0 text-[#25D366]">
@@ -62,7 +64,7 @@ export default function RootLayout({
         </a>
 
         {/* Site-wide LocalBusiness + Reviews structured data */}
-        <Script
+        <script
           id="schema-local-business"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -77,10 +79,8 @@ export default function RootLayout({
               "email": "b.rplasteringsw@gmail.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "64 High Street",
-                "addressLocality": "Bideford",
-                "addressRegion": "Devon",
-                "postalCode": "EX39 2AR",
+                "addressLocality": "Bude",
+                "addressRegion": "Cornwall",
                 "addressCountry": "GB"
               },
               "geo": {

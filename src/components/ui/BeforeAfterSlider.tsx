@@ -88,12 +88,25 @@ export default function BeforeAfterSlider({
     <div className={`w-full ${className}`}>
         <div
         ref={containerRef}
-        className={`relative aspect-[3/2] sm:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl select-none cursor-ew-resize ${isDragging ? "cursor-grabbing" : "cursor-ew-resize"}`}
+        className={`relative aspect-[3/2] sm:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl select-none cursor-ew-resize focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-500 ${isDragging ? "cursor-grabbing" : "cursor-ew-resize"}`}
         onMouseDown={onMouseDown}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
-        role="img"
-        aria-label={`Before and after comparison: ${beforeAlt} and ${afterAlt}`}
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowLeft') {
+            setPosition((p) => Math.max(1, p - 5));
+            setHasInteracted(true);
+          } else if (e.key === 'ArrowRight') {
+            setPosition((p) => Math.min(99, p + 5));
+            setHasInteracted(true);
+          }
+        }}
+        tabIndex={0}
+        role="slider"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(position)}
+        aria-label={`Interactive before and after comparison slider. Left arrow to see more before: ${beforeAlt}. Right arrow to see more after: ${afterAlt}.`}
       >
         {/* Skeleton loader */}
         {imagesLoaded < 2 && (

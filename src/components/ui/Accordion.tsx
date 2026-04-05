@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
@@ -12,13 +12,17 @@ interface AccordionItemProps {
 
 export function AccordionItem({ title, children, defaultOpen = false }: AccordionItemProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const buttonId = useId();
+  const contentId = useId();
 
   return (
     <div className="border border-white/20 bg-white/40 backdrop-blur-md rounded-2xl mb-4 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
       <button
+        id={buttonId}
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between p-5 md:p-6 text-left group"
         aria-expanded={isOpen}
+        aria-controls={contentId}
       >
         <span className="font-headline font-bold text-lg md:text-xl text-zinc-900 group-hover:text-blue-600 transition-colors pr-8">
           {title}
@@ -31,6 +35,9 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            id={contentId}
+            role="region"
+            aria-labelledby={buttonId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
