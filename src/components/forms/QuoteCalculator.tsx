@@ -2,23 +2,31 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, CheckCircle2, Building, Home, Box, Check, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Building, Home, Box, Check, MessageCircle, Wrench, Layers, ThermometerSnowflake, HelpCircle } from "lucide-react";
 
 type QuoteData = {
+  serviceType: string;
   propertyType: string;
   walls: string;
-  insulation: string;
   name: string;
   phone: string;
   gdprConsent: boolean;
 };
 
+const serviceOptions = [
+  { label: "External rendering", icon: Layers },
+  { label: "Internal plastering", icon: Home },
+  { label: "External Wall Insulation (EWI)", icon: ThermometerSnowflake },
+  { label: "Rendering repair", icon: Wrench },
+  { label: "Not sure yet", icon: HelpCircle },
+];
+
 export default function QuoteCalculator() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<QuoteData>({
+    serviceType: "",
     propertyType: "",
     walls: "",
-    insulation: "",
     name: "",
     phone: "",
     gdprConsent: false,
@@ -34,7 +42,7 @@ export default function QuoteCalculator() {
 
   const handleSelect = (field: keyof QuoteData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    setTimeout(nextStep, 350); // Auto-advance for better UX
+    setTimeout(nextStep, 350);
   };
 
   return (
@@ -67,7 +75,46 @@ export default function QuoteCalculator() {
               className="flex-1"
             >
               <h3 className="text-2xl font-bold font-headline text-zinc-900 mb-6">
-                What type of property is it?
+                What do you need?
+              </h3>
+              <div className="flex flex-col gap-3">
+                {serviceOptions.map(({ label, icon: Icon }) => (
+                  <motion.button
+                    whileHover={{ scale: 1.02, x: 4 }}
+                    whileTap={{ scale: 0.98 }}
+                    key={label}
+                    onClick={() => handleSelect("serviceType", label)}
+                    className={`p-5 rounded-2xl flex items-center justify-between border-2 transition-all hover:shadow-md ${
+                      formData.serviceType === label
+                        ? "border-blue-600 bg-blue-50"
+                        : "border-zinc-200 bg-white hover:border-blue-300"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Icon className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                      <span className="font-bold text-zinc-800">{label}</span>
+                    </div>
+                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
+                      formData.serviceType === label ? "border-blue-600 bg-blue-600" : "border-zinc-300"
+                    }`}>
+                      {formData.serviceType === label && <Check className="w-4 h-4 text-white" />}
+                    </div>
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          {step === 2 && (
+            <motion.div
+              key="step2"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              className="flex-1"
+            >
+              <h3 className="text-2xl font-bold font-headline text-zinc-900 mb-6">
+                What type of property?
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {["Detached", "Semi-Detached", "Terraced", "Bungalow"].map((pt) => (
@@ -90,19 +137,19 @@ export default function QuoteCalculator() {
             </motion.div>
           )}
 
-          {step === 2 && (
+          {step === 3 && (
             <motion.div
-              key="step2"
+              key="step3"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               className="flex-1"
             >
               <h3 className="text-2xl font-bold font-headline text-zinc-900 mb-6">
-                How many walls need rendering?
+                How much needs doing?
               </h3>
               <div className="flex flex-col gap-3">
-                {["Just the Front", "Front & Back", "3 Walls", "Whole Property", "Just a Repair"].map((w) => (
+                {["Just the Front", "Front & Back", "3 Walls", "Whole Property", "Just a Repair / Small Area"].map((w) => (
                   <motion.button
                     whileHover={{ scale: 1.02, x: 4 }}
                     whileTap={{ scale: 0.98 }}
@@ -126,41 +173,6 @@ export default function QuoteCalculator() {
             </motion.div>
           )}
 
-          {step === 3 && (
-            <motion.div
-              key="step3"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="flex-1"
-            >
-              <h3 className="text-2xl font-bold font-headline text-zinc-900 mb-6">
-                Are you looking to add External Wall Insulation (EWI)?
-              </h3>
-              <p className="text-zinc-500 mb-8 -mt-4 text-sm leading-relaxed">
-                EWI can dramatically reduce heating bills and prevent damp, but changes the wall thickness.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {["Yes", "No", "Not Sure Yet"].map((ins) => (
-                  <motion.button
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    key={ins}
-                    onClick={() => handleSelect("insulation", ins)}
-                    className={`p-6 rounded-2xl flex flex-col items-center justify-center gap-4 border-2 transition-all hover:shadow-xl hover:shadow-blue-500/10 ${
-                      formData.insulation === ins
-                        ? "border-blue-600 bg-blue-50 shadow-md"
-                        : "border-zinc-200 bg-white hover:border-blue-300"
-                    }`}
-                  >
-                    <Box className="w-8 h-8 text-blue-600" />
-                    <span className="font-bold text-zinc-800 text-center">{ins}</span>
-                  </motion.button>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
           {step === 4 && (
             <motion.div
               key="step4"
@@ -170,10 +182,10 @@ export default function QuoteCalculator() {
               className="flex-1"
             >
               <h3 className="text-2xl font-bold font-headline text-zinc-900 mb-6">
-                Where should we send your quote?
+                How should Ben get back to you?
               </h3>
               <p className="text-zinc-500 mb-8 -mt-4 text-sm leading-relaxed">
-                Provide your WhatsApp number for a response within 60 seconds during business hours.
+                Leave your number and Ben will be in touch — usually same day. WhatsApp works great too.
               </p>
               <div className="flex flex-col gap-5">
                 <div>
@@ -182,7 +194,7 @@ export default function QuoteCalculator() {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-5 py-4 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-teal-600 bg-white text-zinc-900 text-lg transition-shadow shadow-sm focus:shadow-md"
+                    className="w-full px-5 py-4 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-zinc-900 text-lg transition-shadow shadow-sm focus:shadow-md"
                     placeholder="E.g. John Smith"
                   />
                 </div>
@@ -197,18 +209,18 @@ export default function QuoteCalculator() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-5 py-4 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-teal-600 bg-white text-zinc-900 text-lg transition-shadow shadow-sm focus:shadow-md"
+                    className="w-full px-5 py-4 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-zinc-900 text-lg transition-shadow shadow-sm focus:shadow-md"
                     placeholder="07..."
                   />
                 </div>
-                
+
                 <div className="flex items-start gap-3 mt-2">
                   <input
                     type="checkbox"
                     id="gdpr-consent"
                     checked={formData.gdprConsent}
                     onChange={(e) => setFormData({ ...formData, gdprConsent: e.target.checked })}
-                    className="mt-1 w-4 h-4 text-blue-700 border-zinc-300 rounded focus:ring-teal-600"
+                    className="mt-1 w-4 h-4 text-blue-700 border-zinc-300 rounded focus:ring-blue-600"
                   />
                   <label htmlFor="gdpr-consent" className="text-xs text-zinc-500 leading-relaxed">
                     I consent to PureRend processing my data in accordance with the <a href="/your-rights" className="underline hover:text-blue-700" target="_blank">Privacy Policy</a>. I understand I will be contacted regarding my quote.
@@ -243,7 +255,7 @@ export default function QuoteCalculator() {
                     : 'bg-zinc-200 text-zinc-500 cursor-not-allowed'
                   }`}
                 >
-                  Request Instant Quote <ArrowRight className="w-5 h-5" />
+                  Send Quote Request <ArrowRight className="w-5 h-5" />
                 </motion.button>
               </div>
             </motion.div>
@@ -260,19 +272,19 @@ export default function QuoteCalculator() {
                 <CheckCircle2 className="w-12 h-12 text-green-600" />
               </div>
               <h3 className="text-3xl font-black font-headline text-zinc-900 mb-4 tracking-tight">
-                Quote Requested!
+                Quote Request Sent
               </h3>
               <p className="text-lg text-zinc-600 max-w-md mx-auto mb-8 leading-relaxed">
-                Thanks, {formData.name.split(" ")[0]}. Ben will be reviewing your property details and will send a message to {formData.phone} shortly.
+                Thanks, {formData.name.split(" ")[0]}. Ben will be in touch on {formData.phone} — usually same day.
               </p>
-              <button 
+              <button
                 onClick={() => {
                   setStep(1);
-                  setFormData({ propertyType: "", walls: "", insulation: "", name: "", phone: "", gdprConsent: false });
+                  setFormData({ serviceType: "", propertyType: "", walls: "", name: "", phone: "", gdprConsent: false });
                 }}
-                className="text-blue-700 font-bold hover:text-teal-700 underline underline-offset-4"
+                className="text-blue-700 font-bold hover:text-blue-500 underline underline-offset-4"
               >
-                Submit another property
+                Submit another enquiry
               </button>
             </motion.div>
           )}

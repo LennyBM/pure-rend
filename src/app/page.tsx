@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import QuoteCalculator from "@/components/forms/QuoteCalculator";
-import InteractiveSlider from "@/components/ui/InteractiveSlider";
 import { 
   ArrowRight, 
   Home as HomeIcon,
@@ -24,6 +23,8 @@ import {
 import { Button } from "@/components/ui/Button";
 
 import ClientContentPlaceholder from "@/components/ui/ClientContentPlaceholder";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
+import { StaggerContainer, StaggerItem } from "@/components/ui/StaggerReveal";
 
 export default function Home() {
   const prefersReducedMotion = useReducedMotion();
@@ -78,18 +79,18 @@ export default function Home() {
         >
           <div className="max-w-3xl space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black font-headline text-white leading-[1.1] tracking-normal mb-2">
-              Transform Your Space. <br />
-              <span className="text-blue-600">Stop Losing Sleep Over Cracked Walls.</span>
+              Plastering and rendering <br />
+              <span className="text-blue-600">done properly.</span>
             </h1>
             <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl leading-relaxed">
-              Making your dream home a reality with flawless finishes. Bude&apos;s most recommended rendering and plastering specialist — every project backed by our 10-year workmanship guarantee.
+              Based in Bude, covering North Cornwall and Devon. All work done by Ben — no subcontractors, no shortcuts. Backed by a 10-year workmanship guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <div className="flex flex-col gap-2">
                 <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }}>
                   <Button asChild className="rounded-3xl h-auto py-4 px-8 text-lg font-bold font-headline shadow-[0_0_20px_rgba(20,142,179,0.4)] hover:bg-blue-500 text-zinc-900 border-none transition-colors">
                     <Link href="/contact" className="gap-2 flex items-center justify-center">
-                      Get My Free Plastering Quote
+                      Get a Free Quote
                       <ArrowRight className="w-5 h-5" />
                     </Link>
                   </Button>
@@ -100,7 +101,7 @@ export default function Home() {
                   href="https://wa.me/447469931758"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass-surface text-zinc-900 px-8 py-4 text-lg font-bold hover:bg-white/10 transition-colors font-headline text-center flex items-center justify-center gap-2"
+                  className="rounded-3xl flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 font-medium transition-colors hover:bg-white/20 h-full"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Instant WhatsApp Chat
@@ -112,7 +113,7 @@ export default function Home() {
       </header>
 
       {/* 2. Brand Trust Bar */}
-      <section className="bg-white py-16 border-b border-zinc-200">
+      <section className="bg-zinc-50 py-12 border-b border-zinc-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center lg:justify-between items-center gap-12 lg:gap-16">
             <motion.div whileHover={{ scale: 1.05 }} className="relative w-48 h-16 md:w-56 md:h-20 transition-all duration-300">
@@ -160,32 +161,33 @@ export default function Home() {
             {/* Text Col */}
             <div>
               <h2 className="text-3xl md:text-5xl font-bold font-headline text-zinc-900 tracking-tight mb-6 leading-tight">
-                You shouldn&apos;t have to choose between a smooth finish and a clean home.
+                Work that speaks for itself — and customers who do the same.
               </h2>
               <div className="bg-teal-50/50 border-l-4 border-blue-600 p-6 mb-8 rounded-r-lg">
                 <p className="text-xl text-zinc-800 font-medium leading-relaxed italic">
-                  &quot;We treat every job site with the same respect we give our own homes, ensuring a flawless result without the dust and debris.&quot;
+                  &quot;I don&apos;t subcontract. I don&apos;t cut corners. And I don&apos;t leave a job until it&apos;s right. Every bit of work I&apos;ve ever had has come through recommendation.&quot;
                 </p>
+                <p className="text-sm text-zinc-500 mt-2 not-italic font-semibold">— Ben Rod, PureRend</p>
               </div>
               <p className="text-lg text-zinc-600 mb-6 leading-relaxed">
-                Ben Rod built PureRend on a simple belief — exceptional work speaks for itself. Every referral, every return customer, and every five-star review has come through recommendation rather than advertising. Modern rendering is a precise science, and coastal properties face unique challenges from salt spray and wind-driven rain. We engineer highly durable, breathable, and waterproof systems — from K-Rend to heritage lime — designed to increase your property&apos;s value and eliminate future maintenance.
+                I&apos;m Ben, and I do all the work myself. Living on the North Cornwall coast, I know exactly what render has to put up with — Atlantic weather, salt spray, driving rain. I use EcoRend&apos;s Generation 3 low-carbon systems and the right product for every job, whether that&apos;s silicone render for a coastal property or heritage lime for an old Cornish stone cottage.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-6 h-6 text-blue-600" />
-                  <span className="font-semibold text-zinc-800">Advanced Weatherproofing</span>
+                  <span className="font-semibold text-zinc-800">All work done by Ben</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-6 h-6 text-blue-600" />
-                  <span className="font-semibold text-zinc-800">BBA-Approved Materials</span>
+                  <span className="font-semibold text-zinc-800">NVQ Level 2 qualified</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-6 h-6 text-blue-600" />
-                  <span className="font-semibold text-zinc-800">Meticulous Site Cleanup</span>
+                  <span className="font-semibold text-zinc-800">Site left clean and tidy</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-6 h-6 text-blue-600" />
-                  <span className="font-semibold text-zinc-800">Transparent & Inclusive Quoting</span>
+                  <span className="font-semibold text-zinc-800">Day rate — no hidden costs</span>
                 </div>
               </div>
             </div>
@@ -193,48 +195,95 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 4. Project Transformations Slider (Static Representation) */}
+      {/* 4. Testimonials */}
+      <section className="py-12 md:py-24 bg-zinc-900">
+        <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-white mb-3">What customers say</h2>
+            <div className="flex justify-center gap-1 mb-2">
+              {[1,2,3,4,5].map(s => (
+                <svg key={s} className="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+            <p className="text-zinc-400 text-sm">Google · MyBuilder · Rated People</p>
+          </div>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { author: "Steve Allonby", source: "Google", text: "Excellent, wouldn't hesitate to recommend to anyone, great quality, value and very responsive, many thanks." },
+              { author: "Darren Horstmann", source: "Google", text: "Ben and the team provided an outstanding rendering service. The attention to detail and quality of the finish completely transformed our property. Highly absolute class professionalism." },
+              { author: "Verified Customer", source: "MyBuilder", text: "Ben is an outstanding tradesman! He responded promptly, gave me a competitive quote and worked really hard to the timetable agreed. Did an absolutely brilliant job and left everything neat and tidy. Would happily recommend to anyone." },
+              { author: "Verified Customer", source: "Rated People", text: "Ben is hard working, punctual, reliable and the quality of his work is very good. Turned up on time, did the job in the timescale and price he said he would, and tidied away at the end of every day. A trustworthy chap, we would use again." },
+            ].map((r, i) => (
+              <StaggerItem key={i}>
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-7 h-full flex flex-col">
+                  <div className="flex gap-1 mb-4">
+                    {[1,2,3,4,5].map(s => (
+                      <svg key={s} className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    ))}
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed mb-5 text-sm flex-grow">&ldquo;{r.text}&rdquo;</p>
+                  <div className="flex items-center justify-between mt-auto">
+                    <span className="font-bold text-white text-sm">{r.author}</span>
+                    <span className="text-zinc-500 text-xs uppercase tracking-wider font-semibold">{r.source}</span>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </motion.div>
+      </section>
+
+      {/* 5. Project Transformations — Before & After Sliders */}
+      {/* TODO: Replace placeholder before/after images with real client-supplied before/after photos */}
       <section className="py-12 md:py-24 bg-blue-50 border-y border-blue-100">
         <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16 text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold font-headline text-zinc-900 mb-4">Project Transformations</h2>
+            <h2 className="text-4xl font-bold font-headline text-zinc-900 mb-4">Recent Work</h2>
             <p className="text-lg text-zinc-500">
-              Witness the evolution of local Bude properties from weathered brick to pristine modern architectural finishes.
+              Drag the slider to see the difference. Real rendering and plastering projects across Bude and North Cornwall.
             </p>
           </div>
-          
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 space-y-6">
-              <span className="text-blue-600 font-bold uppercase tracking-widest text-sm font-headline">Featured Project</span>
-              <h3 className="text-3xl md:text-4xl font-bold font-headline text-zinc-900">Bude Coastal Extension</h3>
-              <p className="text-zinc-600 text-lg leading-relaxed">
-                This project required a complete architectural finish for a major double-story extension. We applied a waterproof base coat and finished with a premium through-coloured system to protect against rapid coastal weathering, ensuring decades of vibrant, maintenance-free protection.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="bg-white/80 backdrop-blur-md p-5 border border-blue-100 rounded-2xl shadow-sm">
-                  <div className="text-blue-600 font-bold text-sm uppercase tracking-wider mb-1 font-headline">System</div>
-                  <div className="text-zinc-900 font-bold">Ecorend Silicone</div>
-                </div>
-                <div className="bg-white/80 backdrop-blur-md p-5 border border-blue-100 rounded-2xl shadow-sm">
-                  <div className="text-blue-600 font-bold text-sm uppercase tracking-wider mb-1 font-headline">Location</div>
-                  <div className="text-zinc-900 font-bold">North Cornwall</div>
-                </div>
-              </div>
-            </div>
-            
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="order-1 md:order-2 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5"
-            >
-              <Image 
-                src="/images/real_portfolio/double-story-extension-main.webp"
-                alt="Completed PureRend Project"
-                fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
+
+          <StaggerContainer className="max-w-4xl mx-auto space-y-12">
+            {/* Featured slider */}
+            <StaggerItem>
+              <BeforeAfterSlider
+                beforeImage="/images/purerend-silicone-rendering-before-1.webp"
+                afterImage="/images/purerend-silicone-rendering-after-1.webp"
+                beforeAlt="Property before silicone rendering in Bude, North Cornwall"
+                afterAlt="Property after silicone rendering by PureRend in Bude, North Cornwall"
+                beforeLabel="Before"
+                afterLabel="After"
+                caption="Silicone render — EcoRend system, North Cornwall"
               />
-              <ClientContentPlaceholder />
-            </motion.div>
-          </div>
+            </StaggerItem>
+
+            {/* Two-up grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <StaggerItem>
+                <BeforeAfterSlider
+                  beforeImage="/images/purerend-monocouche-render-before-2.webp"
+                  afterImage="/images/purerend-monocouche-render-after-2.webp"
+                  beforeAlt="Property before monocouche rendering in North Cornwall"
+                  afterAlt="Property after monocouche rendering by PureRend"
+                  beforeLabel="Before"
+                  afterLabel="After"
+                  caption="Monocouche render — through-coloured finish"
+                />
+              </StaggerItem>
+              <StaggerItem>
+                <BeforeAfterSlider
+                  beforeImage="/images/purerend-external-wall-insulation-before-3.webp"
+                  afterImage="/images/purerend-external-wall-insulation-after-3.webp"
+                  beforeAlt="Property before external wall insulation in Cornwall"
+                  afterAlt="Property after EWI installation by PureRend"
+                  beforeLabel="Before"
+                  afterLabel="After"
+                  caption="External wall insulation — EWI system"
+                />
+              </StaggerItem>
+            </div>
+          </StaggerContainer>
         </motion.div>
       </section>
 
@@ -242,48 +291,34 @@ export default function Home() {
       <section className="py-12 md:py-24 mesh-bg">
         <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <h2 className="text-4xl font-bold font-headline text-zinc-900 mb-4 text-center">Our Rendering Services</h2>
+            <h2 className="text-4xl font-bold font-headline text-zinc-900 mb-4 text-center">Rendering &amp; Plastering Services</h2>
             <div className="w-20 h-1.5 bg-blue-600 mx-auto"></div>
           </div>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={{
-              hidden: { opacity: 0 },
-              show: {
-                opacity: 1,
-                transition: { staggerChildren: 0.1 }
-              }
-            }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
+
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: HomeIcon, title: "Monocouche", desc: "Through-coloured, highly breathable formulation. Eliminates the need for future painting while resisting coastal weathering." },
-              { icon: Layers, title: "Silicone Renders", desc: "Hydrophobic, self-cleaning technology. Repels moisture and biological growth. Ideal for extreme Atlantic exposure in Bude." },
-              { icon: ThermometerSnowflake, title: "External Wall Insulation", desc: "Dramatically reduce heating bills by wrapping your home in engineered thermal mass. Eradicates cold bridging and condensation." },
-              { icon: PenTool, title: "Thin Coat Systems", desc: "Polymer-modified, highly flexible renders. Perfect for modern construction and timber frames requiring anti-crack resilience." },
-              { icon: Brush, title: "Heritage Lime Render", desc: "Vapour-permeable natural lime. Essential for older Cornish stone properties, allowing walls to breathe and preventing trapped moisture." },
-              { icon: Wrench, title: "Machine Application", desc: "High-velocity spray application for flawless consistency and rapid completion on larger commercial or residential projects." },
-              { icon: Shield, title: "Rendering Repair", desc: "Precision restoration of damaged, cracked, or blown renders. We identify the root cause before applying structural fixes." },
-              { icon: Droplets, title: "Soft-Wash Aftercare", desc: "Gentle fungicidal treatment to eradicate algae and salt build-up without high-pressure damage, keeping your render pristine." }
+              { icon: HomeIcon, title: "Monocouche", desc: "One-coat, through-coloured render. The colour goes all the way through so there's no repainting needed — ever. Great on new builds and extensions." },
+              { icon: Layers, title: "Silicone Renders", desc: "Water-repellent and self-cleaning. Brilliant for coastal properties that take a battering from Atlantic weather. Walls breathe, algae doesn't stick." },
+              { icon: ThermometerSnowflake, title: "External Wall Insulation", desc: "Wrap the house in insulation board, then render over the top. Cuts heat loss, eliminates cold spots, and transforms the look in one job." },
+              { icon: PenTool, title: "Thin Coat Systems", desc: "Flexible and crack-resistant. The right choice for timber frames and modern builds where movement is a factor." },
+              { icon: Brush, title: "Heritage Lime Render", desc: "Breathable lime for older Cornish stone properties. Lets walls dry out naturally — the right material for the job, not just the cheapest." },
+              { icon: Wrench, title: "Machine Application", desc: "Spray-applied render for consistent coverage on bigger jobs. Same quality as hand-finished, just faster on larger areas." },
+              { icon: Shield, title: "Rendering Repair", desc: "Fixing cracked, blown, or failed render. I find out why it failed before I fix it — otherwise you're just patching the same problem twice." },
+              { icon: Droplets, title: "Soft-Wash Aftercare", desc: "Chemical cleaning for algae and moss. No pressure washing — that strips the render. Low-pressure biocide that kills it at the root." },
+              { icon: ChevronsUpDown, title: "Internal Plastering", desc: "Skimming, boarding, ceilings. Smooth, flat, paint-ready. Same care inside as out." }
             ].map((service, i) => (
-              <motion.div 
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } }
-                }}
-                whileHover={{ y: -5, scale: 1.02 }} 
-                className="bg-white/80 backdrop-blur-xl p-8 rounded-3xl group transition-all duration-300 shadow-lg border border-white/50 hover:shadow-2xl hover:shadow-blue-500/10"
-              >
-                <service.icon className="w-10 h-10 text-blue-600 group-hover:scale-110 transition-transform mb-6 drop-shadow-md" />
-                <h3 className="text-xl font-bold mb-4 font-headline text-zinc-900 border-l-4 border-blue-600 pl-3">{service.title}</h3>
-                <p className="text-zinc-600 text-sm leading-relaxed">{service.desc}</p>
-              </motion.div>
+              <StaggerItem key={i} className="h-full">
+                <motion.div 
+                  whileHover={{ y: -5, scale: 1.02 }} 
+                  className="bg-white/80 backdrop-blur-xl p-8 rounded-3xl group transition-all duration-300 shadow-lg border border-white/50 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col"
+                >
+                  <service.icon className="w-10 h-10 text-blue-600 group-hover:scale-110 transition-transform mb-6 drop-shadow-md" />
+                  <h3 className="text-xl font-bold mb-4 font-headline text-zinc-900 border-l-4 border-blue-600 pl-3">{service.title}</h3>
+                  <p className="text-zinc-600 text-sm leading-relaxed">{service.desc}</p>
+                </motion.div>
+              </StaggerItem>
             ))}
-          </motion.div>
+          </StaggerContainer>
         </motion.div>
       </section>
 
@@ -292,24 +327,15 @@ export default function Home() {
         <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
             <div>
-              <span className="uppercase tracking-[0.2em] text-xs font-bold text-blue-600 mb-3 block font-headline">Serving North Cornwall</span>
-              <h2 className="text-4xl font-bold font-headline text-zinc-900">Primary Service Locations</h2>
+              <span className="uppercase tracking-[0.2em] text-xs font-bold text-blue-600 mb-3 block font-headline">North Cornwall &amp; Devon</span>
+              <h2 className="text-4xl font-bold font-headline text-zinc-900">Areas I Cover</h2>
             </div>
             <p className="max-w-md text-zinc-600 text-lg">
-              We provide specialist architectural rendering services across Bude and the surrounding coastal villages.
+              Based in Bude. I cover a 25-mile radius into North Cornwall and North Devon — most jobs are within 30 minutes of home.
             </p>
           </div>
           
-          <motion.div 
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              show: { opacity: 1, transition: { staggerChildren: 0.1 } }
-            }}
-            className="grid grid-cols-2 md:grid-cols-5 gap-6"
-          >
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
               { name: "Bude", tag: "Main Hub", href: "/locations/bude", cols: 1 },
               { name: "Stratton", tag: "Local", href: "/locations/stratton", cols: 1 },
@@ -317,25 +343,25 @@ export default function Home() {
               { name: "Widemouth Bay", tag: "Coastal", href: "/locations/widemouth-bay", cols: 1 },
               { name: "Marhamchurch", tag: "Valley", href: "/locations/marhamchurch", cols: 2 }
             ].map((loc, i) => (
-              <motion.div 
+              <StaggerItem
                 key={loc.name}
-                variants={{
-                  hidden: { opacity: 0, scale: 0.9 },
-                  show: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 60 } }
-                }}
-                whileHover={{ y: -5, scale: 1.03 }}
-                className={loc.cols === 2 ? "col-span-2 md:col-span-1" : ""}
+                className={loc.cols === 2 ? "col-span-2 md:col-span-1 h-full" : "h-full"}
               >
-                <Link href={loc.href} className="bg-white/90 backdrop-blur-xl min-h-[14rem] flex flex-col items-center justify-center rounded-3xl shadow-lg border border-white/60 hover:shadow-2xl hover:shadow-blue-500/10 transition-all group p-6 text-center h-full">
-                  <span className="font-bold font-headline text-2xl mb-2 text-zinc-800 group-hover:text-blue-600 transition-colors">{loc.name}</span>
-                  <span className="text-xs text-zinc-500 uppercase tracking-widest mb-4">{loc.tag}</span>
-                  <span className="text-sm font-bold text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                    View Area Guide <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
-              </motion.div>
+                <motion.div 
+                  whileHover={{ y: -5, scale: 1.03 }}
+                  className="h-full"
+                >
+                  <Link href={loc.href} className="bg-white/90 backdrop-blur-xl min-h-[14rem] flex flex-col items-center justify-center rounded-3xl shadow-lg border border-white/60 hover:shadow-2xl hover:shadow-blue-500/10 transition-all group p-6 text-center h-full">
+                    <span className="font-bold font-headline text-2xl mb-2 text-zinc-800 group-hover:text-blue-600 transition-colors">{loc.name}</span>
+                    <span className="text-xs text-zinc-500 uppercase tracking-widest mb-4">{loc.tag}</span>
+                    <span className="text-sm font-bold text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                      View Area Guide <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </motion.div>
+              </StaggerItem>
             ))}
-          </motion.div>
+          </StaggerContainer>
         </motion.div>
       </section>
 
@@ -346,11 +372,10 @@ export default function Home() {
         <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-headline text-zinc-900 tracking-tight leading-[1.1] mb-6">
-              Start your project with Ben Rod&apos;s <br className="hidden md:block"/>
-              local coastal expertise.
+              Get a free quote from Ben
             </h2>
             <p className="text-xl text-zinc-500 max-w-2xl mx-auto">
-              Get an instant, transparent quote. Complete the form below and Ben will review your requirements.
+              Fill in a few details and Ben will get back to you — usually same day.
             </p>
           </div>
           
@@ -370,40 +395,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Structured Data for Local SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "PureRend",
-            "image": "https://purerend.co.uk/purerend-official-logo.webp",
-            "description": "Bude's premier rendering specialists offering silicone render, monocouche, external wall insulation (EWI), and architectural finishes.",
-            "url": "https://purerend.co.uk",
-            "telephone": "+447761735022",
-            "areaServed": {
-              "@type": "GeoCircle",
-              "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": 50.8291,
-                "longitude": -4.5452
-              },
-              "geoRadius": "25000"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Bude",
-              "addressRegion": "Cornwall",
-              "addressCountry": "UK"
-            },
-            "sameAs": [
-              "https://www.facebook.com/PureRend"
-            ],
-            "priceRange": "$$"
-          })
-        }}
-      />
+      {/* LocalBusiness schema is now site-wide in layout.tsx */}
     </div>
   );
 }

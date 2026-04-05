@@ -10,31 +10,31 @@ export const metadata = {
 const steps = [
   {
     number: "01",
-    title: "Transparent Consultation",
-    body: "Before any scaffolding arrives, we inspect the property in person. We assess geographical exposure to coastal winds, examine the existing wall structure and substrate, then provide a transparent, fixed-price quote. No hidden costs — ever.",
+    title: "Site visit and honest quote",
+    body: "Before any scaffolding goes up, I come out and look at the job in person. I check the existing substrate, the exposure to weather, what's caused any existing problems — and then give you a straight quote. Day rate plus materials, no hidden extras.",
     image: "/images/real_portfolio/sand-cement-new-build-main.webp",
-    imageAlt: "Property assessment before rendering",
+    imageAlt: "Property assessment before rendering in Bude, Cornwall",
   },
   {
     number: "02",
-    title: "Substrate Engineering",
-    body: "A render is only as strong as what it's attached to. We painstakingly prepare the substrate — stripping failed render, treating algae and organic growth, applying stabilizing primers, and embedding reinforcement mesh around high-stress areas like windows and doors to prevent micro-cracking.",
+    title: "Proper preparation",
+    body: "A render job is only as good as the surface underneath it. I strip any failed render, treat algae and organic growth, apply stabilising primer, and embed reinforcement mesh around windows and doors where cracking is most likely. Get this wrong and the render fails — so I don't skip it.",
     image: "/images/real_portfolio/internal-works-aug-2024-main.webp",
-    imageAlt: "Substrate preparation and primer application",
+    imageAlt: "Substrate preparation before rendering in North Cornwall",
   },
   {
     number: "03",
-    title: "Precision Application",
-    body: "For flawless consistency we use state-of-the-art spray rendering machines where appropriate, guaranteeing the correct water-to-compound ratio for maximum structural integrity. Our master plasterers then hand-finish every surface to exact tolerances, achieving a result no machine alone can replicate.",
+    title: "Application — by hand or machine",
+    body: "On bigger jobs I use a spray machine for consistent coverage. On smaller areas or detail work it's hand-applied. Either way, I finish every surface myself — clean lines, level faces, sharp edges. The machine gets it on, I make it right.",
     image: "/images/real_portfolio/christmas-2022-review-child-6.webp",
-    imageAlt: "Machine-applied monocouche rendering",
+    imageAlt: "Machine-applied monocouche rendering in Cornwall",
   },
   {
     number: "04",
-    title: "Immaculate Site Cleanup",
-    body: "Your home is not a building site. All windows, doors, driveways and gardens are extensively masked before a single drop of render is mixed. When the scaffolding comes down we leave the site completely spotless — no cement dust on the patio, no mess in the garden. Just a stunning architectural finish.",
+    title: "Clean site, done job",
+    body: "Before I start mixing anything, all windows, doors, driveways and plants are masked and protected. When the scaffolding comes down, the site is spotless — no render on the patio, no mess in the garden. Just a finished job I'm happy to put my name to.",
     image: "/images/real_portfolio/summer-sprays-ecorend-main.webp",
-    imageAlt: "Finished silicone render — clean site handover",
+    imageAlt: "Finished silicone render in Bude — clean site handover",
   },
 ];
 
@@ -55,13 +55,13 @@ export default function ProcessPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-14 md:pb-18 w-full">
           <span className="inline-block bg-blue-600/20 border border-blue-500/30 text-blue-400 font-semibold tracking-[0.2em] uppercase text-xs px-4 py-2 rounded-full mb-5 font-headline">
-            The PureRend Standard
+            How I Work
           </span>
           <h1 className="text-4xl md:text-6xl font-headline font-bold text-white leading-tight mb-4 max-w-3xl">
-            Precision Engineering. <br /> Flawless Execution.
+            What to expect <br /> when you hire Ben.
           </h1>
           <p className="text-lg text-zinc-300 max-w-2xl leading-relaxed">
-            We don&apos;t just &ldquo;throw mud at a wall.&rdquo; Modern rendering is a chemical science — we manage every variable from substrate to site cleanup.
+            A good render job starts well before the first coat goes on. Here&apos;s how I approach every project.
           </p>
         </div>
       </header>
@@ -162,10 +162,10 @@ export default function ProcessPage() {
       {/* ── FINAL CTA ── */}
       <section className="py-24 bg-white text-center px-6">
         <h2 className="text-3xl md:text-4xl font-headline font-bold text-zinc-900 mb-4">
-          Ready to see the PureRend process first-hand?
+          Want Ben to take a look at your job?
         </h2>
         <p className="text-zinc-500 mb-10 max-w-xl mx-auto text-lg">
-          Book a free, no-obligation site survey and get a fully transparent, fixed-price quote from Ben.
+          Free site visit, no obligation. Ben will give you a straight quote and tell you honestly what the job needs.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link

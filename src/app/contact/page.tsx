@@ -27,11 +27,11 @@ export default function ContactPage() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold font-headline text-zinc-900 mb-6 drop-shadow-sm">
-            Start Your <span className="text-blue-600">Transformation</span>
+            Get a <span className="text-blue-600">Free Quote</span>
           </h1>
-          
+
           <p className="text-xl text-zinc-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Whether it&apos;s a coastal property requiring advanced weather defense, or an internal plastering repair, our technical team is ready to design the exact material specification your project needs.
+            Whether it&apos;s a full external render, internal plastering, or just a repair job — fill in the form and Ben will get back to you the same day. No hard sell, no pressure.
           </p>
         </div>
       </section>
@@ -90,20 +90,20 @@ export default function ContactPage() {
             {/* Social Proof & Socials */}
             <div className="bg-blue-50 rounded-3xl p-8 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-20 -mt-20" />
-              <h3 className="text-xl font-bold font-headline text-zinc-900 mb-6 relative z-10">Follow the Process</h3>
+              <h3 className="text-xl font-bold font-headline text-zinc-900 mb-6 relative z-10">See the work in progress</h3>
               <p className="text-zinc-500 mb-8 relative z-10 leading-relaxed">
-                We document our advanced silicone applications, from base-coat preparation to final cure. See our material science in action.
+                Ben documents jobs from start to finish on Instagram and TikTok — real work, not showreel stuff.
               </p>
-              
-              <a 
-                href="https://instagram.com/purerend" 
+
+              <a
+                href="https://www.instagram.com/purerendsw/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-between w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4 transition-all group relative z-10"
               >
                 <div className="flex items-center gap-3">
                   <Camera className="w-5 h-5 text-zinc-600" />
-                  <span className="font-semibold text-zinc-900">@purerend</span>
+                  <span className="font-semibold text-zinc-900">@purerendsw</span>
                 </div>
                 <ArrowRight className="w-5 h-5 text-blue-500 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -126,10 +126,10 @@ export default function ContactPage() {
             <div className="sticky top-32">
               <div className="mb-6">
                 <h2 className="text-3xl font-bold font-headline text-zinc-900 mb-2">
-                  Get an Instant Estimate
+                  Get a Free Quote
                 </h2>
                 <p className="text-zinc-600 leading-relaxed">
-                  Fill out our intelligent calculation framework to receive a rapid baseline estimate. We require zero long-term commitments for quotes.
+                  Takes two minutes. Ben will review your details and be in touch — no obligation.
                 </p>
               </div>
               

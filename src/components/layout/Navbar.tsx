@@ -99,7 +99,7 @@ export function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           id="mobile-menu" 
-          className="lg:hidden glass-surface border-t border-white/20 px-4 pb-6 shadow-2xl mx-[-1rem] mt-3 rounded-b-3xl rounded-t-none"
+          className="lg:hidden bg-white/95 backdrop-blur-2xl border-t border-zinc-200 px-4 pb-6 shadow-[0_30px_60px_rgba(0,0,0,0.12)] mx-[-1rem] mt-4 pt-2 rounded-b-3xl rounded-t-none relative z-50"
         >
           <nav className="flex flex-col gap-1 pt-4" aria-label="Mobile Navigation">
             {navLinks.map((link) => (

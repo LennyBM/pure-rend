@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/data/services";
 import QuoteCalculator from "@/components/forms/QuoteCalculator";
-import InteractiveSlider from "@/components/ui/InteractiveSlider";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 import { ArrowRight, Phone, Mail, CheckCircle, ChevronDown } from "lucide-react";
 import Script from "next/script";
 import ClientContentPlaceholder from "@/components/ui/ClientContentPlaceholder";
@@ -174,18 +174,24 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-headline font-bold text-zinc-900 mb-3">
-                See the Transformation
+                See the Difference
               </h2>
               <p className="text-zinc-500 max-w-xl mx-auto">
                 Drag the slider to reveal the before and after on a real {service.name.toLowerCase()} project.
               </p>
             </div>
-            <InteractiveSlider
-              beforeImage={service.beforeImage!}
-              afterImage={service.afterImage!}
-              beforeLabel="Before"
-              afterLabel="After"
-            />
+            {/* TODO: Replace with real client-supplied before/after photos */}
+            <div className="max-w-3xl mx-auto">
+              <BeforeAfterSlider
+                beforeImage={service.beforeImage!}
+                afterImage={service.afterImage!}
+                beforeAlt={`Property before ${service.name.toLowerCase()} in North Cornwall`}
+                afterAlt={`Property after ${service.name.toLowerCase()} by PureRend in North Cornwall`}
+                beforeLabel="Before"
+                afterLabel="After"
+                caption={`${service.name} — real project, North Cornwall`}
+              />
+            </div>
           </div>
         </section>
       )}
@@ -290,18 +296,75 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
+            "name": service.name,
             "serviceType": service.name,
+            "url": `https://purerend.co.uk/services/${service.slug}`,
+            "description": service.shortDescription,
             "provider": {
               "@type": "LocalBusiness",
               "name": "PureRend",
               "telephone": "+447469931758",
-              "address": { "@type": "PostalAddress", "addressLocality": "Bude", "addressRegion": "Cornwall", "addressCountry": "UK" }
+              "url": "https://purerend.co.uk",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "64 High Street",
+                "addressLocality": "Bideford",
+                "addressRegion": "Devon",
+                "postalCode": "EX39 2AR",
+                "addressCountry": "GB"
+              }
             },
-            "areaServed": { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 50.8291, "longitude": -4.5452 }, "geoRadius": "40000" },
-            "description": service.shortDescription,
+            "areaServed": [
+              { "@type": "City", "name": "Bude" },
+              { "@type": "City", "name": "Holsworthy" },
+              { "@type": "City", "name": "Bideford" },
+              { "@type": "City", "name": "Barnstaple" },
+              { "@type": "City", "name": "Stratton" },
+              { "@type": "City", "name": "Launceston" },
+              { "@type": "City", "name": "Camelford" }
+            ]
           })
         }}
       />
+
+      {/* BreadcrumbList schema */}
+      <Script
+        id={`schema-breadcrumb-${service.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://purerend.co.uk" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://purerend.co.uk/services" },
+              { "@type": "ListItem", "position": 3, "name": service.name, "item": `https://purerend.co.uk/services/${service.slug}` }
+            ]
+          })
+        }}
+      />
+
+      {/* FAQPage schema */}
+      {service.faqs.length > 0 && (
+        <Script
+          id={`schema-faq-${service.slug}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": service.faqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer
+                }
+              }))
+            })
+          }}
+        />
+      )}
     </div>
   );
 }

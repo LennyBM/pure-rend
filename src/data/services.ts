@@ -171,7 +171,7 @@ export const services: ServiceData[] = [
       { title: "01. Logistics & Setup", description: "Establishing spray zones, material mixing stations, and intensive masking." },
       { title: "02. Mechanical Mixing", description: "Automated continuous mixing ensures perfectly hydrated material." },
       { title: "03. Spray Application", description: "High-velocity spraying of the basecoat or monocouche directly onto the substrate." },
-      { title: "04. Hand-Finished Detailing", description: "Our master plasterers follow the spray, ruling off and finishing the surface by hand for perfect tolerances." }
+      { title: "04. Hand-Finished Detailing", description: "Ben follows the spray, ruling off and finishing the surface by hand to get clean, level lines." }
     ],
     faqs: [
       { question: "Is machine rendering cheaper?", answer: "On small domestic jobs, the setup time negates savings. On large projects or new builds, the massive reduction in labour time significantly lowers overall project costs." },
@@ -234,12 +234,12 @@ export const services: ServiceData[] = [
   {
     slug: "internal-plastering",
     name: "Internal Plastering",
-    title: "Internal Plastering Cornwall | Elite Paint-Ready Finishes | PureRend",
-    metaDescription: "Transform tired walls into perfect, glass-like, paint-ready surfaces with our 100% dust-free internal plastering services in Bude and Cornwall.",
-    h1: "Precision Internal Plastering",
-    shortDescription: "Premium internal plastering for an ultimate smooth, paint-ready surface over tired walls.",
+    title: "Internal Plastering in Bude & Cornwall | PureRend",
+    metaDescription: "Internal plastering by Ben Rod — skimming, boarding, and ceilings across Bude and North Cornwall. Smooth, paint-ready finishes. Fully insured, 10-year guarantee.",
+    h1: "Internal Plastering",
+    shortDescription: "Skimming, boarding, ceilings — smooth and paint-ready. Done properly, left clean.",
     heroImage: "/images/real_portfolio/garage-float-apartment-skim-main.webp",
-    longDescription: "A truly flawless interior begins with masterful plastering. Whether you are renovating an entire property, building an extension, or simply looking to skim over deeply textured Artex, our precision internal plastering services deliver an 'ultimate finish' that is glass-smooth and entirely paint-ready. We treat your property with absolute respect, using a 100% dust-free process with advanced extraction units, rigorous site protection, and a meticulous clean-up. Every job is backed by our 10-year workmanship warranty.",
+    longDescription: "Whether it's a skim over tired walls, plasterboarding a new room, or a full ceiling, I do it the same way I do everything else — properly. Your home is left clean at the end of every day and the finish is smooth enough to paint straight onto. All work is backed by my 10-year workmanship guarantee.",
     benefits: [
       { title: "Paint-Ready Perfection", description: "A glass-smooth surface that requires absolutely zero prep work before painting.", icon: Sparkles },
       { title: "100% Dust-Free Process", description: "Advanced dust-extraction sanding and meticulous masking keeps your home spotless.", icon: Wind },

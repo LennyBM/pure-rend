@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
     
-    const { propertyType, walls, insulation, name, phone, gdprConsent } = data;
+    const { serviceType, propertyType, walls, name, phone, gdprConsent } = data;
 
     if (!name || !phone || !gdprConsent) {
       return NextResponse.json(
@@ -29,9 +29,9 @@ export async function POST(req: Request) {
         <ul>
           <li><strong>Name:</strong> ${name}</li>
           <li><strong>Phone:</strong> ${phone}</li>
+          <li><strong>Service Needed:</strong> ${serviceType || "Not specified"}</li>
           <li><strong>Property Type:</strong> ${propertyType || "Not specified"}</li>
-          <li><strong>Number of Walls:</strong> ${walls || "Not specified"}</li>
-          <li><strong>Needs EWI (Insulation):</strong> ${insulation ? "Yes" : "No"}</li>
+          <li><strong>Scope:</strong> ${walls || "Not specified"}</li>
           <li><strong>GDPR Consent:</strong> ${gdprConsent ? "Yes" : "No"}</li>
         </ul>
         <hr />

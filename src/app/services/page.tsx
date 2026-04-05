@@ -4,6 +4,8 @@ import { ArrowRight, Wrench } from "lucide-react";
 import { services } from "@/data/services";
 import ClientContentPlaceholder from "@/components/ui/ClientContentPlaceholder";
 
+import { StaggerContainer, StaggerItem } from "@/components/ui/StaggerReveal";
+
 export const metadata = {
   title: "Specialist Rendering Services | PureRend",
   description: "Explore our range of premium rendering and plastering services across North Cornwall and Devon. From silicone systems to heritage lime finishes.",
@@ -28,39 +30,40 @@ export default function ServicesHub() {
 
       {/* Services Grid */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
-            <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
-              className="group relative rounded-2xl overflow-hidden h-72 block border border-zinc-200 hover:border-blue-600/40 transition-all duration-500 shadow-sm hover:shadow-xl"
-            >
-              {/* Background image */}
-              <Image
-                src={service.heroImage}
-                alt={service.name}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <ClientContentPlaceholder className="opacity-70 group-hover:opacity-100 transition-opacity" />
-              {/* Gradient overlay — stronger at bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/95 via-zinc-900/50 to-zinc-900/10 pointer-events-none" />
+            <StaggerItem key={service.slug}>
+              <Link
+                href={`/services/${service.slug}`}
+                className="group relative rounded-2xl overflow-hidden h-72 block border border-zinc-200 hover:border-blue-600/40 transition-all duration-500 shadow-sm hover:shadow-xl"
+              >
+                {/* Background image */}
+                <Image
+                  src={service.heroImage}
+                  alt={service.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <ClientContentPlaceholder className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                {/* Gradient overlay — stronger at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/95 via-zinc-900/50 to-zinc-900/10 pointer-events-none" />
 
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-7">
-                <h2 className="text-xl font-headline font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                  {service.name}
-                </h2>
-                <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2 mb-4">
-                  {service.shortDescription}
-                </p>
-                <div className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 tracking-wide">
-                  Explore <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-7">
+                  <h2 className="text-xl font-headline font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    {service.name}
+                  </h2>
+                  <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2 mb-4">
+                    {service.shortDescription}
+                  </p>
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 tracking-wide">
+                    Explore <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </section>
     </div>
   );
