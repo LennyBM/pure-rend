@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, Search } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 
 export default function NotFound() {
   const prefersReducedMotion = useReducedMotion();
@@ -14,19 +14,19 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen flex items-center justify-center mesh-bg px-6 pt-24 pb-12">
-      <motion.div 
+      <m.div 
         {...reveal}
         className="max-w-2xl w-full text-center space-y-8 glass-surface p-12 shadow-2xl relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/10 via-transparent to-transparent pointer-events-none" />
         
         <div className="relative z-10 flex flex-col items-center">
-          <motion.div 
+          <m.div 
             whileHover={{ scale: 1.05, rotate: 5 }}
             className="inline-flex items-center justify-center w-24 h-24 bg-white/50 backdrop-blur-sm border border-blue-100 rounded-[2rem] shadow-sm mb-6"
           >
             <Search className="w-12 h-12 text-blue-600 drop-shadow-md" />
-          </motion.div>
+          </m.div>
           
           <h1 className="text-4xl md:text-6xl font-headline font-black text-zinc-900 tracking-tight mb-4">
             Page Not Found
@@ -38,23 +38,23 @@ export default function NotFound() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-8 w-full">
-            <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
+            <m.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
               <Link
                 href="/"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold font-headline hover:bg-white hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all shadow-md"
               >
                 Return Home
               </Link>
-            </motion.div>
+            </m.div>
             
-            <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
+            <m.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
               <Link
                 href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/60 text-zinc-900 border border-white/80 px-8 py-4 rounded-2xl font-bold font-headline hover:bg-white transition-colors backdrop-blur-md shadow-sm"
               >
                 Contact Us <ArrowRight className="w-4 h-4" />
               </Link>
-            </motion.div>
+            </m.div>
           </div>
 
           <div className="pt-10 mt-10 border-t border-zinc-200/50 w-full space-y-5">
@@ -67,7 +67,7 @@ export default function NotFound() {
              </div>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

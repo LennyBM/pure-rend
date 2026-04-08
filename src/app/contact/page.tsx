@@ -1,13 +1,28 @@
-import QuoteCalculator from "@/components/forms/QuoteCalculator";
+import dynamic from "next/dynamic";
 import { Mail, MapPin, Phone, Camera, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import CoverageAreaMap from "@/components/ui/CoverageAreaMap";
-import GoogleReviewSlider from "@/components/ui/GoogleReviewSlider";
+const QuoteCalculator = dynamic(() => import("@/components/forms/QuoteCalculator"), {
+  loading: () => <div className="w-full max-w-2xl mx-auto h-[420px] bg-zinc-100 rounded-3xl animate-pulse" />,
+});
+const GoogleReviewSlider = dynamic(() => import("@/components/ui/GoogleReviewSlider"), {
+  loading: () => <div className="h-48 bg-zinc-100 rounded-2xl animate-pulse" />,
+});
 
 export const metadata: Metadata = {
   title: "Contact PureRend | Silicone Rendering & Plastering in Bude",
   description: "Get a free quote for your rendering or plastering project in Bude, Cornwall. Contact Ben at PureRend today.",
+  alternates: { canonical: "https://purerend.co.uk/contact" },
+  openGraph: {
+    title: "Get a Free Quote | PureRend Bude",
+    description: "Contact Ben at PureRend for a free, no-pressure quote on rendering or plastering in North Cornwall or Devon.",
+    url: "https://purerend.co.uk/contact",
+    type: "website",
+    siteName: "PureRend",
+    locale: "en_GB",
+    images: [{ url: "/images/purerend-rendering-specialist-hero.webp", width: 1200, height: 630, alt: "PureRend — Rendering Specialist, Bude Cornwall" }],
+  },
 };
 
 export default function ContactPage() {
@@ -47,7 +62,7 @@ export default function ContactPage() {
               
               <div className="flex flex-col gap-6">
                 <a 
-                  href="tel:07469931758" 
+                  href="tel:+447761735022" 
                   className="group flex items-center gap-6 p-6 rounded-3xl bg-white border border-zinc-200 hover:border-blue-200 hover:shadow-lg transition-all"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
@@ -55,7 +70,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-1">Call Ben Direct</p>
-                    <p className="text-xl font-bold text-zinc-900 group-hover:text-blue-700 transition-colors">07469 931 758</p>
+                    <p className="text-xl font-bold text-zinc-900 group-hover:text-blue-700 transition-colors">07761 735022</p>
                   </div>
                 </a>
 

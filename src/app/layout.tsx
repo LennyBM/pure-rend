@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import Script from "next/script";
 import { Navbar } from "@/components/layout/Navbar";
@@ -6,26 +6,36 @@ import { Footer } from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
 import BackToTop from "@/components/ui/BackToTop";
 import MobileStickyCTA from "@/components/ui/MobileStickyCTA";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
+  display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: '#2563eb',
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://purerend.co.uk'),
   title: "PureRend | Plastering & Rendering Specialist in Bude, Cornwall",
   description: "Plastering and rendering specialist based in Bude. Silicone render, monocouche, EWI, heritage lime, and internal plastering across North Cornwall and Devon. All work done by Ben.",
   icons: {
-    icon: '/images/purerend-official-logo.webp',
+    icon: '/favicon.ico',
     apple: '/images/purerend-official-logo.webp',
   },
+  manifest: '/manifest.webmanifest',
   openGraph: {
     type: 'website',
     locale: 'en_GB',
@@ -57,12 +67,19 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://tile.openstreetmap.org" />
+        <link rel="dns-prefetch" href="https://basemaps.cartocdn.com" />
+      </head>
       <body className="font-sans min-h-full flex flex-col bg-zinc-50 text-zinc-900">
+        <MotionProvider>
         <Navbar />
-        <main className="flex-1 flex flex-col w-full h-full min-h-screen">
+        <main id="main-content" className="flex-1 flex flex-col w-full h-full min-h-screen">
           {children}
         </main>
         <Footer />
@@ -70,7 +87,7 @@ export default function RootLayout({
         <BackToTop />
         <MobileStickyCTA />
         <a 
-          href="https://wa.me/447469931758"
+          href="https://wa.me/447761735022"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:flex fixed bottom-6 right-6 z-[60] items-center gap-3 bg-blue-50/90 backdrop-blur-xl border border-white/10 text-zinc-900 px-5 py-3 rounded-full shadow-2xl hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:bg-blue-100 hover:-translate-y-1 transition-all duration-300 font-medium tracking-wide text-sm"
@@ -86,18 +103,39 @@ export default function RootLayout({
         </a>
 
         {/* Site-wide LocalBusiness + Reviews structured data */}
+        </MotionProvider>
+
+        {/* WebSite schema — enables Google Sitelinks search */}
+        <script
+          id="schema-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "PureRend",
+              "url": "https://purerend.co.uk",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": { "@type": "EntryPoint", "urlTemplate": "https://purerend.co.uk/?q={search_term_string}" },
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+
         <script
           id="schema-local-business"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": "HomeAndConstructionBusiness",
               "name": "PureRend",
               "description": "Plastering and rendering specialist in Bude, Cornwall. Silicone render, monocouche, EWI, internal plastering, and heritage lime render.",
               "url": "https://purerend.co.uk",
               "image": "https://purerend.co.uk/images/purerend-official-logo.webp",
-              "telephone": "+447469931758",
+              "telephone": "+447761735022",
               "email": "b.rplasteringsw@gmail.com",
               "address": {
                 "@type": "PostalAddress",

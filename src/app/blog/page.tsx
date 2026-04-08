@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Rendering & Plastering Advice | PureRend Blog — Bude, Cornwall",
   description: "Practical advice on rendering and plastering from Ben Rod, based in Bude. Costs, materials, planning permission, aftercare and more.",
   alternates: { canonical: "https://purerend.co.uk/blog" },
+  openGraph: {
+    title: "Rendering & Plastering Guides | PureRend Blog",
+    description: "Practical answers to common rendering questions — costs, materials, planning permission, and aftercare. Written by Ben Rod, Bude.",
+    url: "https://purerend.co.uk/blog",
+    type: "website",
+    siteName: "PureRend",
+    locale: "en_GB",
+    images: [{ url: "/images/purerend-rendering-specialist-hero.webp", width: 1200, height: 630, alt: "PureRend rendering advice blog" }],
+  },
 };
 
 const articles = [
@@ -13,35 +22,35 @@ const articles = [
     slug: "rendering-cost-cornwall",
     title: "How Much Does Rendering Cost in Cornwall? (2026 Prices)",
     description: "Ballpark prices for silicone render, monocouche, EWI and internal plastering — plus the factors that push costs up or down.",
-    date: "2026",
+    date: "Feb 2026",
     readTime: "5 min read",
   },
   {
     slug: "silicone-render-vs-monocouche",
     title: "Silicone Render vs Monocouche: Which Is Right for Your House?",
     description: "Plain English breakdown of the two most common render systems — when to use each, and what products Ben uses.",
-    date: "2026",
+    date: "Feb 2026",
     readTime: "4 min read",
   },
   {
     slug: "render-over-pebbledash",
     title: "Can You Render Over Pebbledash? (And Should You?)",
     description: "The honest answer: it depends on the condition. Here's how to tell, and what the process involves.",
-    date: "2026",
+    date: "Mar 2026",
     readTime: "4 min read",
   },
   {
     slug: "how-to-clean-render",
     title: "How to Clean Render Without Damaging It",
     description: "The most important thing homeowners need to know: never pressure wash modern render. Here's what actually works.",
-    date: "2026",
+    date: "Mar 2026",
     readTime: "4 min read",
   },
   {
     slug: "planning-permission-rendering",
     title: "Do I Need Planning Permission to Render My House?",
     description: "Usually no — but there are important exceptions for listed buildings, conservation areas, and EWI.",
-    date: "2026",
+    date: "Apr 2026",
     readTime: "5 min read",
   },
 ];

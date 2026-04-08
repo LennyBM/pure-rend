@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, CheckCircle2, Building, Home, Box, Check, MessageCircle, Wrench, Layers, ThermometerSnowflake, HelpCircle } from "lucide-react";
+import { m, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowRight, CheckCircle2, Building, Home, Check, MessageCircle, Wrench, Layers, ThermometerSnowflake, HelpCircle } from "lucide-react";
 
 type QuoteData = {
   serviceType: string;
@@ -23,6 +23,7 @@ const serviceOptions = [
 
 export default function QuoteCalculator() {
   const [step, setStep] = useState(1);
+  const [submitError, setSubmitError] = useState(false);
   const [formData, setFormData] = useState<QuoteData>({
     serviceType: "",
     propertyType: "",
@@ -65,9 +66,12 @@ export default function QuoteCalculator() {
       </div>
 
       <div className="p-5 sm:p-8 md:p-12 min-h-[350px] md:min-h-[400px] flex flex-col relative bg-zinc-50/50">
+        <div aria-live="polite" aria-atomic="true" className="sr-only">
+          {step <= 4 ? `Step ${step} of 4` : "Quote request complete"}
+        </div>
         <AnimatePresence mode="wait">
           {step === 1 && (
-            <motion.div
+            <m.div
               key="step1"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -79,7 +83,8 @@ export default function QuoteCalculator() {
               </h3>
               <div className="flex flex-col gap-3">
                 {serviceOptions.map(({ label, icon: Icon }) => (
-                  <motion.button
+                  <m.button
+                    type="button"
                     whileHover={{ scale: 1.02, x: 4 }}
                     whileTap={{ scale: 0.98 }}
                     key={label}
@@ -99,14 +104,14 @@ export default function QuoteCalculator() {
                     }`}>
                       {formData.serviceType === label && <Check className="w-4 h-4 text-white" />}
                     </div>
-                  </motion.button>
+                  </m.button>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           )}
 
           {step === 2 && (
-            <motion.div
+            <m.div
               key="step2"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -118,7 +123,8 @@ export default function QuoteCalculator() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {["Detached", "Semi-Detached", "Terraced", "Bungalow"].map((pt) => (
-                  <motion.button
+                  <m.button
+                    type="button"
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     key={pt}
@@ -131,14 +137,14 @@ export default function QuoteCalculator() {
                   >
                     {pt === "Detached" ? <Building className="w-8 h-8 text-blue-600" /> : <Home className="w-8 h-8 text-blue-600" />}
                     <span className="font-bold text-zinc-800">{pt}</span>
-                  </motion.button>
+                  </m.button>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           )}
 
           {step === 3 && (
-            <motion.div
+            <m.div
               key="step3"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -150,7 +156,8 @@ export default function QuoteCalculator() {
               </h3>
               <div className="flex flex-col gap-3">
                 {["Just the Front", "Front & Back", "3 Walls", "Whole Property", "Just a Repair / Small Area"].map((w) => (
-                  <motion.button
+                  <m.button
+                    type="button"
                     whileHover={{ scale: 1.02, x: 4 }}
                     whileTap={{ scale: 0.98 }}
                     key={w}
@@ -167,14 +174,14 @@ export default function QuoteCalculator() {
                     }`}>
                       {formData.walls === w && <Check className="w-4 h-4 text-white" />}
                     </div>
-                  </motion.button>
+                  </m.button>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           )}
 
           {step === 4 && (
-            <motion.div
+            <m.div
               key="step4"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -189,28 +196,36 @@ export default function QuoteCalculator() {
               </p>
               <div className="flex flex-col gap-5">
                 <div>
-                  <label className="block text-sm font-bold text-zinc-700 mb-2 font-headline uppercase tracking-wider">Full Name</label>
+                  <label htmlFor="quote-name" className="block text-sm font-bold text-zinc-700 mb-2 font-headline uppercase tracking-wider">Full Name</label>
                   <input
+                    id="quote-name"
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-5 py-4 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-zinc-900 text-lg transition-shadow shadow-sm focus:shadow-md"
                     placeholder="E.g. John Smith"
+                    autoComplete="name"
+                    required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-zinc-700 mb-2 font-headline uppercase tracking-wider flex items-center justify-between">
+                  <label htmlFor="quote-phone" className="block text-sm font-bold text-zinc-700 mb-2 font-headline uppercase tracking-wider flex items-center justify-between">
                     Phone / WhatsApp Number
                     <span className="text-xs text-green-600 flex items-center gap-1 bg-green-50 px-2 py-1 rounded-md mb-0.5 border border-green-200">
                       <MessageCircle className="w-3 h-3" /> Preferred
                     </span>
                   </label>
                   <input
+                    id="quote-phone"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-5 py-4 rounded-xl border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white text-zinc-900 text-lg transition-shadow shadow-sm focus:shadow-md"
                     placeholder="07..."
+                    autoComplete="tel"
+                    required
+                    pattern="[0-9\s\-\+\(\)]{10,}"
+                    title="Please enter a valid UK phone number"
                   />
                 </div>
 
@@ -222,16 +237,22 @@ export default function QuoteCalculator() {
                     onChange={(e) => setFormData({ ...formData, gdprConsent: e.target.checked })}
                     className="mt-1 w-4 h-4 text-blue-700 border-zinc-300 rounded focus:ring-blue-600"
                   />
-                  <label htmlFor="gdpr-consent" className="text-xs text-zinc-500 leading-relaxed">
-                    I consent to PureRend processing my data in accordance with the <a href="/your-rights" className="underline hover:text-blue-700" target="_blank">Privacy Policy</a>. I understand I will be contacted regarding my quote.
+                  <label htmlFor="gdpr-consent" className="text-sm text-zinc-500 leading-relaxed">
+                    I consent to PureRend processing my data in accordance with the <a href="/your-rights" className="underline hover:text-blue-700" target="_blank" rel="noopener noreferrer" aria-label="Privacy Policy (opens in new tab)">Privacy Policy</a>. I understand I will be contacted regarding my quote.
                   </label>
                 </div>
 
-                <motion.button
+                {submitError && (
+                  <p role="alert" className="text-red-600 text-sm text-center bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                    Something went wrong. Please try again or call us on <a href="tel:+447761735022" className="font-bold underline">07761 735022</a>.
+                  </p>
+                )}
+                <m.button
                   whileHover={formData.name && formData.phone && formData.gdprConsent ? { scale: 1.02, y: -2 } : {}}
                   whileTap={formData.name && formData.phone && formData.gdprConsent ? { scale: 0.98 } : {}}
                   onClick={async () => {
                     if (formData.name && formData.phone && formData.gdprConsent) {
+                      setSubmitError(false);
                       try {
                         const res = await fetch("/api/contact", {
                           method: "POST",
@@ -241,28 +262,24 @@ export default function QuoteCalculator() {
                         if (res.ok) {
                           setStep(5);
                         } else {
-                          console.error("Failed to submit form");
+                          setSubmitError(true);
                         }
-                      } catch (error) {
-                        console.error("Error submitting form", error);
+                      } catch {
+                        setSubmitError(true);
                       }
                     }
                   }}
                   disabled={!formData.name || !formData.phone || !formData.gdprConsent}
-                  className={`w-full mt-4 font-bold text-lg py-5 rounded-2xl transition-all flex items-center justify-center gap-2 ${
-                    (formData.name && formData.phone && formData.gdprConsent)
-                    ? 'bg-blue-600 text-white hover:bg-blue-500 shadow-lg hover:shadow-xl hover:shadow-blue-500/20'
-                    : 'bg-zinc-200 text-zinc-500 cursor-not-allowed'
-                  }`}
+                  className="w-full mt-4 font-bold text-lg py-5 rounded-2xl transition-all flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-500 shadow-lg hover:shadow-xl hover:shadow-blue-500/20 disabled:bg-zinc-200 disabled:text-zinc-400 disabled:cursor-not-allowed disabled:shadow-none"
                 >
                   Send Quote Request <ArrowRight className="w-5 h-5" />
-                </motion.button>
+                </m.button>
               </div>
-            </motion.div>
+            </m.div>
           )}
 
           {step === 5 && (
-            <motion.div
+            <m.div
               key="step5"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -286,13 +303,14 @@ export default function QuoteCalculator() {
               >
                 Submit another enquiry
               </button>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
 
         {/* Navigation buttons */}
         {step > 1 && step < 5 && (
           <button
+            type="button"
             onClick={prevStep}
             className="absolute top-8 left-8 md:top-12 md:left-12 text-zinc-500 hover:text-zinc-600 transition-colors flex items-center gap-1 font-semibold"
           >

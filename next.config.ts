@@ -15,6 +15,8 @@ const cspHeader = `
 `;
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+  compress: true,
   images: {
     remotePatterns: [
       {

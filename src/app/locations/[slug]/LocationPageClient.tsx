@@ -75,11 +75,11 @@ export default function LocationPageClient({ location }: { location: LocationDat
           {location.shortDescription}
         </p>
         <a
-          href="tel:07469931758"
+          href="tel:+447761735022"
           className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-zinc-900 transition-colors"
         >
           <Phone className="w-5 h-5" />
-          Call Ben: 07469 931 758
+          Call Ben: 07761 735022
         </a>
       </section>
 
@@ -196,10 +196,10 @@ export default function LocationPageClient({ location }: { location: LocationDat
             Get a Free Quote <ArrowRight className="w-5 h-5" />
           </Link>
           <a
-            href="tel:07469931758"
+            href="tel:+447761735022"
             className="inline-flex items-center gap-2 border border-zinc-600 text-zinc-300 px-8 py-4 rounded-full font-bold hover:border-blue-500 hover:text-white transition-colors"
           >
-            <Phone className="w-4 h-4" /> 07469 931 758
+            <Phone className="w-4 h-4" /> 07761 735022
           </a>
         </div>
       </section>

@@ -4,6 +4,16 @@ import { ArrowRight, Shield, Award, Phone } from "lucide-react";
 export const metadata = {
   title: "About PureRend | Meet Ben Rod | Bude's Rendering Specialist",
   description: "I'm Ben Rod, the founder of PureRend. Specialised in high-performance silicone render and external wall insulation across Bude and North Cornwall.",
+  alternates: { canonical: "https://purerend.co.uk/about" },
+  openGraph: {
+    title: "About PureRend | Meet Ben Rod",
+    description: "Specialised rendering and plastering by Ben Rod, based in Bude, Cornwall. No subcontracting — every job done personally.",
+    url: "https://purerend.co.uk/about",
+    type: "website" as const,
+    siteName: "PureRend",
+    locale: "en_GB",
+    images: [{ url: "/images/purerend-founder-ben-rod-plasterer.webp", width: 1200, height: 630, alt: "Ben Rod, founder of PureRend" }],
+  },
 };
 
 export default function AboutPage() {
@@ -26,11 +36,11 @@ export default function AboutPage() {
           </p>
           <div className="pt-4 flex flex-wrap gap-4">
              <a
-               href="tel:07469931758"
+               href="tel:+447761735022"
                className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-medium hover:bg-zinc-900 transition-colors duration-300"
              >
                <Phone className="w-5 h-5" />
-               Call me: 07469 931 758
+               Call me: 07761 735022
              </a>
           </div>
         </div>

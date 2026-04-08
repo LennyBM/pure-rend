@@ -113,7 +113,9 @@ export default function PortfolioGrid() {
           {SERVICE_TYPES.map((type) => (
             <button
               key={type}
+              type="button"
               onClick={() => setActiveFilter(type)}
+              aria-pressed={activeFilter === type}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 border ${
                 activeFilter === type
                   ? "bg-blue-600 text-white border-blue-600 shadow-md"
@@ -171,9 +173,9 @@ export default function PortfolioGrid() {
             );
 
             return project.href ? (
-              <StaggerItem key={i}><Link href={project.href}>{card}</Link></StaggerItem>
+              <StaggerItem key={project.title}><Link href={project.href}>{card}</Link></StaggerItem>
             ) : (
-              <StaggerItem key={i}>{card}</StaggerItem>
+              <StaggerItem key={project.title}>{card}</StaggerItem>
             );
           })}
         </StaggerContainer>

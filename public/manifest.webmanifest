@@ -1,0 +1,23 @@
+{
+  "name": "PureRend — Plastering & Rendering Specialist",
+  "short_name": "PureRend",
+  "description": "Plastering and rendering specialist in Bude, Cornwall. Silicone render, monocouche, EWI, and internal plastering.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/images/purerend-official-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy | PureRend',
   description: 'How PureRend collects, uses, and protects your personal information under UK GDPR.',
+  alternates: { canonical: 'https://purerend.co.uk/privacy' },
 };
 
 export default function PrivacyPolicyPage() {
@@ -91,7 +92,7 @@ export default function PrivacyPolicyPage() {
             <p>If you have any questions about this privacy policy or wish to exercise your data rights, contact us at:</p>
             <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-600">
               <li>Email: <a href="mailto:b.rplasteringsw@gmail.com">b.rplasteringsw@gmail.com</a></li>
-              <li>Phone: 07469 931 758</li>
+              <li>Phone: 07761 735022</li>
             </ul>
           </section>
 

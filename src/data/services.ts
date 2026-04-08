@@ -1,3 +1,4 @@
+import type { LucideIcon } from 'lucide-react';
 import { Shield, Wind, Thermometer, Palette, Clock, Home, TrendingUp, Sparkles, Brush, Maximize, Droplets, Wrench, Settings, HeartPulse } from 'lucide-react';
 
 export interface ServiceData {
@@ -11,7 +12,7 @@ export interface ServiceData {
   heroImage: string;
   beforeImage?: string;
   afterImage?: string;
-  benefits: { title: string; description: string; icon: any }[];
+  benefits: { title: string; description: string; icon: LucideIcon }[];
   process: { title: string; description: string }[];
   faqs: { question: string; answer: string }[];
   pricing?: string;

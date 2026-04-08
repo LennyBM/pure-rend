@@ -71,10 +71,10 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
               Get a Free Quote <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:07469931758"
+              href="tel:+447761735022"
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white border border-white/20 px-7 py-3.5 rounded-full font-semibold hover:bg-white/20 transition-colors"
             >
-              <Phone className="w-4 h-4" /> 07469 931 758
+              <Phone className="w-4 h-4" /> 07761 735022
             </a>
           </div>
         </div>
@@ -132,8 +132,8 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
                 Request Fast Quote <ArrowRight className="w-4 h-4" />
               </Link>
               <div className="space-y-3 pt-4 border-t border-zinc-800">
-                <a href="tel:+447469931758" className="flex items-center gap-3 text-sm text-zinc-400 hover:text-blue-400 transition-colors">
-                  <Phone className="w-4 h-4 shrink-0" /> 07469 931 758
+                <a href="tel:+447761735022" className="flex items-center gap-3 text-sm text-zinc-400 hover:text-blue-400 transition-colors">
+                  <Phone className="w-4 h-4 shrink-0" /> 07761 735022
                 </a>
                 <a href="mailto:b.rplasteringsw@gmail.com" className="flex items-center gap-3 text-sm text-zinc-400 hover:text-blue-400 transition-colors">
                   <Mail className="w-4 h-4 shrink-0" /> b.rplasteringsw@gmail.com
@@ -180,7 +180,6 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
                 Drag the slider to reveal the before and after on a real {service.name.toLowerCase()} project.
               </p>
             </div>
-            {/* TODO: Replace with real client-supplied before/after photos */}
             <div className="max-w-3xl mx-auto">
               <BeforeAfterSlider
                 beforeImage={service.beforeImage!}
@@ -370,10 +369,10 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
             Book a Free Survey <ArrowRight className="w-4 h-4" />
           </Link>
           <a
-            href="tel:07469931758"
+            href="tel:+447761735022"
             className="inline-flex items-center gap-2 border border-zinc-700 text-zinc-300 px-8 py-4 rounded-full font-semibold hover:border-blue-600 hover:text-white transition-colors"
           >
-            <Phone className="w-4 h-4" /> 07469 931 758
+            <Phone className="w-4 h-4" /> 07761 735022
           </a>
         </div>
       </section>
@@ -392,7 +391,7 @@ export default async function ServiceSiloPage({ params }: { params: Promise<{ sl
             "provider": {
               "@type": "LocalBusiness",
               "name": "PureRend",
-              "telephone": "+447469931758",
+              "telephone": "+447761735022",
               "url": "https://purerend.co.uk",
               "address": {
                 "@type": "PostalAddress",

@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Waves, Thermometer, Hammer, CheckCircle2 } from 
 export const metadata = {
   title: "Widemouth Bay Case Study | PureRend Bude",
   description: "A masterclass in coastal protection. Discover how PureRend engineered a weather-defying finish for this exposed Atlantic property.",
+  alternates: { canonical: "https://purerend.co.uk/portfolio/widemouth-bay" },
 };
 
 const CHALLENGES = [

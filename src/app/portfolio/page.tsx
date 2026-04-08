@@ -33,7 +33,6 @@ export default function PortfolioHub() {
       </section>
 
       {/* Before & After Showcase */}
-      {/* TODO: Replace placeholder before/after images with real client-supplied before/after photos */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto mb-16">
         <h2 className="text-2xl md:text-3xl font-headline font-bold text-zinc-900 mb-3 text-center">
           Before & <span className="text-blue-600">After</span>

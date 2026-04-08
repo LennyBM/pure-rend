@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useId } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useId, useRef } from "react";
+import { m, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
 interface AccordionItemProps {
@@ -14,12 +14,38 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const buttonId = useId();
   const contentId = useId();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    const parent = buttonRef.current?.closest("[data-accordion]");
+    if (!parent) return;
+    const buttons = Array.from(parent.querySelectorAll<HTMLButtonElement>("button[data-accordion-trigger]"));
+    const idx = buttons.indexOf(buttonRef.current!);
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      buttons[(idx + 1) % buttons.length]?.focus();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      buttons[(idx - 1 + buttons.length) % buttons.length]?.focus();
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      buttons[0]?.focus();
+    } else if (e.key === "End") {
+      e.preventDefault();
+      buttons[buttons.length - 1]?.focus();
+    }
+  };
 
   return (
     <div className="border border-white/20 bg-white/40 backdrop-blur-md rounded-2xl mb-4 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
       <button
+        ref={buttonRef}
         id={buttonId}
+        data-accordion-trigger
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
+        onKeyDown={handleKeyDown}
         className="w-full flex items-center justify-between p-5 md:p-6 text-left group"
         aria-expanded={isOpen}
         aria-controls={contentId}
@@ -34,7 +60,7 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
 
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div
+          <m.div
             id={contentId}
             role="region"
             aria-labelledby={buttonId}
@@ -46,16 +72,16 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
             <div className="p-5 md:p-6 pt-0 text-zinc-600 leading-relaxed">
               {children}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>
   );
 }
 
-export function Accordion({ children, className = "" }: { children: React.ReactNode, className?: string }) {
+export function Accordion({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`w-full ${className}`}>
+    <div data-accordion className={`w-full ${className}`}>
       {children}
     </div>
   );

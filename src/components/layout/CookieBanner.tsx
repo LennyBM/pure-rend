@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { X, Shield } from "lucide-react";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 export default function CookieBanner() {
   const [show, setShow] = useState(false);
@@ -30,7 +30,10 @@ export default function CookieBanner() {
   return (
     <AnimatePresence>
       {show && (
-        <motion.div
+        <m.div
+          role="dialog"
+          aria-label="Cookie consent"
+          aria-modal="true"
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -41,11 +44,12 @@ export default function CookieBanner() {
             <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0">
               <Shield className="w-5 h-5 text-blue-500" />
             </div>
-            
+
             <div className="flex-1 pt-1">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-zinc-900 font-headline font-bold text-sm">We value your privacy</h3>
-                <button 
+                <button
+                  type="button"
                   onClick={decline}
                   className="text-zinc-500 hover:text-zinc-900 transition-colors"
                   aria-label="Close"
@@ -54,26 +58,28 @@ export default function CookieBanner() {
                 </button>
               </div>
               <p className="text-xs text-zinc-500 leading-relaxed mb-4">
-                We use cookies to improve your experience and analyse site traffic. Read our{" "}
-                <Link href="/privacy" className="text-blue-500 hover:underline underline-offset-2">Privacy Policy</Link> to learn more.
+                This site uses cookies to improve your experience. See our{" "}
+                <Link href="/privacy" className="text-blue-500 hover:underline underline-offset-2">Privacy Policy</Link>.
               </p>
               <div className="flex items-center gap-3">
                 <button
+                  type="button"
                   onClick={accept}
-                  className="flex-1 bg-blue-600 hover:bg-blue-500 text-zinc-900 text-xs font-bold py-2.5 rounded-lg transition-colors"
+                  className="flex-1 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold py-2.5 rounded-lg transition-colors"
                 >
-                  Accept
+                  OK, got it
                 </button>
                 <button
+                  type="button"
                   onClick={decline}
-                  className="flex-1 bg-blue-100 hover:bg-zinc-700 text-zinc-600 text-xs font-medium py-2.5 rounded-lg transition-colors border border-zinc-700"
+                  className="flex-1 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 text-xs font-medium py-2.5 rounded-lg transition-colors border border-zinc-300"
                 >
-                  Reject Non-Essential
+                  No thanks
                 </button>
               </div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

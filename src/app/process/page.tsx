@@ -5,6 +5,16 @@ import { CheckCircle, Droplets, AlertTriangle, ArrowRight, Phone } from "lucide-
 export const metadata = {
   title: "Our Process | PureRend Bude",
   description: "Learn about our meticulous 4-step exterior rendering process, including site cleanup and vital render aftercare advice.",
+  alternates: { canonical: "https://purerend.co.uk/process" },
+  openGraph: {
+    title: "How PureRend Works | Our Rendering Process",
+    description: "From site visit to final inspection — the 4-step process Ben follows on every rendering or plastering job in Cornwall and Devon.",
+    url: "https://purerend.co.uk/process",
+    type: "website" as const,
+    siteName: "PureRend",
+    locale: "en_GB",
+    images: [{ url: "/images/purerend-rendering-specialist-hero.webp", width: 1200, height: 630, alt: "PureRend rendering process" }],
+  },
 };
 
 const steps = [
@@ -175,10 +185,10 @@ export default function ProcessPage() {
             Book a Free Survey <ArrowRight className="w-5 h-5" />
           </Link>
           <a
-            href="tel:07469931758"
+            href="tel:+447761735022"
             className="inline-flex items-center gap-2 border border-zinc-300 text-zinc-700 px-8 py-4 rounded-full text-base font-bold font-headline hover:border-blue-600 hover:text-blue-600 transition-colors"
           >
-            <Phone className="w-5 h-5" /> 07469 931 758
+            <Phone className="w-5 h-5" /> 07761 735022
           </a>
         </div>
       </section>

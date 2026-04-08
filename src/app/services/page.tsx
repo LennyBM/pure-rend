@@ -9,6 +9,16 @@ import { StaggerContainer, StaggerItem } from "@/components/ui/StaggerReveal";
 export const metadata = {
   title: "Specialist Rendering Services | PureRend",
   description: "Explore our range of premium rendering and plastering services across North Cornwall and Devon. From silicone systems to heritage lime finishes.",
+  alternates: { canonical: "https://purerend.co.uk/services" },
+  openGraph: {
+    title: "Rendering & Plastering Services | PureRend",
+    description: "Silicone render, monocouche, EWI, internal plastering, and heritage lime — all delivered by Ben Rod across North Cornwall and Devon.",
+    url: "https://purerend.co.uk/services",
+    type: "website" as const,
+    siteName: "PureRend",
+    locale: "en_GB",
+    images: [{ url: "/images/craftsmanship_internal.webp", width: 1200, height: 630, alt: "PureRend rendering and plastering services" }],
+  },
 };
 
 export default function ServicesHub() {

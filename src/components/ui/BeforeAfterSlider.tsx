@@ -12,6 +12,7 @@ interface BeforeAfterSliderProps {
   afterLabel?: string;
   caption?: string;
   className?: string;
+  priority?: boolean;
 }
 
 export default function BeforeAfterSlider({
@@ -23,6 +24,7 @@ export default function BeforeAfterSlider({
   afterLabel = "After",
   caption,
   className = "",
+  priority = false,
 }: BeforeAfterSliderProps) {
   const [position, setPosition] = useState(50); // 0–100
   const [isDragging, setIsDragging] = useState(false);
@@ -126,7 +128,8 @@ export default function BeforeAfterSlider({
             fill
             className={`object-cover transition-opacity duration-500 ${imagesLoaded >= 2 ? 'opacity-100' : 'opacity-0'}`}
             sizes="(max-width: 768px) 100vw, 800px"
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            priority={priority}
             draggable={false}
             onLoad={() => setImagesLoaded((prev) => prev + 1)}
           />
@@ -143,7 +146,8 @@ export default function BeforeAfterSlider({
             fill
             className={`object-cover transition-opacity duration-500 ${imagesLoaded >= 2 ? 'opacity-100' : 'opacity-0'}`}
             sizes="(max-width: 768px) 100vw, 800px"
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            priority={priority}
             draggable={false}
             onLoad={() => setImagesLoaded((prev) => prev + 1)}
           />

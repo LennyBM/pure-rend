@@ -1,9 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
-import QuoteCalculator from "@/components/forms/QuoteCalculator";
+import dynamic from "next/dynamic";
+const QuoteCalculator = dynamic(() => import("@/components/forms/QuoteCalculator"), {
+  loading: () => <div className="w-full max-w-2xl mx-auto h-[420px] bg-zinc-100 rounded-3xl animate-pulse" />,
+});
 import { 
   ArrowRight, 
   Home as HomeIcon,
@@ -29,14 +29,6 @@ import { Accordion, AccordionItem } from "@/components/ui/Accordion";
 import CoverageAreaMap from "@/components/ui/CoverageAreaMap";
 
 export default function Home() {
-  const prefersReducedMotion = useReducedMotion();
-  const reveal = prefersReducedMotion ? {} : {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: '-100px' },
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
-  };
-
   const transformations = [
     {
       before: '/images/silicone_before.webp',
@@ -129,18 +121,14 @@ export default function Home() {
             fill
             className="object-cover opacity-50 sm:opacity-70"
             priority
+            fetchPriority="high"
             placeholder="blur"
             blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMyNzI3MmEiLz48L3N2Zz4="
           />
           <ClientContentPlaceholder className="!top-28 !right-4 lg:!top-8 lg:!right-8" />
           <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-zinc-950 via-zinc-900/80 to-zinc-900/40 lg:to-transparent" />
         </div>
-        <motion.div 
-          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl space-y-6 md:space-y-8">
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-black font-headline text-white leading-[1.1] tracking-normal mb-2 drop-shadow-lg">
               Plastering and rendering <br />
@@ -150,17 +138,17 @@ export default function Home() {
               Based in Bude, covering North Cornwall and Devon. All work done by Ben — no subcontractors, no shortcuts. Backed by a 10-year workmanship guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-              <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} className="flex-1 sm:flex-none">
+              <div className="flex-1 sm:flex-none hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.97] transition-transform">
                 <Button asChild className="w-full sm:w-auto rounded-full h-full min-h-[52px] md:min-h-[56px] py-3.5 md:py-4 px-6 md:px-8 text-base md:text-lg font-bold font-headline shadow-[0_0_20px_rgba(37,99,235,0.4)] bg-blue-600 hover:bg-white text-white hover:text-blue-900 border-none transition-colors">
                   <Link href="/contact" className="gap-2 flex items-center justify-center h-full">
                     Get a Free Quote
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} className="flex-1 sm:flex-none">
+              </div>
+              <div className="flex-1 sm:flex-none hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.97] transition-transform">
                 <Link
-                  href="https://wa.me/447469931758"
+                  href="https://wa.me/447761735022"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto rounded-full flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 md:px-8 py-3.5 md:py-4 min-h-[52px] md:min-h-[56px] font-medium transition-colors hover:bg-white/20 h-full"
@@ -168,15 +156,15 @@ export default function Home() {
                   <MessageCircle className="w-5 h-5" />
                   Instant WhatsApp
                 </Link>
-              </motion.div>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </header>
 
       {/* ─── 2. CRAFTSMANSHIP / ABOUT BEN ─── */}
       <section className="py-12 md:py-24 mesh-bg">
-        <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             {/* Image Col — smaller on mobile */}
             <div className="relative max-w-[280px] sm:max-w-sm lg:max-w-none mx-auto lg:mx-0 w-full">
@@ -190,17 +178,14 @@ export default function Home() {
                 />
                 <ClientContentPlaceholder />
               </div>
-              <motion.div 
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 bg-blue-600 text-white p-6 md:p-10 rounded-2xl md:rounded-3xl shadow-xl hidden sm:block shadow-blue-500/20"
-              >
+              <div className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 bg-blue-600 text-white p-6 md:p-10 rounded-2xl md:rounded-3xl shadow-xl hidden sm:block shadow-blue-500/20 hover:scale-105 hover:rotate-2 transition-transform cursor-default">
                 <div className="text-3xl md:text-5xl font-black font-headline text-center">10yr</div>
                 <div className="uppercase tracking-widest text-[10px] md:text-xs font-bold font-headline mt-1 md:mt-2 text-center whitespace-nowrap">
                   Workmanship Guarantee
                 </div>
-              </motion.div>
+              </div>
             </div>
-            
+
             {/* Text Col */}
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold font-headline text-zinc-900 tracking-tight mb-4 md:mb-6 leading-tight">
@@ -230,12 +215,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* ─── 3. SERVICES ─── (Mobile: Horizontal Snap Carousel / Desktop: Grid) */}
       <section className="py-12 md:py-24 bg-white">
-        <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 md:mb-16 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-headline text-zinc-900 mb-3 md:mb-4">Rendering &amp; Plastering Services</h2>
             <div className="w-16 md:w-20 h-1.5 bg-blue-600 mx-auto"></div>
@@ -244,16 +229,15 @@ export default function Home() {
           {/* Mobile: Snap-scroll carousel */}
           <div className="md:hidden">
             <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 -mx-4 px-4">
-              {services.map((service, i) => (
-                <motion.div 
-                  key={i}
-                  whileTap={{ scale: 0.98 }}
-                  className="snap-start flex-shrink-0 w-[280px] bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-zinc-100 flex flex-col"
+              {services.map((service) => (
+                <div
+                  key={service.title}
+                  className="snap-start flex-shrink-0 w-[280px] bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-zinc-100 flex flex-col active:scale-[0.98] transition-transform"
                 >
                   <service.icon className="w-8 h-8 text-blue-600 mb-4 drop-shadow-md" />
                   <h3 className="text-lg font-bold mb-3 font-headline text-zinc-900 border-l-4 border-blue-600 pl-3">{service.title}</h3>
                   <p className="text-zinc-600 text-sm leading-relaxed">{service.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
             <p className="text-center text-sm text-zinc-500 mt-3 uppercase tracking-widest font-semibold">Swipe to see all services →</p>
@@ -261,25 +245,22 @@ export default function Home() {
 
           {/* Desktop: Grid */}
           <StaggerContainer className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
-              <StaggerItem key={i} className="h-full">
-                <motion.div 
-                  whileHover={{ y: -5, scale: 1.02 }} 
-                  className="bg-white/80 backdrop-blur-xl p-8 rounded-3xl group transition-all duration-300 shadow-lg border border-white/50 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col"
-                >
+            {services.map((service) => (
+              <StaggerItem key={service.title} className="h-full">
+                <div className="bg-white/80 backdrop-blur-xl p-8 rounded-3xl group transition-all duration-300 shadow-lg border border-white/50 hover:shadow-2xl hover:shadow-blue-500/10 h-full flex flex-col hover:-translate-y-1 hover:scale-[1.02]">
                   <service.icon className="w-10 h-10 text-blue-600 group-hover:scale-110 transition-transform mb-6 drop-shadow-md" />
                   <h3 className="text-xl font-bold mb-4 font-headline text-zinc-900 border-l-4 border-blue-600 pl-3">{service.title}</h3>
                   <p className="text-zinc-600 text-sm leading-relaxed">{service.desc}</p>
-                </motion.div>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
-        </motion.div>
+        </div>
       </section>
 
       {/* ─── 4. PROJECT TRANSFORMATIONS — Before & After ─── */}
       <section className="py-12 md:py-24 bg-blue-50 border-y border-blue-100">
-        <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 md:mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-headline text-zinc-900 mb-3 md:mb-4">Recent Work</h2>
             <p className="text-base md:text-lg text-zinc-500">
@@ -290,8 +271,8 @@ export default function Home() {
           {/* Mobile: Snap-scroll carousel for before/after */}
           <div className="md:hidden">
             <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 -mx-4 px-4">
-              {transformations.map((project, i) => (
-                <div key={i} className="snap-start flex-shrink-0 w-[85vw] max-w-[340px]">
+              {transformations.map((project) => (
+                <div key={project.title} className="snap-start flex-shrink-0 w-[85vw] max-w-[340px]">
                   <BeforeAfterSlider
                     beforeImage={project.before}
                     afterImage={project.after}
@@ -309,8 +290,8 @@ export default function Home() {
 
           {/* Desktop: Stacked */}
           <StaggerContainer className="hidden md:block max-w-4xl mx-auto space-y-12">
-            {transformations.map((project, i) => (
-              <StaggerItem key={i}>
+            {transformations.map((project) => (
+              <StaggerItem key={project.title}>
                 <BeforeAfterSlider
                   beforeImage={project.before}
                   afterImage={project.after}
@@ -323,12 +304,12 @@ export default function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
-        </motion.div>
+        </div>
       </section>
 
       {/* ─── 5. TESTIMONIALS ─── (Mobile: Horizontal Snap Carousel / Desktop: Grid) */}
       <section className="py-12 md:py-24 bg-zinc-900">
-        <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 md:mb-12 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-headline text-white mb-3">What customers say</h2>
             <div className="flex justify-center gap-1 mb-2">
@@ -342,8 +323,8 @@ export default function Home() {
           {/* Mobile: Snap-scroll carousel */}
           <div className="md:hidden">
             <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 -mx-4 px-4">
-              {testimonials.map((r, i) => (
-                <div key={i} className="snap-start flex-shrink-0 w-[300px] bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col">
+              {testimonials.map((r) => (
+                <div key={r.author} className="snap-start flex-shrink-0 w-[300px] bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col">
                   <div className="flex gap-1 mb-3">
                     {[1,2,3,4,5].map(s => (
                       <svg key={s} className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -362,8 +343,8 @@ export default function Home() {
 
           {/* Desktop: Grid */}
           <StaggerContainer className="hidden md:grid grid-cols-2 gap-6">
-            {testimonials.map((r, i) => (
-              <StaggerItem key={i}>
+            {testimonials.map((r) => (
+              <StaggerItem key={r.author}>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-7 h-full flex flex-col">
                   <div className="flex gap-1 mb-4">
                     {[1,2,3,4,5].map(s => (
@@ -379,12 +360,12 @@ export default function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
-        </motion.div>
+        </div>
       </section>
 
       {/* ─── 6. AREAS COVERED ─── (Mobile: Horizontal Snap Carousel / Desktop: Grid) */}
       <section className="py-12 md:py-24 glass-surface my-6 md:my-12 mx-4 sm:mx-8">
-        <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 gap-4 md:gap-8">
             <div>
               <span className="uppercase tracking-[0.2em] text-xs font-bold text-blue-600 mb-2 md:mb-3 block font-headline">North Cornwall &amp; Devon</span>
@@ -399,7 +380,7 @@ export default function Home() {
           <div className="md:hidden">
             <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 -mx-4 px-4">
               {locations.map((loc) => (
-                <motion.div key={loc.name} whileTap={{ scale: 0.97 }} className="snap-start flex-shrink-0 w-[160px]">
+                <div key={loc.name} className="snap-start flex-shrink-0 w-[160px] active:scale-[0.97] transition-transform">
                   <Link href={loc.href} className="bg-white/90 backdrop-blur-xl min-h-[10rem] flex flex-col items-center justify-center rounded-2xl shadow-lg border border-white/60 transition-all group p-4 text-center h-full">
                     <span className="font-bold font-headline text-lg mb-1 text-zinc-800">{loc.name}</span>
                     <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-3">{loc.tag}</span>
@@ -407,7 +388,7 @@ export default function Home() {
                       View <ArrowRight className="w-3 h-3" />
                     </span>
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
             <p className="text-center text-sm text-zinc-500 mt-2 uppercase tracking-widest font-semibold">Swipe to see all areas →</p>
@@ -417,7 +398,7 @@ export default function Home() {
           <StaggerContainer className="hidden md:grid grid-cols-3 lg:grid-cols-5 gap-5">
             {locations.map((loc) => (
               <StaggerItem key={loc.name} className="h-full">
-                <motion.div whileHover={{ y: -5, scale: 1.03 }} className="h-full">
+                <div className="h-full hover:-translate-y-1 hover:scale-[1.03] transition-transform">
                   <Link href={loc.href} className="bg-white/90 backdrop-blur-xl min-h-[14rem] flex flex-col items-center justify-center rounded-3xl shadow-lg border border-white/60 hover:shadow-2xl hover:shadow-blue-500/10 transition-all group p-6 text-center h-full">
                     <span className="font-bold font-headline text-2xl mb-2 text-zinc-800 group-hover:text-blue-600 transition-colors">{loc.name}</span>
                     <span className="text-xs text-zinc-500 uppercase tracking-widest mb-4">{loc.tag}</span>
@@ -425,7 +406,7 @@ export default function Home() {
                       View Area Guide <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>
-                </motion.div>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -436,12 +417,12 @@ export default function Home() {
               <CoverageAreaMap center={[50.8290, -4.5447]} radiusMiles={25} />
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* ─── 7. FAQ ACCORDION ─── */}
       <section className="py-12 md:py-24 mesh-bg">
-        <motion.div {...reveal} className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 md:mb-12 text-center">
             <span className="uppercase tracking-[0.2em] text-xs font-bold text-blue-600 mb-2 md:mb-3 block font-headline">Common Questions</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-headline text-zinc-900 mb-3 md:mb-4">Before You Book</h2>
@@ -452,18 +433,18 @@ export default function Home() {
 
           <Accordion>
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} title={faq.question} defaultOpen={i === 0}>
+              <AccordionItem key={faq.question} title={faq.question} defaultOpen={i === 0}>
                 <p className="text-sm md:text-base">{faq.answer}</p>
               </AccordionItem>
             ))}
           </Accordion>
-        </motion.div>
+        </div>
       </section>
 
       {/* ─── 8. FINAL CTA & QUOTE CALCULATOR ─── */}
       <section className="mesh-bg py-12 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-900/20 via-zinc-900/0 to-zinc-900/0 pointer-events-none"></div>
-        <motion.div {...reveal} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-headline text-zinc-900 tracking-tight leading-[1.1] mb-4 md:mb-6">
               Get a free quote from Ben
@@ -478,16 +459,30 @@ export default function Home() {
           <div className="mt-10 md:mt-16 flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-12 text-zinc-500 font-bold uppercase tracking-widest text-xs md:text-sm font-headline">
             <div className="flex items-center gap-3">
               <Phone className="w-4 h-4 md:w-5 md:h-5 text-blue-600" /> 
-              <span>07469 931 758</span>
+              <span>07761 735022</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-4 h-4 md:w-5 md:h-5 text-blue-600" /> 
               <span>b.rplasteringsw@gmail.com</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map((faq) => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+            })),
+          }),
+        }}
+      />
     </div>
   );
 }

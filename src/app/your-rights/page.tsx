@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Your Data Rights | PureRend',
   description: 'Learn about your rights regarding your personal data under UK GDPR.',
+  alternates: { canonical: 'https://purerend.co.uk/your-rights' },
 };
 
 export default function YourRightsPage() {
@@ -70,7 +71,7 @@ export default function YourRightsPage() {
           </p>
           <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-600">
             <li>E-mail: <a href="mailto:b.rplasteringsw@gmail.com">b.rplasteringsw@gmail.com</a></li>
-            <li>Phone: 07469 931 758</li>
+            <li>Phone: 07761 735022</li>
           </ul>
           <p className="mt-4 text-sm text-zinc-500">We will respond to your request within one month.</p>
         </div>

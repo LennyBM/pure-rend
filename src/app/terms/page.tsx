@@ -3,12 +3,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service | PureRend',
   description: 'Terms and conditions for PureRend plastering and rendering services.',
+  alternates: { canonical: 'https://purerend.co.uk/terms' },
 };
 
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-zinc-50 pt-32 pb-16 px-6">
-      <div className="max-w-3xl mx-auto bg-white p-4 md:p-8 md:p-12 rounded-3xl shadow-sm border border-zinc-100">
+      <div className="max-w-3xl mx-auto bg-white p-4 md:p-12 rounded-3xl shadow-sm border border-zinc-100">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-50 border border-teal-100 mb-6">
           <span className="text-xs font-semibold tracking-widest text-teal-800 uppercase">Legal</span>
         </div>
@@ -28,7 +29,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold font-headline text-zinc-900 mt-8 mb-4">2. Who we are</h2>
             <p>
-              PureRend is a plastering and rendering business operated by Ben Rod. Registered address: 64 High Street, Bideford, Devon, EX39 2AR. Contact: 07469 931 758 or <a href="mailto:b.rplasteringsw@gmail.com">b.rplasteringsw@gmail.com</a>.
+              PureRend is a plastering and rendering business operated by Ben Rod. Registered address: 64 High Street, Bideford, Devon, EX39 2AR. Contact: 07761 735022 or <a href="mailto:b.rplasteringsw@gmail.com">b.rplasteringsw@gmail.com</a>.
             </p>
           </section>
 
@@ -88,7 +89,7 @@ export default function TermsPage() {
             <p>If you have any questions about these terms, please contact us:</p>
             <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-600">
               <li>Email: <a href="mailto:b.rplasteringsw@gmail.com">b.rplasteringsw@gmail.com</a></li>
-              <li>Phone: 07469 931 758</li>
+              <li>Phone: 07761 735022</li>
             </ul>
           </section>
         </div>

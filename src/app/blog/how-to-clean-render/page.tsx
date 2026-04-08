@@ -137,8 +137,8 @@ export default function CleanRenderArticle() {
               <Link href="/contact" className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-500 transition-colors">
                 Get in Touch <ArrowRight className="w-4 h-4" />
               </Link>
-              <a href="tel:07469931758" className="inline-flex items-center gap-2 border border-zinc-300 text-zinc-700 px-6 py-3 rounded-full font-bold hover:border-blue-600 hover:text-blue-600 transition-colors">
-                <Phone className="w-4 h-4" /> 07469 931 758
+              <a href="tel:+447761735022" className="inline-flex items-center gap-2 border border-zinc-300 text-zinc-700 px-6 py-3 rounded-full font-bold hover:border-blue-600 hover:text-blue-600 transition-colors">
+                <Phone className="w-4 h-4" /> 07761 735022
               </a>
             </div>
           </div>

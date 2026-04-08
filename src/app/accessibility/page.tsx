@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Accessibility Statement | PureRend',
   description: 'Our commitment to digital accessibility for all users.',
+  alternates: { canonical: 'https://purerend.co.uk/accessibility' },
 };
 
 export default function AccessibilityPage() {
@@ -30,7 +31,7 @@ export default function AccessibilityPage() {
             We welcome your feedback on the accessibility of the PureRend website. Please let us know if you encounter accessibility barriers on our site:
           </p>
           <ul className="list-disc pl-6 space-y-2 mt-4 text-zinc-600">
-            <li>Phone: 07469 931 758</li>
+            <li>Phone: 07761 735022</li>
             <li>E-mail: b.rplasteringsw@gmail.com</li>
           </ul>
 

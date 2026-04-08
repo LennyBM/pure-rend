@@ -6,6 +6,16 @@ import CoverageAreaMap from "@/components/ui/CoverageAreaMap";
 export const metadata = {
   title: "Areas We Cover | PureRend Plastering & Rendering",
   description: "PureRend provides specialist rendering and internal plastering services across North Cornwall and North Devon. Find out if we cover your area.",
+  alternates: { canonical: "https://purerend.co.uk/locations" },
+  openGraph: {
+    title: "Areas We Cover | PureRend North Cornwall & Devon",
+    description: "Based in Bude, PureRend serves Bideford, Barnstaple, Launceston, Camelford, Holsworthy, Stratton and surrounding areas.",
+    url: "https://purerend.co.uk/locations",
+    type: "website" as const,
+    siteName: "PureRend",
+    locale: "en_GB",
+    images: [{ url: "/images/purerend-rendering-specialist-hero.webp", width: 1200, height: 630, alt: "PureRend service areas in North Cornwall and Devon" }],
+  },
 };
 
 export default function LocationsHub() {
